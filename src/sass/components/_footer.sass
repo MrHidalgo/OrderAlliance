@@ -7,8 +7,10 @@
   background-color: $colorMatterhorn
   color: $colorVeryLightGrey
 
+
   &__wrapper
     display: flex
+
 
   &__row
     width: 100%
@@ -27,6 +29,9 @@
         margin-bottom: 15px
         font-size: 10px
 
+        &:last-child
+          margin-bottom: 0
+
     &-1,
     &-2
       a
@@ -34,6 +39,9 @@
         margin-bottom: 15px
         font-size: 12px
         +transition(color)
+
+        &:last-child
+          margin-bottom: 0
 
         &:hover
           color: $colorWhite
@@ -44,6 +52,11 @@
         display: block
         margin-bottom: 30px
         font-size: 28px
+        +transition(color)
+
+        &:hover
+          color: $colorWhite
+          +transition(color)
 
       svg
         width: 30px
@@ -55,7 +68,6 @@
         &:hover
           fill: $colorWhite
           +transition(fill)
-
 
 
   &__logo
