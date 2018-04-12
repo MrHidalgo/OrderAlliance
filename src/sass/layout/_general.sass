@@ -16,7 +16,8 @@ ul
 body, html
   background: white
   color: $fontColor
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-family: 'TTNorms', Arial, sans-serif
+  font-weight: normal
   font-size: 16px
   min-width: 320px
   max-width: 100%
@@ -38,17 +39,26 @@ body, html
     padding-top: 100px
 
 .container
-  max-width: 1200px
   width: 100%
   margin-left: auto
   margin-right: auto
-  padding-left: 40px
-  padding-right: 40px
+  padding-left: 15px
+  padding-right: 15px
+  +rmin(320)
+    max-width: 100%
+  +rmin(576)
+    max-width: 540px
+  +rmin(768)
+    max-width: 720px
+  +rmin(992)
+    max-width: 960px
+  +rmin(1200)
+    max-width: 1200px
 
-+r($mobile)
-  .container
-    padding-left: 20px
-    padding-right: 20px
+//+r($mobile)
+//  .container
+//    padding-left: 15px
+//    padding-right: 15px
 
 // REMOVE FOR PRODUCTION !
 .dev-bp-debug
