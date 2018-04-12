@@ -1,11 +1,29 @@
 $sprite: (
-	logo: (
+	corner: (
+		offset-x: 0px,
+		offset-y: -23px,
+		width: 11px,
+		height: 7px,
+		total-width: 30px,
+		total-height: 30px,
+		image: '../img/sprite.png'
+	),
+	marker--hover: (
 		offset-x: 0px,
 		offset-y: 0px,
-		width: 300px,
-		height: 70px,
-		total-width: 300px,
-		total-height: 70px,
+		width: 10px,
+		height: 13px,
+		total-width: 30px,
+		total-height: 30px,
+		image: '../img/sprite.png'
+	),
+	marker: (
+		offset-x: -20px,
+		offset-y: 0px,
+		width: 10px,
+		height: 13px,
+		total-width: 30px,
+		total-height: 30px,
 		image: '../img/sprite.png'
 	),
 );
@@ -64,6 +82,12 @@ $sprite: (
 
 
 
-	.icon-logo {
-		@include sprite(logo)
+	.icon-corner {
+		@include sprite(corner)
+	}
+	.icon-marker--hover {
+		@include sprite(marker--hover)
+	}
+	.icon-marker {
+		@include sprite(marker)
 	}

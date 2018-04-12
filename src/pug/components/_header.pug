@@ -6,4 +6,25 @@ header.header
     .header__wrapper
 
 
+      .header__container
+        .header__row.header__row-0
+          img(
+            src="./img/img-logo__header.png" srcset="./img/img-logo__header@2x.png 2x"
+            class="header_logo"
+            alt=""
+            title=""
+          )
+
+        .header__row.header__row-1
+          include ../macros/_menu
+
+
+      .header__container
+        .header__row.header__row-2
+          include ../macros/_dropdown
+
+        .header__row.header__row-3
+          a(href="tel:4872702524" class="header__phone" title="")!= "(4872) 70-25-24"
+
+
 // HEADER :: END

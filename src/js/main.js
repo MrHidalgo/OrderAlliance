@@ -112,6 +112,56 @@ $(document).ready(function(){
   }
 
 
+  // CLOSE ALL DROPDOWN OR OTHER POPUP WINDOW
+  // ====================
+  /**
+   * @description close popup or modal window after press button ESC
+   */
+  _document.on('keyup', function(e){
+    if (e.keyCode === 27) {
+      $(".dropdown__menu").removeClass("is-show");
+    }
+  });
+  /**
+   * @description close popup or modal window after click on BODY
+   */
+  _document.on("click", "body", function(e) {
+    if(!$(e.target).closest(".dropdown").length) {
+      $(".dropdown__menu").removeClass("is-show");
+    }
+  });
+  // ====================
+
+
+  // CHOOSE LOCATION
+  // ====================
+  /**
+   * @description open dropdown menu for choose location
+   */
+  _document.on("click", "[dropdown-choose]", function() {
+    var dropdownMenu = $(".dropdown__menu");
+
+    dropdownMenu.addClass("is-show");
+  });
+  /**
+   * @description choose your current location
+   */
+  _document.on("click", "[dropdown-btn]", function() {
+    var dropdownMenu = $(".dropdown__menu"),
+      chooseVal = $(this).find("[dropdown-name]").text(),
+      currentVal = $("[dropdown-choose]").find("span");
+
+    $("[dropdown-btn]").removeClass("is-active");
+    $(this).addClass("is-active");
+
+    currentVal.text(chooseVal);
+
+    dropdownMenu.removeClass("is-show");
+  });
+  // ====================
+
+
+
   // HAMBURGER TOGGLER
   _document.on('click', '[js-hamburger]', function(){
     $(this).toggleClass('is-active');
