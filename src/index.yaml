@@ -2,4 +2,4 @@ ProjectTitle: OrderAlliance
 
 PageList:
 - file: homepage.html
-  ready: 100
+  ready: 5
