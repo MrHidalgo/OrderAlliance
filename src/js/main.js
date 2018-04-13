@@ -144,7 +144,7 @@ $(document).ready(function(){
     dropdownMenu.addClass("is-show");
   });
   /**
-   * @description choose your current location
+   * @description choose your location
    */
   _document.on("click", "[dropdown-btn]", function() {
     var dropdownMenu = $(".dropdown__menu"),
@@ -157,6 +157,16 @@ $(document).ready(function(){
     currentVal.text(chooseVal);
 
     dropdownMenu.removeClass("is-show");
+  });
+  // ====================
+  // TAB
+  // ====================
+  /**
+   * @description toggle active tab
+   */
+  _document.on("click", "[tab-js]", function(e) {
+    $("[tab-js]").removeClass("is-active");
+    $(this).addClass("is-active");
   });
   // ====================
 

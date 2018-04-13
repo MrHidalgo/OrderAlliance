@@ -1,0 +1,32 @@
+//- VARIABLE
+//- ==========
+-
+  var tabMenuArr = [
+    "Квартиры",
+    "Коммерческая недвижимость",
+    "Кладовые",
+    "Земля",
+    "Машиноместа"
+  ];
+  var tabMenuColorArr = [
+    "emerald",
+    "gold",
+    "blizzardBlue",
+    "lightningYellow",
+    "deepCerise"
+  ];
+//- ==========
+
+
+.tab
+  ul.tab__list
+    -for(var i = 0, len = tabMenuArr.length; i < len; i++)
+      li(
+        class!= (i === 0) ? "is-active tab__item tab__item-" + i:"tab__item tab__item-" + i
+        tab-js
+      )
+        a(
+          href="#"
+          class!="tab__link tab__link--" + tabMenuColorArr[i]
+          title=""
+        )!= tabMenuArr[i]
