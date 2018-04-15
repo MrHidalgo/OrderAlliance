@@ -1,9 +1,69 @@
 // BANNER :: START
 
+//- MIXIN
+//- ==========
+mixin mainSlider(sliderName, activeClass, jsName)
+  div(class="banner__slider banner__slider--" + sliderName + " " + activeClass)
+    div(data-mainSlider-js=`${jsName}`)
+      -for(var i = 0; i < 4; i++)
+        div
+          img(
+            src="./img/img-bg__" + sliderName + ".jpg" srcset="./img/img-bg__" + sliderName + "@2x.jpg 2x"
+          )
+//- ==========
+
 
 .banner
-  .container
-    .banner__wrapper
+  .banner__dredient
+
+  //.container
+  //  .banner__wrapper
+
+  +mainSlider("apartment",  "is-active",  "slider-apartment-js")
+  +mainSlider("commercial", "",           "slider-commercial-js")
+  +mainSlider("storerooms", "",           "slider-storerooms-js")
+  +mainSlider("earth",      "",           "slider-earth-js")
+  +mainSlider("carParking", "",           "slider-carParking-js")
+  //
+  //.banner__slider.banner__slider--apartment.is-active
+  //  div(slider-apartment-js)
+  //    -for(var i = 0; i < 4; i++)
+  //      div
+  //        img(
+  //          src="./img/img-bg__apartment.jpg" srcset="./img/img-bg__apartment@2x.jpg 2x"
+  //        )
+  //
+  //.banner__slider.banner__slider--commercial
+  //  div(slider-commercial-js)
+  //    -for(var i = 0; i < 4; i++)
+  //      div
+  //        img(
+  //          src="./img/img-bg__commercial.jpg" srcset="./img/img-bg__commercial@2x.jpg 2x"
+  //        )
+  //
+  //.banner__slider.banner__slider--storerooms
+  //  div(slider-storerooms-js)
+  //    -for(var i = 0; i < 4; i++)
+  //      div
+  //        img(
+  //          src="./img/img-bg__storerooms.jpg" srcset="./img/img-bg__storerooms@2x.jpg 2x"
+  //        )
+  //
+  //.banner__slider.banner__slider--earth
+  //  div(slider-earth-js)
+  //    -for(var i = 0; i < 4; i++)
+  //      div
+  //        img(
+  //          src="./img/img-bg__earth.jpg" srcset="./img/img-bg__earth@2x.jpg 2x"
+  //        )
+  //
+  //.banner__slider.banner__slider--carParking
+  //  div(slider-carParking-js)
+  //    -for(var i = 0; i < 4; i++)
+  //      div
+  //        img(
+  //          src="./img/img-bg__carParking.jpg" srcset="./img/img-bg__carParking@2x.jpg 2x"
+  //        )
 
 
   include ../macros/_mouse

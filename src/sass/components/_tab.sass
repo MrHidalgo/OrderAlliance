@@ -17,14 +17,14 @@
       border-radius: 0
       width: 0
       height: 0
-      +transition(width, height, border-radius, background-color, box-shadow)
+      //+transition(width, height, border-radius, background-color, box-shadow)
 
     &.is-active
       &:after
         width: calc(100% + 10px)
         height: calc(100% + 10px)
         border-radius: 5px
-        +transition(width, height, border-radius, background-color, box-shadow)
+        //+transition(width, height, border-radius, background-color, box-shadow)
       .tab__link
         z-index: 3
 
@@ -40,6 +40,9 @@
         position: absolute
         top: 0
         height: 60px
+      &.is-active
+        &:after
+          //+transition(background-color, box-shadow)
 
     &-0
       &:before
@@ -50,7 +53,6 @@
         &:after
           background-color: $colorEmerald
           box-shadow: 0 0 20px 5px rgba($colorEmerald, 0.55)
-          +transition(background-color, box-shadow)
     &-1
       &:before
         left: 10px
@@ -60,7 +62,6 @@
         &:after
           background-color: $colorGold
           box-shadow: 0 0 20px 5px rgba($colorGold, 0.55)
-          +transition(background-color, box-shadow)
     &-2
       &:before
         left: 0
@@ -70,7 +71,6 @@
         &:after
           background-color: $colorBlizzardBlue
           box-shadow: 0 0 20px 5px rgba($colorBlizzardBlue, 0.55)
-          +transition(background-color, box-shadow)
     &-3
       &:before
         right: 10px
@@ -80,7 +80,6 @@
         &:after
           background-color: $colorLightningYellow
           box-shadow: 0 0 20px 5px rgba($colorLightningYellow, 0.55)
-          +transition(background-color, box-shadow)
     &-4
       &:before
         right: 10px
@@ -90,7 +89,6 @@
         &:after
           background-color: $colorDeepCerise
           box-shadow: 0 0 20px 5px rgba($colorDeepCerise, 0.55)
-          +transition(background-color, box-shadow)
 
 
   &__link

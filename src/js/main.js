@@ -229,12 +229,29 @@ $(document).ready(function(){
         });
       }
 
-    })
+    });
 
-    // other individual sliders goes here
-    $('[js-myCustomSlider]').slick({
 
-    })
+    var mainSliderOpt = {
+      dots: true,
+      pauseOnDotsHover: true,
+      prevArrow: false,
+      nextArrow: false,
+      speed: 550,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear',
+      customPaging: function() {
+        return '<span></span>';
+      }
+    };
+
+
+    $("[data-mainSlider-js='slider-apartment-js']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='slider-commercial-js']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='slider-storerooms-js']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='slider-earth-js']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='slider-carParking-js']").not(".slick-initialized").slick(mainSliderOpt);
 
   }
 
