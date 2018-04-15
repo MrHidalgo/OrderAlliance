@@ -245,8 +245,6 @@ $(document).ready(function(){
       nextArrow: false,
       speed: 550,
       infinite: true,
-      fade: true,
-      cssEase: 'linear',
       customPaging: function() {
         return '<span></span>';
       }
