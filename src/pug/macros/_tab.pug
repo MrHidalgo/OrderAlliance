@@ -15,6 +15,13 @@
     "lightningYellow",
     "deepCerise"
   ];
+  var tabMenuAttr = [
+    "apartment",
+    "commercial",
+    "storerooms",
+    "earth",
+    "carParking"
+  ];
 //- ==========
 
 
@@ -23,6 +30,7 @@
     -for(var i = 0, len = tabMenuArr.length; i < len; i++)
       li(
         class!= (i === 0) ? "is-active tab__item tab__item-" + i:"tab__item tab__item-" + i
+        data-tab= tabMenuAttr[i]
         tab-js
       )
         a(

@@ -20,17 +20,23 @@
 
   &__slider
     z-index: 0
-    position: relative
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
 
     &--apartment,
     &--commercial,
     &--storerooms,
     &--earth,
     &--carParking
-      display: none
+      opacity: 0
+      visibility: hidden
 
       &.is-active
-        display: block
+        opacity: 1
+        visibility: visible
 
 
     .slick-slide

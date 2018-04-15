@@ -167,8 +167,14 @@ $(document).ready(function(){
    * @description toggle active tab
    */
   _document.on("click", "[tab-js]", function(e) {
+    var attrName = $(this).attr("data-tab");
+
+
     $("[tab-js]").removeClass("is-active");
     $(this).addClass("is-active");
+
+    $(".banner__slider").removeClass("is-active");
+    $(".banner__slider--" + attrName).addClass("is-active");
   });
   // ====================
 
@@ -247,11 +253,11 @@ $(document).ready(function(){
     };
 
 
-    $("[data-mainSlider-js='slider-apartment-js']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='slider-commercial-js']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='slider-storerooms-js']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='slider-earth-js']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='slider-carParking-js']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='apartment']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='commercial']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='storerooms']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='earth']").not(".slick-initialized").slick(mainSliderOpt);
+    $("[data-mainSlider-js='carParking']").not(".slick-initialized").slick(mainSliderOpt);
 
   }
 
