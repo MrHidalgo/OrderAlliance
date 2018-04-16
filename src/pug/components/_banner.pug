@@ -1,15 +1,20 @@
 // BANNER :: START
 
+//- VARIABLE
+//- ==========
+-
+  // var apartmentArr = [
+  //   "ЖК на ул. Макаренко",
+  //   "ЖК «Гринхаус»",
+  //   "Петровский квартал",
+  //   "Luxury Village"
+  // ];
+//- ==========
 //- MIXIN
 //- ==========
-mixin mainSlider(sliderName, activeClass, jsName)
-  div(class="banner__slider banner__slider--" + sliderName + " " + activeClass)
-    div(data-mainSlider-js=`${jsName}`)
-      -for(var i = 0; i < 4; i++)
-        div
-          img(
-            src="./img/img-bg__" + sliderName + ".jpg" srcset="./img/img-bg__" + sliderName + "@2x.jpg 2x"
-          )
+
+            )
+
 //- ==========
 
 
@@ -19,11 +24,6 @@ mixin mainSlider(sliderName, activeClass, jsName)
   //.container
   //  .banner__wrapper
 
-  +mainSlider("apartment",  "is-active",  "apartment")
-  +mainSlider("commercial", "",           "commercial")
-  +mainSlider("storerooms", "",           "storerooms")
-  +mainSlider("earth",      "",           "earth")
-  +mainSlider("carParking", "",           "carParking")
   //
   //.banner__slider.banner__slider--apartment.is-active
   //  div(slider-apartment-js)

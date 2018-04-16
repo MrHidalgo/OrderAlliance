@@ -237,26 +237,36 @@ $(document).ready(function(){
 
     });
 
-
-    var mainSliderOpt = {
-      dots: true,
-      pauseOnDotsHover: true,
-      prevArrow: false,
-      nextArrow: false,
-      speed: 550,
-      infinite: true,
-      customPaging: function() {
-        return '<span></span>';
-      }
-    };
-
-
-    $("[data-mainSlider-js='apartment']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='commercial']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='storerooms']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='earth']").not(".slick-initialized").slick(mainSliderOpt);
-    $("[data-mainSlider-js='carParking']").not(".slick-initialized").slick(mainSliderOpt);
-
+    //
+    // var mainSliderOpt = {
+    //   dots: true,
+    //   pauseOnDotsHover: true,
+    //   prevArrow: false,
+    //   nextArrow: false,
+    //   speed: 550,
+    //   infinite: true,
+    //   customPaging: function() {
+    //     return '<span></span>';
+    //   }
+    // };
+    //
+    // var mainCarouselOpt = {
+    //   dots: false,
+    //   // prevArrow: true,
+    //   // nextArrow: true,
+    //   speed: 550,
+    //   infinite: true,
+    //   centerMode: true,
+    //   centerPadding: '0',
+    //   slidesToShow: 5
+    // };
+    //
+    //
+    // $("[data-mainSlider-js='apartment']").not(".slick-initialized").slick(mainSliderOpt);
+    // $("[data-mainSlider-js='commercial']").not(".slick-initialized").slick(mainSliderOpt);
+    // $("[data-mainSlider-js='storerooms']").not(".slick-initialized").slick(mainSliderOpt);
+    // $("[data-mainSlider-js='earth']").not(".slick-initialized").slick(mainSliderOpt);
+    // $("[data-mainSlider-js='carParking']").not(".slick-initialized").slick(mainSliderOpt);
   }
 
   //////////
