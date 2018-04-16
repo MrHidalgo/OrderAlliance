@@ -1,0 +1,29 @@
+// BANNER :: START
+
+
+//- VARIABLE
+//- ==========
+//- ==========
+//- MIXIN
+//- ==========
+mixin carouselBg()
+  div(class="banner__carousel banner__carousel--earth")
+    div(carousel-earth-js)
+      -for(var i = 0; i < 5; i++)
+        div(
+          class="banner__carousel-image"
+          style="background-image: url('./img/img-bg__earth.jpg')"
+        )
+//- ==========
+
+
+.banner
+  .banner__gradient
+
+
+  +carouselBg()
+
+  include ../macros/_mouse
+
+
+// BANNER :: END
