@@ -245,7 +245,9 @@ $(document).ready(function(){
       [data-js='carousel-commercial-js'],
       [data-js='carousel-storerooms-js'],
       [data-js='carousel-earth-js'],
-      [data-js='carousel-parking-js']
+      [data-js='carousel-parking-js'],
+      [data-js='carousel-quarter-js'],
+      [data-js='carousel-flat-js']
     `;
     const sliderLocationName = `
       [data-js='slider-apartment-js'],
