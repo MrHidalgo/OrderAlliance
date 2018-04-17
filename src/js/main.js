@@ -208,8 +208,8 @@ $(document).ready(function(){
   //////////
 
   function initSliders(){
-    var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
-    var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
+    var slickPrevArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
+    var slickNextArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>';
 
     // General purpose sliders
     $('[js-slider]').each(function(i, slider){
@@ -238,32 +238,50 @@ $(document).ready(function(){
     });
 
 
+    // VARIABLE
+    // ===============
+    const carouselBgName = `
+      [carousel-apartment-js],
+      [carousel-commercial-js],
+      [carousel-storerooms-js],
+      [carousel-earth-js],
+      [carousel-carParking-js]
+    `;
+    const sliderLocationName = `
+      [slider-apartment-js]
+    `;
+    // ===============
+    // SLICK OPTION
+    // ===============
     const carouselBgOption = {
       dots: false,
       prevArrow: false,
       nextArrow: false,
-      speed: 500,
-      infinite: true,
+      speed: 1000,
+      // infinite: true,
       fade: true,
-      cssEase: 'linear'
+      cssEase: 'linear',
+      asNavFor: sliderLocationName
     };
-
-    /**
-     *
-     * @type {string}
-     */
-    const carouselBgName = `
-      [carousel-apartment-js], 
-      [carousel-commercial-js], 
-      [carousel-storerooms-js], 
-      [carousel-earth-js],
-      [carousel-carParking-js]
-    `;
-
-    /**
-     * @description
-     */
+    const sliderLocationOption = {
+      dots: false,
+      // prevArrow: slickPrevArrow,
+      // nextArrow: slickNextArrow,
+      speed: 1000,
+      infinite: true,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
+      centerMode: true,
+      variableWidth: true,
+      // waitForAnimate: false,
+      asNavFor: carouselBgName
+    };
+    // ===============
+    // SLICK INIT
+    // ===============
     $(carouselBgName).not('.slick-initialized').slick(carouselBgOption);
+    $(sliderLocationName).not('.slick-initialized').slick(sliderLocationOption);
+    // ===============
   }
 
   //////////

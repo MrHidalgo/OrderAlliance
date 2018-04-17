@@ -3,6 +3,13 @@
 
 //- VARIABLE
 //- ==========
+-
+  var sliderLocationArr = [
+    "ЖК «Гринхаус»",
+    "Петровский квартал",
+    "ЖК на ул. Макаренко",
+    "Luxury Village"
+  ];
 //- ==========
 //- MIXIN
 //- ==========
@@ -14,6 +21,19 @@ mixin carouselBg()
           class="banner__carousel-image"
           style="background-image: url('./img/img-bg__apartment.jpg')"
         )
+
+
+mixin sliderLocation()
+  div(class="banner__slider banner__slider--apartment")
+    div(slider-apartment-js)
+        div(class="slider__banner-content" style="width: 200px;")
+          h3!= "ЖК «Гринхаус»"
+        div(class="slider__banner-content" style="width: 200px;")
+          h3!= "Петровский квартал"
+        div(class="slider__banner-content" style="width: 200px;")
+          h3!= "ЖК на ул. Макаренко"
+        div(class="slider__banner-content" style="width: 200px;")
+          h3!= "Luxury Village"
 //- ==========
 
 
@@ -22,6 +42,10 @@ mixin carouselBg()
 
 
   +carouselBg()
+
+  .container.container--slider
+
+    +sliderLocation()
 
   include ../macros/_mouse
 
