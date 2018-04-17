@@ -250,6 +250,9 @@ $(document).ready(function(){
     const sliderLocationName = `
       [slider-apartment-js]
     `;
+    const swapInfoName = `
+      [swap-apartment-js]
+    `;
     const sliderPrevBtn = `
       <button type='button' class='slick-btn slick-prev'>
         <i class='icon icon-prev'></i>
@@ -267,29 +270,45 @@ $(document).ready(function(){
       dots: false,
       prevArrow: false,
       nextArrow: false,
-      speed: 1000,
+      speed: 500,
       infinite: true,
       fade: true,
       cssEase: 'linear',
-      asNavFor: sliderLocationName
+      asNavFor: "[slider-apartment-js], [swap-apartment-js]"
     };
     const sliderLocationOption = {
       dots: false,
       prevArrow: sliderPrevBtn,
       nextArrow: sliderNextBtn,
-      speed: 1000,
+      speed: 500,
       infinite: true,
       // slidesToShow: 1,
       // slidesToScroll: 1,
       centerMode: true,
       variableWidth: true,
-      asNavFor: carouselBgName
+      asNavFor: "[carousel-apartment-js], [swap-apartment-js]"
+    };
+    const swapInfoOption = {
+      dots: true,
+      prevArrow: false,
+      nextArrow: false,
+      speed: 500,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      cssEase: 'linear',
+      customPaging: function() {
+        return '<span></span>';
+      },
+      asNavFor: "[carousel-apartment-js], [slider-apartment-js]"
     };
     // ===============
     // SLICK INIT
     // ===============
     $(carouselBgName).not('.slick-initialized').slick(carouselBgOption);
     $(sliderLocationName).not('.slick-initialized').slick(sliderLocationOption);
+    $(swapInfoName).not('.slick-initialized').slick(swapInfoOption);
     // ===============
   }
 

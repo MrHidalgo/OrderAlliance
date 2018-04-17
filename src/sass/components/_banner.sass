@@ -20,11 +20,18 @@
 
   .container
     &--slider
-      z-index: 0
-      position: relative
-      top: (105px + 158px)
-      left: 0
-      right: 0
+      //z-index: 0
+      //position: relative
+      margin-top: (105px + 158px)
+      //left: 0
+      //right: 0
+
+    &--swap
+      //z-index: 0
+      //position: relative
+      margin-top: (13px * 8)
+      //left: 0
+      //right: 0
 
 
   &__carousel
@@ -107,13 +114,58 @@
       &-center
         width: 430px !important
 
+  &__swap
+
+    &-content
+      color: $colorWhite
+      text-align: center
+
+    &-title
+      margin-bottom: 30px
+      text-shadow: 0 0 13px rgba(0, 0, 0, 0.9)
+      font-size: 24px
+      font-weight: bold
+
+    &-wrap
+      display: flex
+      align-items: center
+      justify-content: space-between
+      max-width: 570px
+      margin-left: auto
+      margin-right: auto
+      font-size: 20px
+      font-weight: 500
+
+      p
+        text-shadow: 0 0 13px rgba(0, 0, 0, 0.9)
+
+      span
+        color: $colorGold
+        font-weight: bold
+
+    &-btn
+      display: block
+      width: 100%
+      max-width: 220px
+      height: 45px
+      line-height: 45px
+      margin-top: 45px
+      margin-left: auto
+      margin-right: auto
+      border-radius: 2em
+      background-color: $colorGold
+      color: $colorBlack
+      font-size: 15px
+      font-weight: 500
+
+    .slick
       &-dots
         display: flex
         align-items: center
         justify-content: center
         position: absolute
         left: 0
-        bottom: 90px
+        bottom: -40px
         width: 100%
         margin-left: auto
         margin-right: auto

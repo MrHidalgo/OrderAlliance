@@ -31,18 +31,35 @@ mixin sliderLocation()
           p.banner__slider-badge!= "НОВЫЕ КОРПУСА С ОТДЕЛКОЙ"
           p.banner__slider-name!= sliderLocationArr[i]
           p.banner__slider-info!= "г. Тула, ул. Фрунзе, д. 20"
+
+
+mixin swapInfo()
+  div(class="banner__swap banner__swap--apartment")
+    div(swap-apartment-js)
+      -for(var i = 0; i < 5; i++)
+        div(
+          class="banner__swap-content"
+        )
+          p.banner__swap-title!= "Квартиры"
+          .banner__swap-wrap
+            p!= "2 комн. от <span>5 500 000₽</span>"
+            p!= "5 комн. от <span>16 000 000₽</span>"
+          a(href="#" class="banner__swap-btn" title="")!= "ПОДОБРАТЬ КВАРТИРУ"
 //- ==========
 
 
 .banner
   .banner__gradient
 
-
   +carouselBg()
 
   .container.container--slider
 
     +sliderLocation()
+
+  .container.container--swap
+
+    +swapInfo()
 
   include ../macros/_mouse
 
