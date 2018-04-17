@@ -35,8 +35,8 @@
 .tab
   ul.tab__list
     -for(var i = 0, len = tabMenuArr.length; i < len; i++)
-      li(
-        class!= (bodyClass === tabHrefAttr[i]) ? "is-active tab__item tab__item-" + i:"tab__item tab__item-" + i
+      li.tab__item(
+        class!= (bodyClass === tabHrefAttr[i]) ? "is-active tab__item-" + i:"tab__item-" + i
         data-tab= tabMenuAttr[i]
         tab-js
       )
