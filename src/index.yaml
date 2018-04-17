@@ -2,4 +2,16 @@ ProjectTitle: OrderAlliance
 
 PageList:
 - file: homepage.html
-  ready: 5
+  ready: 50
+- file: commercial.html
+  ready: 50
+- file: storerooms.html
+  ready: 50
+- file: earth.html
+  ready: 50
+- file: parking.html
+  ready: 50
+- file: flat.html
+  ready: 10
+- file: quarter.html
+  ready: 10
