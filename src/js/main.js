@@ -250,6 +250,16 @@ $(document).ready(function(){
     const sliderLocationName = `
       [slider-apartment-js]
     `;
+    const sliderPrevBtn = `
+      <button type='button' class='slick-btn slick-prev'>
+        <i class='icon icon-prev'></i>
+      </button>
+    `;
+    const sliderNextBtn = `
+      <button type='button' class='slick-btn slick-next'>
+        <i class='icon icon-next'></i>
+      </button>
+    `;
     // ===============
     // SLICK OPTION
     // ===============
@@ -258,22 +268,21 @@ $(document).ready(function(){
       prevArrow: false,
       nextArrow: false,
       speed: 1000,
-      // infinite: true,
+      infinite: true,
       fade: true,
       cssEase: 'linear',
       asNavFor: sliderLocationName
     };
     const sliderLocationOption = {
       dots: false,
-      // prevArrow: slickPrevArrow,
-      // nextArrow: slickNextArrow,
+      prevArrow: sliderPrevBtn,
+      nextArrow: sliderNextBtn,
       speed: 1000,
       infinite: true,
       // slidesToShow: 1,
       // slidesToScroll: 1,
       centerMode: true,
       variableWidth: true,
-      // waitForAnimate: false,
       asNavFor: carouselBgName
     };
     // ===============

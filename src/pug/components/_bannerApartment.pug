@@ -26,14 +26,11 @@ mixin carouselBg()
 mixin sliderLocation()
   div(class="banner__slider banner__slider--apartment")
     div(slider-apartment-js)
+      -for(var i = 0, len = sliderLocationArr.length; i < len; i++)
         div(class="slider__banner-content" style="width: 200px;")
-          h3!= "ЖК «Гринхаус»"
-        div(class="slider__banner-content" style="width: 200px;")
-          h3!= "Петровский квартал"
-        div(class="slider__banner-content" style="width: 200px;")
-          h3!= "ЖК на ул. Макаренко"
-        div(class="slider__banner-content" style="width: 200px;")
-          h3!= "Luxury Village"
+          p.banner__slider-badge!= "НОВЫЕ КОРПУСА С ОТДЕЛКОЙ"
+          p.banner__slider-name!= sliderLocationArr[i]
+          p.banner__slider-info!= "г. Тула, ул. Фрунзе, д. 20"
 //- ==========
 
 

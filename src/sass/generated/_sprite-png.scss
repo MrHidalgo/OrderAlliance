@@ -1,29 +1,47 @@
 $sprite: (
 	corner: (
-		offset-x: 0px,
-		offset-y: -23px,
+		offset-x: -20px,
+		offset-y: -40px,
 		width: 11px,
 		height: 7px,
-		total-width: 30px,
-		total-height: 30px,
+		total-width: 54px,
+		total-height: 53px,
 		image: '../img/sprite.png'
 	),
 	marker--hover: (
-		offset-x: 0px,
+		offset-x: -44px,
 		offset-y: 0px,
 		width: 10px,
 		height: 13px,
-		total-width: 30px,
-		total-height: 30px,
+		total-width: 54px,
+		total-height: 53px,
 		image: '../img/sprite.png'
 	),
 	marker: (
-		offset-x: -20px,
-		offset-y: 0px,
+		offset-x: 0px,
+		offset-y: -40px,
 		width: 10px,
 		height: 13px,
-		total-width: 30px,
-		total-height: 30px,
+		total-width: 54px,
+		total-height: 53px,
+		image: '../img/sprite.png'
+	),
+	next: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 12px,
+		height: 30px,
+		total-width: 54px,
+		total-height: 53px,
+		image: '../img/sprite.png'
+	),
+	prev: (
+		offset-x: -22px,
+		offset-y: 0px,
+		width: 12px,
+		height: 30px,
+		total-width: 54px,
+		total-height: 53px,
 		image: '../img/sprite.png'
 	),
 );
@@ -90,4 +108,10 @@ $sprite: (
 	}
 	.icon-marker {
 		@include sprite(marker)
+	}
+	.icon-next {
+		@include sprite(next)
+	}
+	.icon-prev {
+		@include sprite(prev)
 	}
