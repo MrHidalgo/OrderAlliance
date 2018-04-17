@@ -3,7 +3,13 @@
 
 //- VARIABLE
 //- ==========
-
+-
+  var sliderLocationArr = [
+    "ЖК Петровский квартал",
+    "ЖК Петровский квартал",
+    "ЖК Петровский квартал",
+    "ЖК Петровский квартал"
+  ];
 //- ==========
 //- MIXIN
 //- ==========
@@ -18,13 +24,7 @@
 
   .container.container--slider
 
-    //+sliderLocation("apartment", "slider-apartment-js", sliderLocationArr)
-
-  //.container.container--swap
-
-    //+swapInfoApartment()
-
-  //include ../macros/_mouse
+    +sliderInnerLocation("quarter", "slider-quarter-js", sliderLocationArr)
 
 
 // BANNER :: END

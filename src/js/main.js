@@ -245,7 +245,9 @@ $(document).ready(function(){
       [data-js='carousel-commercial-js'],
       [data-js='carousel-storerooms-js'],
       [data-js='carousel-earth-js'],
-      [data-js='carousel-parking-js'],
+      [data-js='carousel-parking-js']
+    `;
+    const carouselInnerBgName = `
       [data-js='carousel-quarter-js'],
       [data-js='carousel-flat-js']
     `;
@@ -255,6 +257,10 @@ $(document).ready(function(){
       [data-js='slider-storerooms-js'],
       [data-js='slider-earth-js'],
       [data-js='slider-parking-js']
+    `;
+    const sliderInnerLocationName = `
+      [data-js='slider-quarter-js'],
+      [data-js='slider-flat-js']
     `;
     const swapInfoName = `
       [swap-apartment-js],
@@ -267,6 +273,8 @@ $(document).ready(function(){
     const asNavForCarousel = `${sliderLocationName} , ${swapInfoName}`;
     const asNavForSlider = `${carouselBgName} , ${swapInfoName}`;
     const asNavForSwap = `${carouselBgName} , ${sliderLocationName}`;
+    const asNavForCarouselInner = `${sliderInnerLocationName}`;
+    const asNavForSliderInner = `${carouselInnerBgName}`;
 
     const sliderPrevBtn = `
       <button type='button' class='slick-btn slick-prev'>
@@ -281,27 +289,29 @@ $(document).ready(function(){
     // ===============
     // SLICK OPTION
     // ===============
-    const carouselBgOption = {
-      dots: false,
-      prevArrow: false,
-      nextArrow: false,
-      speed: 500,
-      infinite: true,
-      fade: true,
-      cssEase: 'linear',
-      asNavFor: asNavForCarousel
+    const mainCarouselOption = (asNavForName) => {
+      return {
+        dots: false,
+        prevArrow: false,
+        nextArrow: false,
+        speed: 500,
+        infinite: true,
+        fade: true,
+        cssEase: 'linear',
+        asNavFor: asNavForName
+      }
     };
-    const sliderLocationOption = {
-      dots: false,
-      prevArrow: sliderPrevBtn,
-      nextArrow: sliderNextBtn,
-      speed: 500,
-      infinite: true,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
-      centerMode: true,
-      variableWidth: true,
-      asNavFor: asNavForSlider
+    const mainSliderOption = (centerModeBool, variableWidthBool, asNavForName) => {
+      return {
+        dots: false,
+        prevArrow: sliderPrevBtn,
+        nextArrow: sliderNextBtn,
+        speed: 500,
+        infinite: true,
+        centerMode: centerModeBool,
+        variableWidth: variableWidthBool,
+        asNavFor: asNavForName
+      }
     };
     const swapInfoOption = {
       dots: true,
@@ -321,9 +331,12 @@ $(document).ready(function(){
     // ===============
     // SLICK INIT
     // ===============
-    $(carouselBgName).not('.slick-initialized').slick(carouselBgOption);
-    $(sliderLocationName).not('.slick-initialized').slick(sliderLocationOption);
+    $(carouselBgName).not('.slick-initialized').slick(mainCarouselOption(asNavForCarousel));
+    $(sliderLocationName).not('.slick-initialized').slick(mainSliderOption(true, true, asNavForSlider));
     $(swapInfoName).not('.slick-initialized').slick(swapInfoOption);
+
+    $(carouselInnerBgName).not('.slick-initialized').slick(mainCarouselOption(asNavForCarouselInner));
+    $(sliderInnerLocationName).not('.slick-initialized').slick(mainSliderOption(false, false, asNavForSliderInner));
     // ===============
   }
 

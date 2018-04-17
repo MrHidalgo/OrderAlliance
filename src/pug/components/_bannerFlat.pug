@@ -3,7 +3,13 @@
 
 //- VARIABLE
 //- ==========
-
+-
+  var sliderLocationArr = [
+    "ЖК на ул. Макаренко",
+    "ЖК на ул. Макаренко",
+    "ЖК на ул. Макаренко",
+    "ЖК на ул. Макаренко"
+  ];
 //- ==========
 //- MIXIN
 //- ==========
@@ -18,13 +24,7 @@
 
   .container.container--slider
 
-    //+sliderLocation("apartment", "slider-apartment-js", sliderLocationArr)
-
-  //.container.container--swap
-
-    //+swapInfoApartment()
-
-  //include ../macros/_mouse
+    +sliderInnerLocation("flat", "slider-flat-js", sliderLocationArr)
 
 
 // BANNER :: END
