@@ -241,17 +241,64 @@ $(document).ready(function(){
     // VARIABLE
     // ===============
     const carouselBgName = `
-      [carousel-apartment-js],
-      [carousel-commercial-js],
-      [carousel-storerooms-js],
-      [carousel-earth-js],
-      [carousel-carParking-js]
+      [data-js='carousel-apartment-js'],
+      [data-js='carousel-commercial-js'],
+      [data-js='carousel-storerooms-js'],
+      [data-js='carousel-earth-js'],
+      [data-js='carousel-parking-js']
     `;
     const sliderLocationName = `
-      [slider-apartment-js]
+      [data-js='slider-apartment-js'],
+      [data-js='slider-commercial-js'],
+      [data-js='slider-storerooms-js'],
+      [data-js='slider-earth-js'],
+      [data-js='slider-parking-js']
     `;
     const swapInfoName = `
-      [swap-apartment-js]
+      [swap-apartment-js],
+      [swap-commercial-js],
+      [swap-storerooms-js],
+      [swap-earth-js],
+      [swap-parking-js]
+    `;
+    const asNavForCarousel = `
+      [data-js='slider-apartment-js'],
+      [data-js='slider-commercial-js'],      
+      [data-js='slider-storerooms-js'], 
+      [data-js='slider-earth-js'],
+      [data-js='slider-parking-js'],
+         
+      [swap-apartment-js],
+      [swap-commercial-js],
+      [swap-storerooms-js],
+      [swap-earth-js],
+      [swap-parking-js]
+    `;
+    const asNavForSlider = `
+      [data-js='carousel-apartment-js'],
+      [data-js='carousel-commercial-js'],   
+      [data-js='carousel-storerooms-js'],   
+      [data-js='carousel-earth-js'],
+      [data-js='carousel-parking-js'],
+      
+      [swap-apartment-js],
+      [swap-commercial-js],
+      [swap-storerooms-js],
+      [swap-earth-js],
+      [swap-parking-js]
+    `;
+    const asNavForSwap = `
+      [data-js='carousel-apartment-js'],
+      [data-js='carousel-commercial-js'],     
+      [data-js='carousel-storerooms-js'],    
+      [data-js='carousel-earth-js'],    
+      [data-js='carousel-parking-js'],    
+       
+      [data-js='slider-apartment-js'],
+      [data-js='slider-commercial-js'],
+      [data-js='slider-storerooms-js'],
+      [data-js='slider-earth-js'],
+      [data-js='slider-parking-js']
     `;
     const sliderPrevBtn = `
       <button type='button' class='slick-btn slick-prev'>
@@ -274,7 +321,7 @@ $(document).ready(function(){
       infinite: true,
       fade: true,
       cssEase: 'linear',
-      asNavFor: "[slider-apartment-js], [swap-apartment-js]"
+      asNavFor: asNavForCarousel
     };
     const sliderLocationOption = {
       dots: false,
@@ -286,7 +333,7 @@ $(document).ready(function(){
       // slidesToScroll: 1,
       centerMode: true,
       variableWidth: true,
-      asNavFor: "[carousel-apartment-js], [swap-apartment-js]"
+      asNavFor: asNavForSlider
     };
     const swapInfoOption = {
       dots: true,
@@ -301,7 +348,7 @@ $(document).ready(function(){
       customPaging: function() {
         return '<span></span>';
       },
-      asNavFor: "[carousel-apartment-js], [slider-apartment-js]"
+      asNavFor: asNavForSwap
     };
     // ===============
     // SLICK INIT

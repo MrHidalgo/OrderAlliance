@@ -134,22 +134,56 @@
       font-size: 20px
       font-weight: 500
 
+      .banner__swap--storerooms &
+        max-width: 370px
+
+      .banner__swap--earth &
+        max-width: 270px
+
+      .banner__swap--parking &
+        max-width: 350px
+
+      &--left,
+      &--right
+        display: flex
+
       p
         text-shadow: 0 0 13px rgba(0, 0, 0, 0.9)
+
+        .banner__swap--commercial &
+          &:first-child
+            position: relative
+            display: flex
+            align-items: center
+            margin-right: 30px
+
+            &:before
+              content: ""
+              position: absolute
+              right: -15px
+              top: 0
+              width: 2px
+              height: 100%
+              background-color: $colorWhite
+
+          &:last-child
+            text-align: left
+            span
+              display: block
 
       span
         color: $colorGold
         font-weight: bold
 
     &-btn
-      display: block
-      width: 100%
-      max-width: 220px
+      display: table
       height: 45px
       line-height: 45px
       margin-top: 40px
       margin-left: auto
       margin-right: auto
+      padding-left: 25px
+      padding-right: 25px
       border-radius: 2em
       background-color: $colorGold
       color: $colorBlack

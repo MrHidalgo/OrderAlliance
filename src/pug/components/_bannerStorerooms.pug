@@ -3,25 +3,43 @@
 
 //- VARIABLE
 //- ==========
+-
+  var sliderLocationArr = [
+    "<span>ЖК</span> <span>«Гринхаус»</span>",
+    "<span>Петровский</span> <span>квартал</span>",
+    "<span>ЖК на</span> <span>ул. Макаренко</span>",
+    "<span>Luxury</span> <span>Village</span>"
+  ];
 //- ==========
 //- MIXIN
 //- ==========
-mixin carouselBg()
-  div(class="banner__carousel banner__carousel--storerooms")
-    div(carousel-storerooms-js)
+mixin swapInfoStorerooms()
+  div(class="banner__swap banner__swap--storerooms")
+    div(swap-storerooms-js)
       -for(var i = 0; i < 5; i++)
         div(
-          class="banner__carousel-image"
-          style="background-image: url('./img/img-bg__storerooms.jpg')"
+          class="banner__swap-content"
         )
+          p.banner__swap-title!= "Кладовые"
+          .banner__swap-wrap
+            p!= "от <span>5 500 000₽</span>"
+            p!= "от <span>16 000 000₽</span>"
+          a(href="#" class="banner__swap-btn" title="")!= "ПОДРОБНЕЕ"
 //- ==========
 
 
 .banner
   .banner__gradient
 
+  +carouselBg("storerooms", "carousel-storerooms-js", "storerooms")
 
-  +carouselBg()
+  .container.container--slider
+
+    +sliderLocation("storerooms", "slider-storerooms-js", sliderLocationArr)
+
+  .container.container--swap
+
+    +swapInfoStorerooms()
 
   include ../macros/_mouse
 

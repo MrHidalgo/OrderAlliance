@@ -7,3 +7,26 @@ mixin icon(name, modClass)
     - var modClass = ' ' + modClass
   svg(class="ico " + name + modClass)
     use(xlink:href= svgSprite + '#' + name)
+
+//- BANNER BG CAROUSEL
+//- ========================================
+mixin carouselBg(className, jsName, imageName)
+  div(class="banner__carousel banner__carousel--" + className)
+    div(data-js!= jsName)
+      -for(var i = 0; i < 5; i++)
+        div(
+          class="banner__carousel-image"
+          style="background-image: url('./img/img-bg__" + imageName + ".jpg')"
+        )
+
+
+//- BANNER SLIDER
+//- ========================================
+mixin sliderLocation(className, jsName, arrLocation)
+  div(class="banner__slider banner__slider--" + className)
+    div(data-js!= jsName)
+      -for(var i = 0, len = arrLocation.length; i < len; i++)
+        div(class="slider__banner-content" style="width: 190px;")
+          p.banner__slider-badge!= "НОВЫЕ КОРПУСА С ОТДЕЛКОЙ"
+          p.banner__slider-name!= arrLocation[i]
+          p.banner__slider-info!= "г. Тула, ул. Фрунзе, д. 20"
