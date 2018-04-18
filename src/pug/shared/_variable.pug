@@ -30,18 +30,3 @@
     "parking"
   ];
 //- ==========
-
-
-.tab
-  ul.tab__list
-    -for(var i = 0, len = tabMenuArr.length; i < len; i++)
-      li.tab__item(
-        class!= (bodyClass === tabHrefAttr[i]) ? "is-active tab__item-" + i:"tab__item-" + i
-        data-tab= tabMenuAttr[i]
-        tab-js
-      )
-        a(
-          href!= tabHrefAttr[i] + ".html"
-          class!="tab__link tab__link--" + tabMenuColorArr[i]
-          title=""
-        )!= tabMenuArr[i]

@@ -39,8 +39,8 @@ mixin submenuLink(count, arr)
     ul.submenu__list
       -for(var i = 0, len = submenuFlatArr.length; i < len; i++)
         li.submenu__item
-          if(bodyClass === 'homepage flat')
+          if(bodyClass === 'flat')
             +submenuLink(i, submenuFlatArr)
-          else if(bodyClass === 'homepage quarter')
+          else if(bodyClass === 'quarter')
             +submenuLink(i, submenuQuarterArr)
 
