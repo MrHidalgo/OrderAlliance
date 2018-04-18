@@ -31,14 +31,12 @@ mixin swapInfoApartment()
 .banner
   .banner__gradient
 
-  //+carouselBg("apartment", "carousel-apartment-js", "apartment")
+  +carouselBg("apartment", "carousel-apartment-js", "apartment")
 
-  //.container.container--slider
-
+  .container.container--slider
     +sliderLocation("apartment", "slider-apartment-js", sliderLocationArr)
 
-  //.container.container--swap
-
+  .container.container--swap
     +swapInfoApartment()
 
   include ../macros/_mouse
