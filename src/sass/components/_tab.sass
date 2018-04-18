@@ -17,6 +17,12 @@
       border-radius: 0
       width: 0
       height: 0
+      +rmin($tablet)
+        top: -2.5px
+        left: -2.5px
+      +rmin($desktop)
+        top: -5px
+        left: -5px
       //+transition(width, height, border-radius, background-color, box-shadow)
 
     &.is-active
@@ -24,6 +30,12 @@
         width: calc(100% + 10px)
         height: calc(100% + 10px)
         border-radius: 5px
+        +rmin($tablet)
+          width: calc(100% + 5px)
+          height: calc(100% + 5px)
+        +rmin($desktop)
+          width: calc(100% + 10px)
+          height: calc(100% + 10px)
         //+transition(width, height, border-radius, background-color, box-shadow)
       .tab__link
         z-index: 3
@@ -40,6 +52,10 @@
         position: absolute
         top: 0
         height: 60px
+        +rmin($tablet)
+          height: 48px
+        +rmin($desktop)
+          height: 60px
       &.is-active
         &:after
           //+transition(background-color, box-shadow)
@@ -101,9 +117,18 @@
     padding-left: 30px
     padding-right: 30px
     color: $colorWhite
-    font:
-      size: 15px
-      weight: bold
+    font-size: 15px
+    font-weight: bold
+    +rmin($tablet)
+      height: 48px
+      padding-left: 20px
+      padding-right: 20px
+      font-size: 12px
+    +rmin($desktop)
+      height: 60px
+      padding-left: 30px
+      padding-right: 30px
+      font-size: 15px
 
     &--emerald
       background-color: $colorEmerald

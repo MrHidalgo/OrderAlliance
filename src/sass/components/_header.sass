@@ -26,21 +26,46 @@
       width: 300px
       padding-right: 30px
       padding-left: 20px
+      +rmin($tablet)
+        width: auto
+        padding-left: 0
+        padding-right: 30px
+      +rmin($desktop)
+        padding-right: 30px
+        padding-left: 20px
+      +rmin($wide)
+        width: 300px
 
       img
         margin-top: 6px
+        +rmin($tablet)
+          height: 30px
+          margin-top: 0
+        +rmin($desktop)
+          height: auto
+          margin-top: 6px
+
     &-1
-      width: 400px
-      padding-right: 30px
+      //width: 400px
+      //padding-right: 30px
+
     &-3
       width: 180px
       text-align: right
+      +rmin($tablet)
+        width: auto
+        padding-left: 15px
+      +rmin($desktop)
+        width: 180px
 
 
   &__phone
     position: relative
     top: -5px
     color: $colorWhite
-    font:
-      size: 20px
-      weight: 500
+    font-size: 20px
+    font-weight: 500
+    +rmin($tablet)
+      font-size: 16px
+    +rmin($desktop)
+      font-size: 20px
