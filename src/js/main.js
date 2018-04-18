@@ -179,6 +179,18 @@ $(document).ready(function(){
   // ====================
 
 
+  // SUBMENU
+  // ====================
+  /**
+   * @description submenu btn
+   */
+  _document.on("click", "[data-js='submenu-js']", function(e) {
+    $("[data-js='submenu-js']").removeClass("is-active");
+    $(this).addClass("is-active");
+  });
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   _document.on('click', '[js-hamburger]', function(){

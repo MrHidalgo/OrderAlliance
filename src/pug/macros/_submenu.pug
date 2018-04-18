@@ -1,12 +1,32 @@
 //- VARIABLE
 //- ==========
 -
-  var submenuArr = [
-    "Инвесторам",
-    "Ипотека",
-    "Контакты",
-    "О компании"
+  var submenuQuarterArr = [
+    "ДРУГИЕ ОБЪЕКТЫ",
+    "Генплан",
+    "Описание объекта",
+    "Что рядом",
+    "Фото и видео",
+    "Где купить"
   ];
+  var submenuFlatArr = [
+    "ДРУГИЕ ОБЪЕКТЫ",
+    "Выбрать квартиру",
+    "Описание объекта",
+    "Что рядом",
+    "Фото и видео",
+    "Где купить"
+  ];
+//- ==========
+//- MIXIN
+//- ==========
+mixin submenuLink(count, arr)
+  a.submenu__btn(
+    href="#"
+    class!= (count === 1) ? "is-active":""
+    title!=""
+    data-js!= (count > 0) ? "submenu-js":""
+  )!= arr[count]
 //- ==========
 
 
@@ -16,4 +36,11 @@
       feGaussianBlur(in="SourceGraphic" stdDeviation="24")
 
   .container
+    ul.submenu__list
+      -for(var i = 0, len = submenuFlatArr.length; i < len; i++)
+        li.submenu__item
+          if(bodyClass === 'homepage flat')
+            +submenuLink(i, submenuFlatArr)
+          else if(bodyClass === 'homepage quarter')
+            +submenuLink(i, submenuQuarterArr)
 
