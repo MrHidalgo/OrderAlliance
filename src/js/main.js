@@ -324,7 +324,16 @@ $(document).ready(function(){
         infinite: true,
         centerMode: centerModeBool,
         variableWidth: variableWidthBool,
-        asNavFor: asNavForName
+        asNavFor: asNavForName,
+        responsive: [
+          {
+            breakpoint: 992,
+            settings: {
+              centerMode: false,
+              variableWidth: false,
+            }
+          }
+        ]
       }
     };
     const swapInfoOption = {
