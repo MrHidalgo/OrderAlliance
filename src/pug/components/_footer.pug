@@ -51,9 +51,10 @@ footer.footer
           alt=""
           title=""
         )
-        p!= "Группа компаний Стройальянс"
-        p!= "Все права на публикуемые на сайте материалы</br>принадлежат группе компаний «Стройальянс»"
-        p!= "© 2002 - 2017"
+        .footer__row-wrap
+          p!= "Группа компаний Стройальянс"
+          p!= "Все права на публикуемые на сайте материалы</br>принадлежат группе компаний «Стройальянс»"
+          p!= "© 2002 - 2017"
 
 
       .footer__row.footer__row-1
@@ -67,12 +68,13 @@ footer.footer
       .footer__row.footer__row-3
         a(href="tel:4872702524" title="")!= "(4872) 70-25-24"
 
-        h2!= "Социальные сети"
+        .footer__row-wrap
+          h2!= "Социальные сети"
 
-        .social
-          -for(var i = 0, len = socialArr.length; i < len; i++)
-            a(href="#" class="social__link" title="")
-              +icon("ico-" + socialArr[i])
+          .social
+            -for(var i = 0, len = socialArr.length; i < len; i++)
+              a(href="#" class="social__link" title="")
+                +icon("ico-" + socialArr[i])
 
       
 // FOOTER :: END
