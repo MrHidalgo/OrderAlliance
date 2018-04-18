@@ -1,0 +1,19 @@
+//- VARIABLE
+//- ==========
+-
+  var submenuArr = [
+    "Инвесторам",
+    "Ипотека",
+    "Контакты",
+    "О компании"
+  ];
+//- ==========
+
+
+.submenu
+  svg(id="svg-filter")
+    filter(id="svg-blur")
+      feGaussianBlur(in="SourceGraphic" stdDeviation="24")
+
+  .container
+

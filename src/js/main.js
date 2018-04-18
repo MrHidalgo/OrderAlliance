@@ -249,7 +249,9 @@ $(document).ready(function(){
     `;
     const carouselInnerBgName = `
       [data-js='carousel-quarter-js'],
-      [data-js='carousel-flat-js']
+      [data-js='carousel-quarterBlur-js'],
+      [data-js='carousel-flat-js'],
+      [data-js='carousel-flatBlue-js']
     `;
     const sliderLocationName = `
       [data-js='slider-apartment-js'],
