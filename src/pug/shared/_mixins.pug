@@ -39,6 +39,25 @@ mixin carouselBg(className, jsName, imageName)
         )
 
 
+//- BANNER BG CAROUSEL + BLUR
+//- ========================================
+mixin carouselBlurBg(className, jsName, imageName)
+  div(class="banner__carousel banner__carousel--" + className)
+    div(data-js!= jsName)
+      -for(var i = 0; i < 5; i++)
+        div.banner__carousel-wrap
+          div.banner__carousel--blur
+            div(
+              class="banner__carousel-image"
+              style="background-image: url('./img/img-bg__" + imageName + ".jpg')"
+            )
+          div.banner__carousel--normal
+            div(
+              class="banner__carousel-image"
+              style="background-image: url('./img/img-bg__" + imageName + ".jpg')"
+            )
+
+
 //- BANNER SLIDER
 //- ========================================
 mixin sliderLocation(className, jsName, arrLocation)
