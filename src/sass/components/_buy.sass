@@ -1,0 +1,82 @@
+// BUY
+// ===============
+.buy
+  padding-top: 30px
+
+
+  .main__title
+    margin-bottom: 45px
+
+
+  .container
+    z-index: 1
+    position: absolute
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+    height: 100%
+
+
+  &__row
+    position: relative
+    min-height: 600px
+
+
+  &__map
+    z-index: 0
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+
+    #map
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+
+
+  &__wrap
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    height: 100%
+
+
+  &__block
+    width: 100%
+    max-width: 470px
+    min-height: 400px
+    padding: 30px
+    border-radius: 5px
+    box-shadow: 0 15px 35px 0 rgba($colorBlack, 0.15)
+    background-color: $colorWhite
+
+    &-title
+      font-size: 30px
+      font-weight: bold
+      margin-bottom: 20px
+
+    &-location
+      display: block
+      font-size: 16px
+      margin-bottom: 30px
+      &.is-active
+        text-decoration: underline
+        color: $colorIrisBlue
+
+    &-phone
+      display: block
+      margin-bottom: 30px
+      font-size: 20px
+      color: $colorDimGray
+
+    &-email
+      display: block
+      text-decoration: underline
+      font-size: 16px
+      color: $colorIrisBlue

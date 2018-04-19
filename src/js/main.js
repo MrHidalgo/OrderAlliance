@@ -210,6 +210,37 @@ $(document).ready(function(){
   // ====================
 
 
+  // INIT MAP
+  // ====================
+  /**
+   * @description
+   */
+  function initMap() {
+    var uluru = {lat: 54.1918065, lng: 37.6177402};
+    var iconMarker = '../img/map-marker.png';
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      icon: iconMarker
+    });
+  }
+  initMap();
+  // ====================
+
+
+  // LOCATION BTN - map
+  // ====================
+  // ====================
+  _document.on("click", "[location-js]", function() {
+    $("[location-js]").removeClass('is-active');
+    $(this).addClass('is-active');
+  });
+
+
 
   // HAMBURGER TOGGLER
   _document.on('click', '[js-hamburger]', function(){
