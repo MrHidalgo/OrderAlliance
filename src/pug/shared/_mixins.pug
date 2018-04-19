@@ -13,6 +13,26 @@ mixin icon(name, modClass)
 //- ========================================
 mixin tabComponent(countForActive)
   .tab
+    .tab__header
+      .container
+        .tab__header-wrap
+          .tab__header--left
+            img(
+              src="./img/img-logo__tab.png" srcset="./img/img-logo__tab@2x.png 2x"
+              class="header_logo header_logo--tab"
+              alt=""
+              title=""
+            )
+
+
+          .tab__header--right
+            include ../macros/_dropdown
+
+            .header__hamburger
+              .hamburger.hamburger--squeeze.is-active(js-hamburger-close)
+                .hamburger-box
+                  .hamburger-inner
+
     ul.tab__list
       -for(var i = 0, len = tabMenuArr.length; i < len; i++)
         li.tab__item(
@@ -26,6 +46,10 @@ mixin tabComponent(countForActive)
             title=""
           )!= tabMenuArr[i]
 
+    .tab__footer
+      a(href="tel:4872702524" class="header__phone header__phone--tab" title="")!= "(4872) 70-25-24"
+
+      include ../macros/_menu
 
 //- BANNER BG CAROUSEL
 //- ========================================

@@ -191,6 +191,25 @@ $(document).ready(function(){
   // ====================
 
 
+  // HAMBURGER
+  // ====================
+  /**
+   * @description
+   */
+  _document.on("click", "[js-hamburger-open]", function(e) {
+    $("html, body").addClass("is-hideScroll");
+    $(".tab").addClass("is-show")
+  });
+  /**
+   * @description
+   */
+  _document.on("click", "[js-hamburger-close]", function(e) {
+    $("html, body").removeClass("is-hideScroll");
+    $(".tab").removeClass("is-show")
+  });
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   _document.on('click', '[js-hamburger]', function(){

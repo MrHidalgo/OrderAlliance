@@ -21,6 +21,12 @@
     align-items: center
 
 
+  &_logo
+    &--tab
+      height: 30px
+
+
+
   &__row
     &-0
       width: 300px
@@ -45,9 +51,6 @@
           height: auto
           margin-top: 6px
 
-    //&-1
-      //width: 400px
-      //padding-right: 30px
 
     &-3
       width: 180px
@@ -79,3 +82,12 @@
       font-size: 16px
     +rmin($desktop)
       font-size: 20px
+
+    &--tab
+      +r($mobile-max)
+        display: block
+        text-align: center
+        font-size: 30px
+        color: $colorDimGray
+        padding-top: 45px
+        padding-bottom: 45px
