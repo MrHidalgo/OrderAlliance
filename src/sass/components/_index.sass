@@ -1,14 +1,48 @@
-// INDEX
+// MAIN TITLE
 // ===============
-
 .main__title
   margin-bottom: 15px
   text-align: center
   font-weight: 800
   +rmin($mobile-s)
-    font-size: 30px
+    font-size: 49px
   +rmin($mobile)
-    font-size: 40px
+    font-size: 50px
+
+
+// FORM COMPONENT
+// ===============
+.form
+  &__input,
+  &__message
+    border-radius: 2em
+    border: 1px solid rgba($colorVeryLightGrey, 0.5)
+    background-color: $colorWhite
+    color: $colorNero
+    font-size: 14px
+    font-family: 'TTNorms', Arial, sans-serif
+  &__input
+    width: 100%
+    height: 45px
+    padding-left: 20px
+    padding-right: 20px
+  &__message
+    width: 100%
+    height: 170px
+    resize: none
+    padding: 20px
+  &__button
+    cursor: pointer
+    width: 100%
+    max-width: 260px
+    height: 45px
+    line-height: 40px
+    border: 2px solid $colorGold
+    border-radius: 2em
+    background-color: $colorGold
+    font-size: 15px
+    font-weight: 500
+
 
 
 
