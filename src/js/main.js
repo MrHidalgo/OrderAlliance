@@ -88,28 +88,28 @@ $(document).ready(function(){
   // HEADER SCROLL
   // add .header-static for .page or body
   // to disable sticky header
-  function initHeaderScroll(){
-    _window.on('scroll', throttle(function(e) {
-      var vScroll = _window.scrollTop();
-      var header = $('.header').not('.header--static');
-      var headerHeight = header.height();
-      var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
-      var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5;
-
-      if (visibleWhen){
-        if ( vScroll > headerHeight ){
-          header.addClass('is-fixed');
-        } else {
-          header.removeClass('is-fixed');
-        }
-        if ( vScroll > firstSection ){
-          header.addClass('is-fixed-visible');
-        } else {
-          header.removeClass('is-fixed-visible');
-        }
-      }
-    }, 10));
-  }
+  // function initHeaderScroll(){
+  //   _window.on('scroll', throttle(function(e) {
+  //     var vScroll = _window.scrollTop();
+  //     var header = $('.header').not('.header--static');
+  //     var headerHeight = header.height();
+  //     var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
+  //     var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5;
+  //
+  //     if (visibleWhen){
+  //       if ( vScroll > headerHeight ){
+  //         header.addClass('is-fixed');
+  //       } else {
+  //         header.removeClass('is-fixed');
+  //       }
+  //       if ( vScroll > firstSection ){
+  //         header.addClass('is-fixed-visible');
+  //       } else {
+  //         header.removeClass('is-fixed-visible');
+  //       }
+  //     }
+  //   }, 10));
+  // }
 
 
   // CLOSE ALL DROPDOWN OR OTHER POPUP WINDOW
@@ -194,14 +194,14 @@ $(document).ready(function(){
   // HAMBURGER
   // ====================
   /**
-   * @description
+   * @description open mobile menu
    */
   _document.on("click", "[js-hamburger-open]", function(e) {
     $("html, body").addClass("is-hideScroll");
     $(".tab").addClass("is-show")
   });
   /**
-   * @description
+   * @description close mobile menu
    */
   _document.on("click", "[js-hamburger-close]", function(e) {
     $("html, body").removeClass("is-hideScroll");
@@ -213,7 +213,7 @@ $(document).ready(function(){
   // INIT MAP
   // ====================
   /**
-   * @description
+   * @description init google maps
    */
   function initMap() {
     var uluruBuy = {
@@ -248,6 +248,9 @@ $(document).ready(function(){
 
   // LOCATION BTN - map
   // ====================
+  /**
+   * @description buy section, location list
+   */
   _document.on("click", "[location-js]", function() {
     $("[location-js]").removeClass('is-active');
     $(this).addClass('is-active');
@@ -255,9 +258,11 @@ $(document).ready(function(){
   // ====================
 
 
-
   // CHECKBOX
   // ====================
+  /**
+   * @description custom checkbox init
+   */
   function checkboxInit() {
     $(".checkbox").click(function(e) {
       e.preventDefault();
@@ -285,15 +290,15 @@ $(document).ready(function(){
 
 
   // HAMBURGER TOGGLER
-  _document.on('click', '[js-hamburger]', function(){
-    $(this).toggleClass('is-active');
-    $('.mobile-navi').toggleClass('is-active');
-  });
-
-  function closeMobileMenu(){
-    $('[js-hamburger]').removeClass('is-active');
-    $('.mobile-navi').removeClass('is-active');
-  }
+  // _document.on('click', '[js-hamburger]', function(){
+  //   $(this).toggleClass('is-active');
+  //   $('.mobile-navi').toggleClass('is-active');
+  // });
+  //
+  // function closeMobileMenu(){
+  //   $('[js-hamburger]').removeClass('is-active');
+  //   $('.mobile-navi').removeClass('is-active');
+  // }
 
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering when header is inside barba-container
