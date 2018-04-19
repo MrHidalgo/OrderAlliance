@@ -446,6 +446,18 @@ $(document).ready(function(){
       },
       asNavFor: asNavForSwap
     };
+    const sliderInfoOption = {
+      dots: true,
+      prevArrow: false,
+      nextArrow: false,
+      speed: 500,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      customPaging: function() {
+        return '<span></span>';
+      },
+    };
     // ===============
     // SLICK INIT
     // ===============
@@ -455,6 +467,8 @@ $(document).ready(function(){
 
     $(carouselInnerBgName).not('.slick-initialized').slick(mainCarouselOption(asNavForCarouselInner));
     $(sliderInnerLocationName).not('.slick-initialized').slick(mainSliderOption(false, false, asNavForSliderInner));
+
+    $('[info-slide-js]').not('.slick-initialized').slick(sliderInfoOption);
     // ===============
   }
 

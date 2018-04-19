@@ -1,0 +1,130 @@
+// INFO
+// ===============
+.info
+  padding-top: 90px
+  padding-bottom: 30px
+
+
+  .container
+    max-width: 1250px
+
+
+  &__wrap
+    display: flex !important
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    padding-left: 25px
+    padding-right: 25px
+
+
+  &__block
+    cursor: pointer
+    position: relative
+    display: flex
+    width: 100%
+    max-width: 570px
+    min-height: 210px
+    margin-bottom: 45px
+    background-color: $colorWhite
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.15)
+
+    &-0
+      .info__block-left
+        span
+          color: $colorVioletBlue
+      .info__block-right
+        background-size: cover
+
+    &-1
+      .info__block-left
+        span
+          color: $colorFern
+      .info__block-right
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $colorFern
+        span
+          font-weight: bold
+          &:first-child
+            font-size: 120px
+          &:last-child
+            font-size: 62px
+
+    &-2
+      .info__block-left
+        span
+          color: $colorGold
+      .info__block-right
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $colorGold
+
+    &-3
+      .info__block-left
+        span
+          color: $colorVioletBlue
+      .info__block-right
+        background-size: cover
+
+    &-left
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      width: calc(100% - 235px)
+      padding-top: 45px
+      padding-bottom: 45px
+      padding-left: 35px
+
+      p
+        line-height: 1
+        font-size: 30px
+        font-weight: bold
+
+      span
+        font-size: 12px
+        font-weight: bold
+
+    &-right
+      width: 235px
+      color: $colorWhite
+
+  &__row
+    .slick
+      &-dots
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 0
+        bottom: -50px
+        width: 100%
+        margin-left: auto
+        margin-right: auto
+
+        li
+          display: flex
+          align-items: center
+          justify-content: center
+          cursor: pointer
+          width: 30px
+          height: 10px
+          margin:
+            left: 7.5px
+            right: 7.5px
+
+          span
+            display: block
+            width: 100%
+            height: 1px
+            background-color: rgba($colorVeryLightGrey, 0.5)
+            border-top: 1px solid transparent
+            +transition(background-color, border-top)
+
+          &.slick-active
+            span
+              background-color: $colorDimGray
+              border-top: 1px solid $colorDimGray
+              +transition(background-color, border-top)
