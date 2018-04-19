@@ -2,7 +2,7 @@
 // ===============
 .tab
   display: none
-  +rmin($mobile-s)
+  +r($mobile-max)
     overflow-y: auto
     position: fixed
     top: 0
@@ -12,12 +12,7 @@
     min-height: 100%
     background-color: $colorWhite
   +rmin($tablet)
-    position: static
     display: block
-    width: auto
-    height: auto
-    min-height: auto
-    background-color: transparent
 
   &.is-show
     +r($mobile-max)
@@ -51,7 +46,7 @@
       display: none
 
   &__list
-    display: flex
+    //display: flex
     justify-content: center
     +rmin($mobile-s)
       display: block
@@ -66,11 +61,10 @@
       content: ""
       z-index: 2
       position: absolute
-      top: -5px
-      left: -5px
       border-radius: 0
       width: 0
       height: 0
+      //+transition(width, height, border-radius, background-color, box-shadow)
       +r($mobile-max)
         top: 0
         left: 0
@@ -80,12 +74,10 @@
       +rmin($desktop)
         top: -5px
         left: -5px
-      //+transition(width, height, border-radius, background-color, box-shadow)
 
     &.is-active
       &:after
-        width: calc(100% + 10px)
-        height: calc(100% + 10px)
+        //+transition(width, height, border-radius, background-color, box-shadow)
         border-radius: 5px
         +r($mobile-max)
           width: 100%
@@ -97,7 +89,7 @@
         +rmin($desktop)
           width: calc(100% + 10px)
           height: calc(100% + 10px)
-        //+transition(width, height, border-radius, background-color, box-shadow)
+
       .tab__link
         z-index: 3
 
@@ -112,13 +104,13 @@
         z-index: 0
         position: absolute
         top: 0
-        height: 60px
         +r($mobile-max)
           box-shadow: none !important
         +rmin($tablet)
           height: 48px
         +rmin($desktop)
           height: 60px
+
       &.is-active
         &:after
           //+transition(background-color, box-shadow)
@@ -178,11 +170,7 @@
     display: flex
     align-items: center
     justify-content: center
-    height: 60px
-    padding-left: 30px
-    padding-right: 30px
     color: $colorWhite
-    font-size: 15px
     font-weight: bold
     +r($mobile-max)
       justify-content: flex-start
