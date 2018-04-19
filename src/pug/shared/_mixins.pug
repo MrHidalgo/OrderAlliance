@@ -103,3 +103,15 @@ mixin sliderInnerLocation(className, jsName, arrLocation)
         div(class="slider__banner-content")
           p.banner__slider-name!= arrLocation[i]
           p.banner__slider-info!= "г. Тула, ул. Фрунзе, д. 20"
+
+
+//- CHECKBOX
+//- ========================================
+mixin checkboxBtn(className, text)
+  div(class="checkbox " + className)
+    input(type="checkbox" name="checkbox" id="inputCheckbox")
+    label(for="inputCheckbox")
+      .checkbox__icon
+        span
+      .checkbox__name
+        p!= text

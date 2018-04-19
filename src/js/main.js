@@ -216,15 +216,29 @@ $(document).ready(function(){
    * @description
    */
   function initMap() {
-    var uluru = {lat: 54.1918065, lng: 37.6177402};
+    var uluruBuy = {
+      lat: 54.1918065,
+      lng: 37.6177402
+    };
+    var uluruNearby = {
+      lat: 54.1918065,
+      lng: 37.6177402
+    };
     var iconMarker = '../img/map-marker.png';
-    var map = new google.maps.Map(document.getElementById('map'), {
+
+    var mapBuy = new google.maps.Map(document.getElementById('map-buy'), {
       zoom: 17,
-      center: uluru
+      center: uluruBuy
     });
+
+    var mapNearby = new google.maps.Map(document.getElementById('map-nearby'), {
+      zoom: 17,
+      center: uluruNearby
+    });
+
     var marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
+      position: uluruBuy,
+      map: mapBuy,
       icon: iconMarker
     });
   }
@@ -234,11 +248,39 @@ $(document).ready(function(){
 
   // LOCATION BTN - map
   // ====================
-  // ====================
   _document.on("click", "[location-js]", function() {
     $("[location-js]").removeClass('is-active');
     $(this).addClass('is-active');
   });
+  // ====================
+
+
+
+  // CHECKBOX
+  // ====================
+  function checkboxInit() {
+    $(".checkbox").click(function(e) {
+      e.preventDefault();
+
+      var inputCheckbox = $(this).find('input');
+
+      if ($(this).hasClass('disabled')){
+        return false;
+      }
+
+      $(this).toggleClass('is-active');
+
+      if(inputCheckbox.prop('checked') === true){
+        inputCheckbox.prop('checked', false).change();
+      } else {
+        inputCheckbox.prop('checked', true).change();
+      }
+
+      return false;
+    });
+  }
+  checkboxInit();
+  // ====================
 
 
 

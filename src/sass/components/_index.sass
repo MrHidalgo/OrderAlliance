@@ -44,6 +44,69 @@
     font-weight: 500
 
 
+// CHECKBOX
+// ===============
+.checkbox
+  position: relative
+  cursor: pointer
+
+  input[type="checkbox"]
+    position: absolute
+    width: 0
+    height: 0
+    opacity: 0
+    border: none
+    margin: 0
+    padding: 0
+    filter: alpha(opacity=0)
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+    outline: none
+
+  label
+    cursor: pointer
+    display: flex
+    align-items: center
+    margin-bottom: 15px
+
+  &__icon
+    position: relative
+    width: 33px
+    margin-right: 12px
+
+    span
+      display: block
+      width: 100%
+      height: 15px
+      border-radius: 2em
+      background-color: $colorSolitude
+      &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 15px
+        height: 15px
+        border-radius: 100%
+        background-color: $colorDimGray
+
+        .is-active &
+          left: auto
+          right: 0
+
+        .is-active.checkbox-item--polyclinics &
+          background-color: $colorIrisBlue
+        .is-active.checkbox-item--kindergartens &
+          background-color: $colorDeepCerise
+        .is-active.checkbox-item--schools &
+          background-color: $colorDarkTangerine
+        .is-active.checkbox-item--pharmacies &
+          background-color: $colorFern
+        .is-active.checkbox-item--supermarkets &
+          background-color: $colorVioletBlue
+
+  &__name
+    font-size: 14px
+
 
 
 //
