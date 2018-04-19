@@ -2,7 +2,10 @@
 // ===============
 .banner
   position: relative
-  min-height: 900px
+  +rmin($mobile-s)
+    min-height: 800px
+  +rmin($tablet)
+    min-height: 900px
 
   &--inner
     min-height: 885px
@@ -23,10 +26,16 @@
 
   .container
     &--slider
-      margin-top: 250px
+      +rmin($mobile-s)
+        margin-top: 130px
+      +rmin($tablet)
+        margin-top: 250px
 
     &--swap
-      margin-top: 107px
+      +rmin($mobile-s)
+        margin-top: 87px
+      +rmin($tablet)
+        margin-top: 107px
 
 
   &__carousel
@@ -90,8 +99,11 @@
 
       .banner__slider--quarter &,
       .banner__slider--flat &
-        font-size: 65px
         font-weight: 800
+        +rmin($mobile-s)
+          font-size: 35px
+        +rmin($mobile)
+          font-size: 50px
         +rmin($tablet)
           font-size: 55px
         +rmin($desktop)
@@ -99,8 +111,11 @@
 
       .slick-center &,
       .slick-active &
-        font-size: 65px
         font-weight: 800
+        +rmin($mobile-s)
+          font-size: 35px
+        +rmin($mobile)
+          font-size: 50px
         +rmin($tablet)
           font-size: 55px
         +rmin($desktop)
@@ -147,10 +162,18 @@
 
       &-slide
         text-align: center
-        font-size: 16px
         font-weight: 500
         margin-right: 5px
         margin-left: 5px
+        +rmin($mobile-s)
+          font-size: 35px
+        +rmin($mobile)
+          font-size: 50px
+        +rmin($tablet)
+          font-size: 55px
+        +rmin($desktop)
+          font-size: 16px
+
 
       &-center
         width: 470px !important
@@ -176,6 +199,10 @@
       margin-right: auto
       font-size: 20px
       font-weight: 500
+      +rmin($mobile-s)
+        display: block
+      +rmin($tablet)
+        display: flex
 
       .banner__swap--storerooms &
         max-width: 370px
@@ -189,6 +216,8 @@
       &--left,
       &--right
         display: flex
+        justify-content: center
+
 
       p
         text-shadow: 0 0 13px rgba(0, 0, 0, 0.9)

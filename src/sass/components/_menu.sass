@@ -1,10 +1,12 @@
 // MENU
 // ===============
 .menu
-  display: flex
+  display: none
   position: relative
   top: -6px
   left: -2px
+  +rmin($tablet)
+    display: flex
 
 
   &__item
