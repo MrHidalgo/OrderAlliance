@@ -25,7 +25,7 @@ $(document).ready(function(){
   function pageReady(){
     legacySupport();
     updateHeaderActiveClass();
-    initHeaderScroll();
+    // initHeaderScroll();
 
     initPopups();
     initSliders();
