@@ -1,3 +1,7 @@
+// INDEX
+// ===============
+
+
 // MAIN TITLE
 // ===============
 .main__title
@@ -37,11 +41,89 @@
     max-width: 260px
     height: 45px
     line-height: 40px
+    padding-left: 15px
+    padding-right: 15px
     border: 2px solid $colorGold
     border-radius: 2em
     background-color: $colorGold
     font-size: 15px
     font-weight: 500
+
+
+// SELECT
+// ===============
+.select
+  cursor: pointer
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  min-width: 185px
+  height: 45px
+  padding-left: 40px
+  padding-right: 40px
+  border-radius: 2em
+  background-color: $colorSolitude
+
+  select
+    cursor: pointer
+    opacity: 0
+    z-index: 100
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 0
+    filter: alpha(opacity=0)
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+    font-size: initial
+
+  &__value
+    font-size: 20px
+
+  &__icon
+    position: absolute
+    top: 50%
+    right: 15px
+    transform: translateY(-50%)
+
+
+// RADIO
+// ===============
+.radio
+  cursor: pointer
+  position: relative
+
+  input[type="radio"]
+    position: absolute
+    width: 0
+    height: 0
+    opacity: 0
+    border: none
+    margin: 0
+    padding: 0
+    filter: alpha(opacity=0)
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+    outline: none
+
+  label
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 45px
+    height: 45px
+    border-radius: 100%
+    background-color: $colorSolitude
+
+    span
+      font-size: 20px
+
+  &.is-active
+    label
+      color: $colorWhite
+      background-color: $colorIrisBlue
 
 
 // CHECKBOX
@@ -93,15 +175,15 @@
           left: auto
           right: 0
 
-        .is-active.checkbox--polyclinics &
+        .is-active.checkbox--irisBlue &
           background-color: $colorIrisBlue
-        .is-active.checkbox--kindergartens &
+        .is-active.checkbox--deepCerise &
           background-color: $colorDeepCerise
-        .is-active.checkbox--schools &
+        .is-active.checkbox--darkTangerine &
           background-color: $colorDarkTangerine
-        .is-active.checkbox--pharmacies &
+        .is-active.checkbox--fern &
           background-color: $colorFern
-        .is-active.checkbox--supermarkets &
+        .is-active.checkbox--violetBlue &
           background-color: $colorVioletBlue
 
   &__name

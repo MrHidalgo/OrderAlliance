@@ -1,0 +1,135 @@
+// CHOOSE :: START
+
+
+//- VARIABLE
+//- ==========
+-
+  var tableNumber = [
+    "1", "2", "5", "16", "23", "34", "38", "40", "43", "48", "52", "67"
+  ];
+  var tableRoom = [
+    "2", "1", "2", "3", "3", "2", "4", "4", "4", "2", "2", "1"
+  ];
+  var tableArea = [
+    "67.5 м2", "88.5 м2", "84.62 м2", "67.5 м2", "88.5 м2", "84.62 м2", "88.5 м2", "84.62 м2", "67.5 м2", "88.5 м2", "84.62 м2", "88.5 м2"
+  ];
+  var tableCost = [
+    "3 712 500₽", "4 600 000₽", "4 650 000₽", "3 712 500₽", "4 600 000₽", "4 650 000₽", "3 712 500₽", "4 600 000₽", "4 600 000₽", "4 650 000₽", "3 712 500₽", "4 600 000₽"
+  ];
+  var tablePrice = [
+    "55 000₽", "52 000₽", "52 000₽", "55 000₽", "52 000₽", "52 000₽", "38 000₽", "52 000₽", "52 000₽", "52 000₽", "52 000₽", "52 000₽"
+  ];
+  var selectArr = [
+    "Любая",
+    "Любая 1",
+    "Любая 2",
+    "Любая 3",
+    "Любая 4"
+  ];
+
+//- ==========
+//- MIXIN
+//- ==========
+
+//- ==========
+
+
+.choose
+  .container
+
+    h3.main__title!= "Выбрать квартиру"
+
+    .choose__row
+      .choose__row-left
+
+        .choose__field.choose__field-select
+          p.choose__field-title!= "Секция"
+
+          .choose__field-wrap
+            +select(selectArr)
+
+        .choose__field.choose__field-radio
+          p.choose__field-title!= "Количество комнат"
+
+          .choose__field-wrap
+            +radioBtn("1", "1")
+            +radioBtn("2", "2")
+            +radioBtn("3", "3")
+            +radioBtn("4", "4")
+
+        .choose__field.choose__field-table
+          table
+            thead
+              tr
+                th!= "№"
+                th!= "Kомнаты"
+                th!= "Площадь"
+                th!= "Стоимость"
+                th!= "Цена за м²"
+            tbody
+               -for(var i = 0, len = tableNumber.length; i < len; i++)
+                 tr
+                  td!= tableNumber[i]
+                  td!= tableRoom[i]
+                  td!= tableArea[i]
+                  td!= tableCost[i]
+                  td!= tablePrice[i]
+
+
+      .choose__row-right
+        .choose__field.choose__field-plan
+          img(
+            src="./img/img-plan__choose.png"
+            srcset="./img/img-plan__choose@2x.png 2x"
+          )
+
+        .choose__field.choose__field-price
+          .choose__field-left
+            p!= "Стоимость"
+            p!= "3 720 500₽"
+          .choose__field-right
+            p!= "Цена за м2"
+            p!= "55 000₽"
+
+        .choose__field.choose__field-description
+          .choose__field-left
+            p!= "Квартира"
+            p!= "№248"
+          .choose__field-middle
+            .choose__field-wrap
+              span!= "Секция:"
+              span!= "Г"
+            .choose__field-wrap
+              span!= "Этаж:"
+              span!= "11"
+            .choose__field-wrap
+              span!= "Комнат:"
+              span!= "2"
+          .choose__field-right
+            .choose__field-wrap
+              span!= "Общая площадь:"
+              span!= "67.5"
+            .choose__field-wrap
+              span!= "Жилая площадь:"
+              span!= "32.77"
+            .choose__field-wrap
+              span!= "Срок сдачи:"
+              span!= "Сдан"
+
+        .choose__field.choose__field-contacts
+          p!= "Связаться с застройщиком"
+          a(href="tel:+74872525043" class="" title="")!= "+7 (4872) 52-50-43"
+
+        .choose__field.choose__field-form
+          form(choose-appartment-js)
+            .form__field
+              input(type="name" name="name" class="form__input choose__form-input" placeholder="Ваше имя")
+
+            .form__field.form__field--half
+              .form__field-left
+                input(type="tel" name="phone" class="form__input choose__form-input")
+              .form__field-right
+                button(type="submit" class="form__button choose__form-btn")!= "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ"
+
+
+// CHOOSE :: END

@@ -288,6 +288,52 @@ $(document).ready(function(){
   // ====================
 
 
+  // RADIO
+  // ====================
+  function radioInit() {
+    $(".radio").click(function(e) {
+      e.preventDefault();
+
+      $(this).parent().find(".radio").removeClass("is-active");
+      $(this).addClass('is-active');
+
+      $(this).parent().find('input[type="radio"]:checked').prop('checked', false);
+      $(this).find('input[type="radio"]').prop('checked', true).change();
+    });
+  }
+  radioInit();
+  // ====================
+
+
+  // SELECT
+  // ====================
+  function selectInit(selector) {
+    if (selector === undefined) {
+      var selector = 'select';
+    }
+
+    selectReset(selector);
+
+    $(selector).on('change', function () {
+      selectReset(this);
+    });
+  }
+
+  function selectReset(selector){
+    if (selector === undefined) {
+      var selector = 'select';
+    }
+
+    $(selector).each(function(){
+      var valOption = $(this).children('option:selected');
+
+      $(this).prev('span').html(valOption.text());
+    });
+  }
+  selectInit();
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   // _document.on('click', '[js-hamburger]', function(){

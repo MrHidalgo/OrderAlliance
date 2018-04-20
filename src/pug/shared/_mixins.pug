@@ -105,6 +105,27 @@ mixin sliderInnerLocation(className, jsName, arrLocation)
           p.banner__slider-info!= "г. Тула, ул. Фрунзе, д. 20"
 
 
+//- SELECT
+//- ========================================
+mixin select(arr)
+  .select
+    .select__wrap
+      span.select__value
+      select(name="select")
+        -for (var i = 0, len = arr.length; i < len; i++)
+          option!= arr[i]
+      i.select__icon.icon-arrow
+
+
+//- RADIO
+//- ========================================
+mixin radioBtn(idName, text)
+  div(class="radio")
+    input(type="radio", id!=idName, name!="radio")
+    label(for!= idName)
+      span!= text
+
+
 //- CHECKBOX
 //- ========================================
 mixin checkboxBtn(className, text)

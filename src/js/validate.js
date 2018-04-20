@@ -96,6 +96,9 @@ $(document).ready(function(){
   });
 
 
+  /**
+   *
+   */
   $("[question-form-js]").validate({
     errorPlacement: validateErrorPlacement,
     highlight: validateHighlight,
@@ -115,6 +118,29 @@ $(document).ready(function(){
       },
       message: {
         required: "Заполните это поле",
+      }
+    }
+  });
+
+
+  /**
+   *
+   */
+  $("[choose-appartment-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      name: "required",
+      phone: validatePhone,
+    },
+    messages: {
+      name: "Заполните это поле",
+      phone: {
+        required: "Заполните это поле",
+        minlength: "Введите не менее 11 символов",
+        phone: "Введите корректный телефон"
       }
     }
   });
