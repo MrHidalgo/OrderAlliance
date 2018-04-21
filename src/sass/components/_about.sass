@@ -6,21 +6,40 @@
 
 
   .main__title
-    margin-bottom: 45px
+    +rmin($mobile-s)
+      margin-bottom: 15px
+    +rmin($tablet)
+      margin-bottom: 30px
+    +rmin($desktop)
+      margin-bottom: 45px
 
 
   &__row
     display: flex
+    +rmin($mobile-s)
+      flex-direction: column
+    +rmin($desktop)
+      flex-direction: row
+
 
 
   &__left
     padding-top: 30px
-    width: 400px
     text-align: center
+    +rmin($mobile-s)
+      width: 100%
+      margin-bottom: 30px
+    +rmin($desktop)
+      width: 400px
 
 
   &__right
-    width: calc(100% - 400px)
+    +rmin($mobile-s)
+      width: 100%
+      text-align: center
+    +rmin($desktop)
+      width: calc(100% - 400px)
+      text-align: left
 
     p
       font-size: 16px
