@@ -1,19 +1,19 @@
 $sprite: (
 	arrow: (
-		offset-x: -54px,
+		offset-x: -75px,
 		offset-y: 0px,
 		width: 16px,
 		height: 9px,
-		total-width: 70px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
 	corner: (
-		offset-x: -32px,
-		offset-y: -40px,
+		offset-x: -54px,
+		offset-y: -24px,
 		width: 11px,
 		height: 7px,
-		total-width: 70px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
@@ -22,25 +22,43 @@ $sprite: (
 		offset-y: 0px,
 		width: 22px,
 		height: 28px,
-		total-width: 70px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
 	marker--hover: (
-		offset-x: -54px,
+		offset-x: -75px,
 		offset-y: -19px,
 		width: 10px,
 		height: 13px,
-		total-width: 70px,
+		total-width: 91px,
+		total-height: 68px,
+		image: '../img/sprite.png'
+	),
+	marker-active: (
+		offset-x: -32px,
+		offset-y: -40px,
+		width: 11px,
+		height: 14px,
+		total-width: 91px,
+		total-height: 68px,
+		image: '../img/sprite.png'
+	),
+	marker-black: (
+		offset-x: -54px,
+		offset-y: 0px,
+		width: 11px,
+		height: 14px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
 	marker: (
-		offset-x: -54px,
+		offset-x: -75px,
 		offset-y: -42px,
 		width: 10px,
 		height: 13px,
-		total-width: 70px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
@@ -49,7 +67,7 @@ $sprite: (
 		offset-y: -38px,
 		width: 12px,
 		height: 30px,
-		total-width: 70px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
@@ -58,7 +76,7 @@ $sprite: (
 		offset-y: 0px,
 		width: 12px,
 		height: 30px,
-		total-width: 70px,
+		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
 	),
@@ -129,6 +147,12 @@ $sprite: (
 	}
 	.icon-marker--hover {
 		@include sprite(marker--hover)
+	}
+	.icon-marker-active {
+		@include sprite(marker-active)
+	}
+	.icon-marker-black {
+		@include sprite(marker-black)
 	}
 	.icon-marker {
 		@include sprite(marker)

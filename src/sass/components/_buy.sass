@@ -5,18 +5,10 @@
 
 
   .main__title
-    margin-bottom: 45px
-
-
-  .container
-    z-index: 1
-    position: absolute
-    left: 0
-    right: 0
-    margin-left: auto
-    margin-right: auto
-    width: 100%
-    height: 100%
+    +rmin($mobile-s)
+      margin-bottom: 0
+    +rmin($tablet)
+      margin-bottom: 45px
 
 
   &__row
@@ -24,56 +16,92 @@
     min-height: 600px
 
 
-  &__map
+  &__maps
     z-index: 0
-    position: absolute
     left: 0
     top: 0
     width: 100%
-    height: 100%
-
-    .maps
+    +rmin($mobile-s)
+      position: static
+      height: 400px
+    +rmin($tablet)
       position: absolute
-      left: 0
-      top: 0
-      width: 100%
       height: 100%
 
 
-  &__wrap
-    display: flex
-    align-items: center
-    justify-content: flex-end
-    height: 100%
-
-
   &__block
+    z-index: 1
     width: 100%
-    max-width: 470px
     min-height: 400px
     padding: 30px
     border-radius: 5px
     box-shadow: 0 15px 35px 0 rgba($colorBlack, 0.15)
     background-color: $colorWhite
+    +rmin($mobile-s)
+      position: static
+    +r($mobile-max)
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      text-align: center
+    +rmin($tablet)
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      right: 15px
+      max-width: 370px
+      text-align: left
+    +rmin($desktop)
+      max-width: 420px
+    +rmin($wide)
+      left: calc(100% / 1.77)
+      max-width: 470px
 
     &-title
-      font-size: 30px
       font-weight: bold
       margin-bottom: 20px
+      +rmin($mobile-s)
+        font-size: 22px
+      +rmin($desktop)
+        font-size: 25px
+      +rmin($wide)
+        font-size: 30px
 
     &-location
-      display: block
+      display: flex
+      align-items: flex-start
       font-size: 16px
       margin-bottom: 30px
+      +transition(color)
       &.is-active
-        text-decoration: underline
         color: $colorIrisBlue
+        +transition(color)
+
+        .icon
+          @include sprite(marker-active)
+
+      .icon-wrap
+        width: 15px
+
+      .icon
+        margin-top: 2px
 
     &-phone
       display: block
       margin-bottom: 30px
-      font-size: 20px
       color: $colorDimGray
+      +transition(color)
+      &:hover
+        color: $colorIrisBlue
+        +transition(color)
+
+      +rmin($mobile-s)
+        font-size: 16px
+      +rmin($desktop)
+        font-size: 18px
+      +rmin($wide)
+        font-size: 20px
 
     &-email
       display: block
