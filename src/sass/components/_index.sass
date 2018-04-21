@@ -21,7 +21,6 @@
 // FORM COMPONENT
 // ===============
 .form
-
   &__input,
   &__message
     border-radius: 2em
@@ -182,21 +181,26 @@
         height: 15px
         border-radius: 100%
         background-color: $colorDimGray
+        +transition(background-color, left)
 
         .is-active &
-          left: auto
-          right: 0
+          left: calc(100% - 12px)
 
         .is-active.checkbox--irisBlue &
           background-color: $colorIrisBlue
+          +transition(background-color, left)
         .is-active.checkbox--deepCerise &
           background-color: $colorDeepCerise
+          +transition(background-color, left)
         .is-active.checkbox--darkTangerine &
           background-color: $colorDarkTangerine
+          +transition(background-color, left)
         .is-active.checkbox--fern &
           background-color: $colorFern
+          +transition(background-color, left)
         .is-active.checkbox--violetBlue &
           background-color: $colorVioletBlue
+          +transition(background-color, left)
 
   &__name
     font-size: 14px
