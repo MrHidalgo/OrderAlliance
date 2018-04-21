@@ -14,12 +14,34 @@
     flex-wrap: wrap
 
     &-item
-      width: calc(100% / 4)
       margin-bottom: 30px
       padding-right: 30px
+      +rmin($mobile-s)
+        width: calc(100% / 1)
+      +rmin($mobile)
+        width: calc(100% / 2)
+      +rmin($desktop)
+        width: calc(100% / 3)
+      +rmin($wide)
+        width: calc(100% / 4)
+
+      &:hover
+        a
+          text-decoration: underline
+          +transition(text-decoration)
+        i
+          opacity: 0.75
+          +transition(opacity)
+        p
+          text-shadow: 0 0 20px rgba(0, 0, 0, 0.05)
+          +transition(text-shadow)
+
 
     &-btn
       display: flex
+
+      a
+        +transition(text-decoration)
 
       div
         width: 32px
@@ -27,11 +49,13 @@
 
         i
           display: block
+          +transition(opacity)
 
         
       p
         font-size: 14px
         color: $colorNero
+        +transition(text-shadow)
 
 
   &__button
@@ -48,3 +72,9 @@
     text-align: center
     font-size: 15px
     font-weight: 500
+    +transition(background-color)
+
+    &:hover
+      background-color: $colorGold
+      +transition(background-color)
+
