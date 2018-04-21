@@ -19,6 +19,10 @@ html(lang="en")
 
         block footer
           include ../components/_footer
+
+        if(bodyClass === "flat" || bodyClass === "quarter")
+          block modal
+            include ../components/_modal
           
       block scripts
         include _scripts

@@ -126,7 +126,7 @@ $(document).ready(function(){
   /**
    *
    */
-  $("[choose-appartment-js]").validate({
+  $("[choose-appartment-js], [modal-form-js]").validate({
     errorPlacement: validateErrorPlacement,
     highlight: validateHighlight,
     unhighlight: validateUnhighlight,

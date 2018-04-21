@@ -12,6 +12,6 @@ PageList:
 - file: parking.html
   ready: 85
 - file: flat.html
-  ready: 50
+  ready: 65
 - file: quarter.html
   ready: 50

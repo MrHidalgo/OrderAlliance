@@ -261,7 +261,7 @@ $(document).ready(function(){
   // CHECKBOX
   // ====================
   /**
-   * @description custom checkbox init
+   * @description custom checkbox button
    */
   function checkboxInit() {
     $(".checkbox").click(function(e) {
@@ -290,6 +290,9 @@ $(document).ready(function(){
 
   // RADIO
   // ====================
+  /**
+   * @description custom radio button
+   */
   function radioInit() {
     $(".radio").click(function(e) {
       e.preventDefault();
@@ -307,6 +310,11 @@ $(document).ready(function(){
 
   // SELECT
   // ====================
+  /**
+   *
+   * @param selector
+   * @description custom select component - init
+   */
   function selectInit(selector) {
     if (selector === undefined) {
       var selector = 'select';
@@ -319,6 +327,11 @@ $(document).ready(function(){
     });
   }
 
+  /**
+   *
+   * @param selector
+   * @description custom select component - reset
+   */
   function selectReset(selector){
     if (selector === undefined) {
       var selector = 'select';
@@ -534,7 +547,7 @@ $(document).ready(function(){
       preloader: false,
       midClick: true,
       removalDelay: 300,
-      mainClass: 'popup-buble',
+      mainClass: 'show',
       callbacks: {
         beforeOpen: function() {
           startWindowScroll = _window.scrollTop();
