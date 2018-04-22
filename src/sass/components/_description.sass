@@ -8,6 +8,7 @@
   .container
     z-index: 0
     position: absolute
+    top: 0
     left: 0
     right: 0
     margin-left: auto
@@ -20,16 +21,16 @@
     margin-bottom: 60px
 
     &-0
-      height: 555px
+      min-height: 555px
     &-1
-      height: 450px
+      min-height: 450px
     &-2
-      height: 435px
+      min-height: 435px
+
     &--normal
       .container
         display: flex
         justify-content: flex-end
-
 
     &:last-child
       margin-bottom: 0
@@ -39,42 +40,85 @@
       position: absolute
       display: flex
       top: 0
-      left: 0
-      width: 100%
       height: 100%
+      +rmin($mobile-s)
+        width: 75%
+      +rmin($mobile)
+        width: 65%
+      +rmin($tablet)
+        width: 55%
 
+      .description__block--normal &
+        left: 0
       .description__block--reverse &
-        justify-content: flex-end
+        right: 0
 
       img
-        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+
 
     &-wrap
       z-index: 1
       position: relative
       display: flex
-      align-items: center
-      width: 60%
       height: 100%
+      +rmin($mobile-s)
+        align-items: flex-end
+        width: 75%
+      +rmin($mobile)
+        align-items: center
+        width: 65%
+      +rmin($tablet)
+        width: 55%
 
 
     &-info
-      padding-right: 65px
-      padding-top: 45px
-      padding-bottom: 45px
       background-color: rgba($colorWhite, 0.9)
+      +rmin($mobile-s)
+        padding-top: 15px
+        padding-bottom: 15px
+      +rmin($mobile)
+        padding-top: 30px
+        padding-bottom: 30px
+        padding-right: 15px
+      +rmin($tablet)
+        padding-right: 30px
+      +rmin($desktop)
+        padding-top: 45px
+        padding-bottom: 45px
+        padding-right: 65px
 
       .description__block--normal &
         padding-right: 0
-        padding-left: 65px
+        +rmin($mobile-s)
+          padding-left: 15px
+        +rmin($tablet)
+          padding-left: 30px
+        +rmin($desktop)
+          padding-left: 65px
 
       p
         &:first-child
-          font-size: 40px
           font-weight: bold
-          margin-bottom: 30px
+          +rmin($mobile-s)
+            margin-bottom: 15px
+            font-size: 25px
+          +rmin($tablet)
+            margin-bottom: 20px
+            font-size: 30px
+          +rmin($desktop)
+            margin-bottom: 30px
+            font-size: 40px
 
         &:last-child
-          font-size: 20px
           color: $colorDimGray
-          line-height: 1.8
+          line-height: 1.5
+          +rmin($mobile-s)
+            font-size: 14px
+          +rmin($tablet)
+            font-size: 15px
+          +rmin($desktop)
+            font-size: 20px

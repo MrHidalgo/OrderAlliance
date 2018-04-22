@@ -347,6 +347,13 @@ $(document).ready(function(){
   // ====================
 
 
+  // OBJECT-FIT POLYFILL
+  // ====================
+  var $someImages = $('[objectFit-js]');
+  objectFitImages($someImages);
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   // _document.on('click', '[js-hamburger]', function(){
