@@ -17,13 +17,29 @@
     "Фото и видео",
     "Где купить"
   ];
+  var submenuHrefQurterArr = [
+    "#",
+    "#masterplan",
+    "#about",
+    "#nearby",
+    "#",
+    "#buy"
+  ];
+  var submenuHrefFlarArr = [
+    "#",
+    "#choose",
+    "#about",
+    "#nearby",
+    "#",
+    "#buy"
+  ];
 //- ==========
 //- MIXIN
 //- ==========
-mixin submenuLink(count, arr)
+mixin submenuLink(hrefArr, count, arr)
   a.submenu__btn(
-    href="#"
-    class!= (count === 1) ? "is-active":""
+    href!= hrefArr[count]
+    class!= (count === 1) ? "":""
     title!=""
     data-js!= (count > 0) ? "submenu-js":""
   )!= arr[count]
@@ -40,7 +56,7 @@ mixin submenuLink(count, arr)
       -for(var i = 0, len = submenuFlatArr.length; i < len; i++)
         li.submenu__item
           if(bodyClass === 'flat')
-            +submenuLink(i, submenuFlatArr)
+            +submenuLink(submenuHrefFlarArr, i, submenuFlatArr)
           else if(bodyClass === 'quarter')
-            +submenuLink(i, submenuQuarterArr)
+            +submenuLink(submenuHrefQurterArr, i, submenuQuarterArr)
 

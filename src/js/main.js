@@ -242,7 +242,9 @@ $(document).ready(function(){
       icon: iconMarker
     });
   }
-  initMap();
+  if($("#map-buy").length > 0 || $("#map-nearby").length > 0) {
+    initMap();
+  }
   // ====================
 
 
@@ -351,6 +353,28 @@ $(document).ready(function(){
   // ====================
   var $someImages = $('[objectFit-js]');
   objectFitImages($someImages);
+  // ====================
+
+
+  // SMOOTH SCROLL
+  // ====================
+  $(".submenu__list").on("click", "a", function (e) {
+    e.preventDefault();
+
+    var id = $(this).attr('href'),
+      navHeight = 0 || $(".submenu").outerHeight(),
+      topHeightOffset;
+
+    if ($(window).width() >= bp.tablet) {
+      topHeightOffset = $(id).offset().top - navHeight
+    } else {
+      topHeightOffset = $(id).offset().top;
+    }
+
+    $('body, html').animate({
+      scrollTop: topHeightOffset
+    }, 1000);
+  });
   // ====================
 
 
@@ -748,7 +772,7 @@ $(document).ready(function(){
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
 
     pageReady();
-    closeMobileMenu();
+    // closeMobileMenu();
 
   });
 
