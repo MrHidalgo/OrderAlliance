@@ -358,22 +358,76 @@ $(document).ready(function(){
 
   // SMOOTH SCROLL
   // ====================
-  $(".submenu__list").on("click", "a", function (e) {
-    e.preventDefault();
+  /**
+   * @description
+   */
+  function smoothScrollSubmenu() {
+    $(".submenu__list").on("click", "a", function (e) {
+      e.preventDefault();
 
-    var id = $(this).attr('href'),
-      navHeight = 0 || $(".submenu").outerHeight(),
-      topHeightOffset;
+      var id = $(this).attr('href'),
+        navHeight = 0 || $(".submenu").outerHeight(),
+        topHeightOffset;
 
-    if ($(window).width() >= bp.tablet) {
-      topHeightOffset = $(id).offset().top - navHeight
-    } else {
-      topHeightOffset = $(id).offset().top;
+      if ($(window).width() >= bp.tablet) {
+        topHeightOffset = $(id).offset().top - navHeight
+      } else {
+        topHeightOffset = $(id).offset().top;
+      }
+
+      $('body, html').animate({
+        scrollTop: topHeightOffset
+      }, 1000);
+    });
+  }
+  if($(".submenu")) {
+    smoothScrollSubmenu();
+  }
+  // ====================
+
+
+  // TABLE
+  // ====================
+  /**
+   * @description filter rooms count
+   */
+  _document.on("click", "[radio-js]", function(e) {
+    var elem = $(e.target),
+      elemVal = elem.text(),
+      tableRooms = $("[table-js] [room-js]");
+
+    elem.toggleClass("is-active");
+
+    tableRooms.closest("[tbody-tr-js]").removeClass("is-hide");
+
+    if(elem.hasClass("is-active")) {
+      if($("[radio-js]").hasClass("is-active")) {
+        $("[radio-js]").removeClass("is-active");
+      }
+
+      elem.addClass("is-active");
+
+      tableRooms.filter(function(idx, el) {
+        if($(el).text() !== elemVal) {
+          return $(el).closest("[tbody-tr-js]").addClass("is-hide");
+        }
+      });
+    }
+  });
+  /**
+   * @description
+   */
+  _document.on("click", "[table-js]", function(e) {
+    var elem = $(e.target);
+
+    if(elem.closest("[td-js]")) {
+      $("[tbody-tr-js]").removeClass("is-active");
+      elem.closest("[tbody-tr-js]").addClass("is-active");
     }
 
-    $('body, html').animate({
-      scrollTop: topHeightOffset
-    }, 1000);
+    if(elem.closest("[th-js]")) {
+      elem.toggleClass("is-active");
+    }
   });
   // ====================
 
@@ -581,7 +635,7 @@ $(document).ready(function(){
       mainClass: 'show',
       callbacks: {
         beforeOpen: function() {
-          startWindowScroll = _window.scrollTop();
+          // startWindowScroll = _window.scrollTop();
           // $('html').addClass('mfp-helper');
         },
         close: function() {

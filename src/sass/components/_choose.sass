@@ -11,21 +11,42 @@
 
   &__row
     display: flex
-
-
-    &-left,
-    &-right
-      width: 50%
+    +rmin($mobile-s)
+      flex-direction: column
+    +rmin($desktop)
+      flex-direction: row
 
 
     &-left
+      +rmin($tablet)
 
-
+      +rmin($desktop)
+        width: 55%
+      +rmin($wide)
+        width: 100%
+        max-width: (1170px / 2)
     &-right
+      +rmin($tablet)
+      +rmin($desktop)
+        width: 45%
+      +rmin($wide)
+        width: calc(100% - (1170px / 2))
 
 
   &__field
     margin-bottom: 15px
+
+    &-select
+      &Wrap
+        display: flex
+        justify-content: space-between
+      &House
+        .select
+          min-width: 100px
+      &Section
+        .select
+          min-width: 135px
+
 
     &-select,
     &-radio
@@ -43,21 +64,90 @@
         justify-content: space-between
         width: calc(100% - (180px + 30px))
 
+
+      button
+        cursor: pointer
+        width: 45px
+        height: 45px
+        border-radius: 100%
+        border: none
+        background-color: $colorSolitude
+        font-size: 16px
+
+        &.is-active
+          color: $colorWhite
+          background-color: $colorIrisBlue
+
+
     &-table
-      table
-        width: 100%
-        table-layout: fixed
-        border-collapse: collapse
-        text-align: center
-        border-spacing: 0
+      .table
+        display: flex
+        flex-direction: column
 
-        tr
-          cursor: pointer
-          height: 45px
+        &__tbody
+          position: relative
+          max-height: 550px
+          overflow: hidden
+          overflow-y: auto
 
-        th,
-        td
-          font-size: 16px
+          .table__tr
+            +transition(background-color, border-radius, color)
+
+            &:hover
+              border-radius: 2em
+              background-color: $colorSolitude
+              +transition(background-color, border-radius, color)
+
+            &.is-active
+              border-radius: 2em
+              //border-top-left-radius: 2em
+              //border-bottom-left-radius: 2em
+              color: $colorWhite
+              background-color: $colorIrisBlue
+
+            &.is-hide
+              display: none
+
+
+        &__tr
+            cursor: pointer
+            display: flex
+            position: relative
+            height: 45px
+            align-items: center
+
+        &__th,
+        &__td
+          width: calc(100% / 5)
+          white-space: nowrap
+          text-align: center
+          font-size: 14px
+          +rmin($wide)
+            font-size: 16px
+
+        &__th
+          padding-left: 10px
+          padding-right: 10px
+          font-weight: bold
+
+          &.is-active
+            .icon
+              transform: rotate(180deg)
+              +transition(transform, opacity)
+
+          &:hover
+            .icon
+              opacity: 1
+
+          .icon
+            opacity: 0
+            margin-left: 5px
+            +transition(transform, opacity)
+
+
+        &__td
+          padding-left: 10px
+          padding-right: 26px
 
     &-title
       font-size: 20px

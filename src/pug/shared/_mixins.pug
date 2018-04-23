@@ -120,7 +120,7 @@ mixin select(arr)
 //- RADIO
 //- ========================================
 mixin radioBtn(idName, text)
-  div(class="radio")
+  div(class="radio", radio-js)
     input(type="radio", id!=idName, name!="radio")
     label(for!= idName)
       span!= text
