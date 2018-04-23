@@ -2,18 +2,18 @@ ProjectTitle: StroyAlliance
 
 PageList:
 - file: homepage.html
-  ready: 85
+  ready: 95
 - file: commercial.html
-  ready: 85
+  ready: 95
 - file: storerooms.html
-  ready: 85
+  ready: 95
 - file: earth.html
-  ready: 85
+  ready: 95
 - file: parking.html
-  ready: 85
+  ready: 95
 - file: flat.html
-  ready: 75
+  ready: 95
 - file: quarter.html
   ready: 65
 - file: house.html
-  ready: 75
+  ready: 90
