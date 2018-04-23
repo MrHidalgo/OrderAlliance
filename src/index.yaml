@@ -16,4 +16,4 @@ PageList:
 - file: quarter.html
   ready: 65
 - file: house.html
-  ready: 90
+  ready: 95

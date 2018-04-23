@@ -469,7 +469,6 @@ $(document).ready(function(){
         sortBool = boolVal;
       }
 
-
       if(sortBool) {
         sortTable(1, -1, true, false);
       } else {
