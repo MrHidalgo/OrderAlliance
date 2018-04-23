@@ -81,7 +81,7 @@
             .table__thead(thead-js)
               .table__tr(thead-tr-js)
                 -for(var i = 0, len = tableHead.length; i < len; i++)
-                  .table__th(th-js)
+                  .table__th(th-js data-id!= i)
                     != tableHead[i]
                     i.icon.icon-arrow
 

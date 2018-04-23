@@ -417,16 +417,51 @@ $(document).ready(function(){
   /**
    * @description
    */
+  var sortBool = true;
+
   _document.on("click", "[table-js]", function(e) {
     var elem = $(e.target);
+
 
     if(elem.closest("[td-js]")) {
       $("[tbody-tr-js]").removeClass("is-active");
       elem.closest("[tbody-tr-js]").addClass("is-active");
     }
 
+
     if(elem.closest("[th-js]")) {
+      var tbody = $("[tbody-js]"),
+        tbodyTr = $("[tbody-tr-js]");
+
+      var sortIdx = parseInt(elem.attr("data-id"));
+
       elem.toggleClass("is-active");
+
+      function sortTable(sortNum1, sortNum2, numberSortVal, boolVal) {
+        var sortVal = tbodyTr.sort(function(a, b) {
+
+          var firstVal = $(a).find('[td-js]').eq(sortIdx).text(),
+            secondVal = $(b).find('[td-js]').eq(sortIdx).text();
+
+          if(sortIdx === 0 || sortIdx === 1) {
+
+            return (numberSortVal) ? firstVal - secondVal : secondVal - firstVal;
+          } else {
+
+            return (firstVal > secondVal) ? sortNum1 : sortNum2;
+          }
+        });
+
+        tbody.html(sortVal);
+        sortBool = boolVal;
+      }
+
+
+      if(sortBool) {
+        sortTable(1, -1, true, false);
+      } else {
+        sortTable(-1, 1, false, true);
+      }
     }
   });
   // ====================
