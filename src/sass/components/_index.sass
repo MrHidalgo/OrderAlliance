@@ -91,7 +91,10 @@
     font-size: initial
 
   &__value
-    font-size: 20px
+    +rmin($mobile-s)
+      font-size: 18px
+    +rmin($mobile)
+      font-size: 20px
 
   &__icon
     position: absolute

@@ -393,7 +393,7 @@ $(document).ready(function(){
   // TABLE
   // ====================
   /**
-   * @description filter rooms count
+   * @description filter table data
    */
   _document.on("click", "[radio-js]", function(e) {
     var elem = $(e.target),
@@ -419,19 +419,28 @@ $(document).ready(function(){
     }
   });
   /**
-   * @description
+   *
+   * @type {boolean}
    */
   var sortBool = true;
 
-  _document.on("click", "[table-js]", function(e) {
+  /**
+   * @description
+   */
+  _document.on("click", "[tbody-js]", function(e) {
     var elem = $(e.target);
-
 
     if(elem.closest("[td-js]")) {
       $("[tbody-tr-js]").removeClass("is-active");
       elem.closest("[tbody-tr-js]").addClass("is-active");
     }
+  });
 
+  /**
+   * @description
+   */
+  _document.on("click", "[thead-js]", function(e) {
+    var elem = $(e.target);
 
     if(elem.closest("[th-js]")) {
       var tbody = $("[tbody-js]"),
