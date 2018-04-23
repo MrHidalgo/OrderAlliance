@@ -29,13 +29,20 @@
           display: flex
           align-items: center
           justify-content: center
-          width: 200px
           height: 45px
           line-height: 45px
           border: 2px solid $colorGold
           border-radius: 2em
-          font-size: 15px
           +transition(background-color, color)
+          +rmin($tablet)
+            width: 160px
+            font-size: 13px
+          +rmin($desktop)
+            width: 180px
+            font-size: 14px
+          +rmin($wide)
+            width: 200px
+            font-size: 15px
 
           &:hover
             background-color: $colorGold
@@ -49,15 +56,24 @@
           display: flex
           align-items: center
           justify-content: center
-          width: 200px
+          //width: 200px
           height: 45px
           line-height: 45px
-          font-size: 15px
+          //font-size: 15px
           &:before
             content: ""
             display: inline-block
             margin-right: 10px
             @include sprite(submenuArrow)
+          +rmin($tablet)
+            width: 160px
+            font-size: 13px
+          +rmin($desktop)
+            width: 180px
+            font-size: 14px
+          +rmin($wide)
+            width: 200px
+            font-size: 15px
 
 
       &:last-child
@@ -65,13 +81,22 @@
           display: flex
           align-items: center
           justify-content: center
-          width: 200px
+          //width: 200px
           height: 45px
           line-height: 45px
           border: 2px solid $colorGold
           border-radius: 2em
-          font-size: 15px
+          //font-size: 15px
           +transition(background-color, color)
+          +rmin($tablet)
+            width: 160px
+            font-size: 13px
+          +rmin($desktop)
+            width: 180px
+            font-size: 14px
+          +rmin($wide)
+            width: 200px
+            font-size: 15px
 
           &:hover
             background-color: $colorGold
@@ -84,8 +109,13 @@
     position: relative
     display: block
     color: $colorWhite
-    font-size: 20px
     font-weight: 500
+    +rmin($tablet)
+      font-size: 14px
+    +rmin($desktop)
+      font-size: 18px
+    +rmin($wide)
+      font-size: 20px
 
     &:after
       content: ""

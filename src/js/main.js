@@ -685,7 +685,7 @@ $(document).ready(function(){
       mainClass: 'show',
       callbacks: {
         beforeOpen: function() {
-          // startWindowScroll = _window.scrollTop();
+          startWindowScroll = _window.scrollTop();
           // $('html').addClass('mfp-helper');
         },
         close: function() {
