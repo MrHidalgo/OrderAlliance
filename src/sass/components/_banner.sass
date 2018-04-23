@@ -13,6 +13,12 @@
     +rmin($tablet)
       min-height: 885px
 
+    .container.container--slider
+      +rmin($mobile-s)
+        margin-top: 130px
+      +rmin($tablet)
+        margin-top: 270px
+
 
   &__gradient
     z-index: 0
@@ -103,18 +109,6 @@
     &-name
       text-shadow: 0 9px 90px rgba(0, 0, 0, 0.9)
 
-      .banner__slider--quarter &,
-      .banner__slider--flat &
-        font-weight: 800
-        +rmin($mobile-s)
-          font-size: 35px
-        +rmin($mobile)
-          font-size: 50px
-        +rmin($tablet)
-          font-size: 55px
-        +rmin($desktop)
-          font-size: 65px
-
       .slick-center &,
       .slick-active &
         font-weight: 800
@@ -130,6 +124,19 @@
         > span
           display: block
           line-height: 1
+
+      .banner__slider--quarter &,
+      .banner__slider--house &,
+      .banner__slider--flat &
+        font-weight: 800
+        +rmin($mobile-s)
+          font-size: 35px
+        +rmin($mobile)
+          font-size: 50px
+        +rmin($tablet)
+          font-size: 55px
+        +rmin($desktop)
+          font-size: 69px
 
     &-info
       display: none
