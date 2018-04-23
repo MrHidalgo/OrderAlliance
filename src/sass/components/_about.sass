@@ -11,6 +11,8 @@
     min-height: 405px
     padding-top: 0
     padding-bottom: 0
+    padding-left: 15px
+    padding-right: 15px
 
     img
       z-index: 0
@@ -26,21 +28,43 @@
       z-index: 1
       position: relative
       max-width: 960px
-      padding-top: 45px
-      padding-bottom: 45px
       background-color: rgba($colorWhite, 0.9)
+      +rmin($mobile-s)
+        padding-top: 30px
+        padding-bottom: 30px
+      +rmin($wide)
+        padding-top: 45px
+        padding-bottom: 45px
 
       h2
-        margin-bottom: 45px
-        font-size: 50px
         font-weight: 800
         text-align: center
+        +rmin($mobile-s)
+          margin-bottom: 15px
+          font-size: 30px
+        +rmin($mobile)
+          margin-bottom: 30px
+          font-size: 35px
+        +rmin($tablet)
+          margin-bottom: 35px
+          font-size: 40px
+        +rmin($desktop)
+          margin-bottom: 40px
+          font-size: 45px
+        +rmin($wide)
+          margin-bottom: 45px
+          font-size: 50px
 
       p
-        font-size: 20px
         color: $colorDimGray
         text-align: center
         line-height: 1.4
+        +rmin($mobile-s)
+          font-size: 16px
+        +rmin($mobile)
+          font-size: 18px
+        +rmin($desktop)
+          font-size: 20px
 
 
   .main__title
