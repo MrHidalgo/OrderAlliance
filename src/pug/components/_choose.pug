@@ -58,10 +58,11 @@
       .choose__row-left
 
         .choose__field-selectWrap
-          .choose__field.choose__field-select.choose__field-selectHouse
-            p.choose__field-title!= "Дом"
-            .choose__field-wrap
-              +select(selectHouseNumber)
+          if(bodyClass === "house")
+            .choose__field.choose__field-select.choose__field-selectHouse
+              p.choose__field-title!= "Дом"
+              .choose__field-wrap
+                +select(selectHouseNumber)
           .choose__field.choose__field-select.choose__field-selectSection
             p.choose__field-title!= "Секция"
             .choose__field-wrap

@@ -10,7 +10,7 @@ $sprite: (
 	),
 	corner: (
 		offset-x: -54px,
-		offset-y: -24px,
+		offset-y: -48px,
 		width: 11px,
 		height: 7px,
 		total-width: 91px,
@@ -36,8 +36,8 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	marker-active: (
-		offset-x: -32px,
-		offset-y: -40px,
+		offset-x: -54px,
+		offset-y: 0px,
 		width: 11px,
 		height: 14px,
 		total-width: 91px,
@@ -46,7 +46,7 @@ $sprite: (
 	),
 	marker-black: (
 		offset-x: -54px,
-		offset-y: 0px,
+		offset-y: -24px,
 		width: 11px,
 		height: 14px,
 		total-width: 91px,
@@ -76,6 +76,15 @@ $sprite: (
 		offset-y: 0px,
 		width: 12px,
 		height: 30px,
+		total-width: 91px,
+		total-height: 68px,
+		image: '../img/sprite.png'
+	),
+	submenuArrow: (
+		offset-x: -32px,
+		offset-y: -40px,
+		width: 9px,
+		height: 20px,
 		total-width: 91px,
 		total-height: 68px,
 		image: '../img/sprite.png'
@@ -162,4 +171,7 @@ $sprite: (
 	}
 	.icon-prev {
 		@include sprite(prev)
+	}
+	.icon-submenuArrow {
+		@include sprite(submenuArrow)
 	}

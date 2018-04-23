@@ -226,15 +226,19 @@ $(document).ready(function(){
     };
     var iconMarker = '../img/map-marker.png';
 
-    var mapBuy = new google.maps.Map(document.getElementById('map-buy'), {
-      zoom: 17,
-      center: uluruBuy
-    });
+    if($("#map-buy").length) {
+      var mapBuy = new google.maps.Map(document.getElementById('map-buy'), {
+        zoom: 17,
+        center: uluruBuy
+      });
+    }
 
-    var mapNearby = new google.maps.Map(document.getElementById('map-nearby'), {
-      zoom: 17,
-      center: uluruNearby
-    });
+    if($("#map-nearby").length) {
+      var mapNearby = new google.maps.Map(document.getElementById('map-nearby'), {
+        zoom: 17,
+        center: uluruNearby
+      });
+    }
 
     var marker = new google.maps.Marker({
       position: uluruBuy,
@@ -242,7 +246,7 @@ $(document).ready(function(){
       icon: iconMarker
     });
   }
-  if($("#map-buy").length > 0 || $("#map-nearby").length > 0) {
+  if($("#map-buy").length || $("#map-nearby").length) {
     initMap();
   }
   // ====================
@@ -537,7 +541,8 @@ $(document).ready(function(){
     `;
     const carouselInnerBgName = `
       [data-js='carousel-quarterBlur-js'],
-      [data-js='carousel-flatBlue-js']
+      [data-js='carousel-flatBlue-js'],
+      [data-js='carousel-houseBlue-js']
     `;
     const sliderLocationName = `
       [data-js='slider-apartment-js'],
@@ -548,7 +553,8 @@ $(document).ready(function(){
     `;
     const sliderInnerLocationName = `
       [data-js='slider-quarter-js'],
-      [data-js='slider-flat-js']
+      [data-js='slider-flat-js'],
+      [data-js='slider-house-js']
     `;
     const swapInfoName = `
       [swap-apartment-js],

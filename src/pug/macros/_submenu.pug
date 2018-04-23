@@ -10,12 +10,19 @@
     "Где купить"
   ];
   var submenuFlatArr = [
-    "ДРУГИЕ ОБЪЕКТЫ",
+    "ДРУГИЕ ДОМА",
     "Выбрать квартиру",
     "Описание объекта",
     "Что рядом",
     "Фото и видео",
     "Где купить"
+  ];
+  var submenuHouseArr = [
+    "НАЗАД К ПРОЕКТУ",
+    "Выбрать квартиру",
+    "Описание объекта",
+    "Где купить",
+    "ДРУГИЕ ДОМА"
   ];
   var submenuHrefQurterArr = [
     "#",
@@ -32,6 +39,13 @@
     "#nearby",
     "#",
     "#buy"
+  ];
+  var submenuHrefHouseArr = [
+    "#",
+    "#choose",
+    "#about",
+    "#buy",
+    "#"
   ];
 //- ==========
 //- MIXIN
@@ -52,11 +66,21 @@ mixin submenuLink(hrefArr, count, arr)
       feGaussianBlur(in="SourceGraphic" stdDeviation="24")
 
   .container
-    ul.submenu__list
-      -for(var i = 0, len = submenuFlatArr.length; i < len; i++)
-        li.submenu__item
-          if(bodyClass === 'flat')
+    if(bodyClass === "flat")
+      ul.submenu__list.submenu__list--flat
+        -for(var i = 0, len = submenuFlatArr.length; i < len; i++)
+          li.submenu__item
             +submenuLink(submenuHrefFlarArr, i, submenuFlatArr)
-          else if(bodyClass === 'quarter')
+
+    else if(bodyClass === "quarter")
+      ul.submenu__list.submenu__list--quarter
+        -for(var i = 0, len = submenuQuarterArr.length; i < len; i++)
+          li.submenu__item
             +submenuLink(submenuHrefQurterArr, i, submenuQuarterArr)
+
+    else if(bodyClass === "house")
+      ul.submenu__list.submenu__list--house
+        -for(var i = 0, len = submenuHouseArr.length; i < len; i++)
+          li.submenu__item
+            +submenuLink(submenuHrefHouseArr, i, submenuHouseArr)
 

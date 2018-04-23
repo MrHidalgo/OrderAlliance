@@ -22,23 +22,62 @@
 
 
   &__item
-    &:first-child
-      .submenu__btn
-        display: flex
-        align-items: center
-        justify-content: center
-        width: 200px
-        height: 45px
-        line-height: 45px
-        border: 2px solid $colorGold
-        border-radius: 2em
-        font-size: 15px
-        +transition(background-color, color)
-
-        &:hover
-          background-color: $colorGold
-          color: #000
+    .submenu__list--flat &,
+    .submenu__list--quarter &
+      &:first-child
+        .submenu__btn
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 200px
+          height: 45px
+          line-height: 45px
+          border: 2px solid $colorGold
+          border-radius: 2em
+          font-size: 15px
           +transition(background-color, color)
+
+          &:hover
+            background-color: $colorGold
+            color: #000
+            +transition(background-color, color)
+
+    .submenu__list--house &
+      &:first-child
+        .submenu__btn
+          position: relative
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 200px
+          height: 45px
+          line-height: 45px
+          font-size: 15px
+          &:before
+            content: ""
+            display: inline-block
+            margin-right: 10px
+            @include sprite(submenuArrow)
+
+
+      &:last-child
+        .submenu__btn
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 200px
+          height: 45px
+          line-height: 45px
+          border: 2px solid $colorGold
+          border-radius: 2em
+          font-size: 15px
+          +transition(background-color, color)
+
+          &:hover
+            background-color: $colorGold
+            color: #000
+            +transition(background-color, color)
+
 
 
   &__btn
@@ -48,7 +87,7 @@
     font-size: 20px
     font-weight: 500
 
-    &:before
+    &:after
       content: ""
       position: absolute
       bottom: -10px
@@ -59,7 +98,7 @@
       +transition(background-color)
 
     &.is-active
-      &:before
+      &:after
         content: ""
         position: absolute
         bottom: -10px
