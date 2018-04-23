@@ -8,7 +8,10 @@
     min-height: 900px
 
   &--inner
-    min-height: 885px
+    +rmin($mobile-s)
+      min-height: 655px
+    +rmin($tablet)
+      min-height: 885px
 
 
   &__gradient
@@ -59,7 +62,10 @@
         filter: url(#svg-blur)
 
     &--normal
-      height: calc(100% - 105px)
+      +rmin($mobile-s)
+        height: calc(100% - 150px)
+      +rmin($tablet)
+        height: calc(100% - 105px)
 
     .slick-slider,
     .slick-list,

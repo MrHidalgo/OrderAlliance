@@ -5,7 +5,10 @@
   bottom: 0
   left: 0
   width: 100%
-  min-height: 105px
+  +rmin($mobile-s)
+    min-height: 150px
+  +rmin($tablet)
+    min-height: 105px
 
   svg
     z-index: 0
@@ -19,12 +22,29 @@
     align-items: center
     justify-content: space-between
     min-height: 105px
+    +rmin($mobile-s)
+      flex-wrap: wrap
+    +rmin($tablet)
+      flex-wrap: nowrap
 
 
   &__item
+    +rmin($mobile-s)
+      display: flex
+      align-items: center
+      height: 75px
+    +rmin($tablet)
+      height: auto
+      display: block
+
     .submenu__list--flat &,
     .submenu__list--quarter &
       &:first-child
+        +rmin($mobile-s)
+          width: 50%
+        +rmin($tablet)
+          width: auto
+
         .submenu__btn
           display: flex
           align-items: center
@@ -34,6 +54,9 @@
           border: 2px solid $colorGold
           border-radius: 2em
           +transition(background-color, color)
+          +rmin($mobile-s)
+            width: 145px
+            font-size: 11px
           +rmin($tablet)
             width: 160px
             font-size: 13px
@@ -49,46 +72,27 @@
             color: #000
             +transition(background-color, color)
 
+      &:nth-child(2)
+        +rmin($mobile-s)
+          justify-content: flex-end
+          width: 50%
+        +rmin($tablet)
+          justify-content: flex-start
+          width: auto
+
     .submenu__list--house &
-      &:first-child
-        .submenu__btn
-          position: relative
-          display: flex
-          align-items: center
-          justify-content: center
-          //width: 200px
-          height: 45px
-          line-height: 45px
-          //font-size: 15px
-          &:before
-            content: ""
-            display: inline-block
-            margin-right: 10px
-            @include sprite(submenuArrow)
-          +rmin($tablet)
-            width: 160px
-            font-size: 13px
-          +rmin($desktop)
-            width: 180px
-            font-size: 14px
-          +rmin($wide)
-            width: 200px
-            font-size: 15px
-
-
+      &:first-child,
       &:last-child
         .submenu__btn
           display: flex
           align-items: center
           justify-content: center
-          //width: 200px
           height: 45px
           line-height: 45px
-          border: 2px solid $colorGold
-          border-radius: 2em
-          //font-size: 15px
-          +transition(background-color, color)
-          +rmin($tablet)
+          +rmin($mobile-s)
+            width: 145px
+            font-size: 11px
+          +rmin($mobile)
             width: 160px
             font-size: 13px
           +rmin($desktop)
@@ -98,11 +102,57 @@
             width: 200px
             font-size: 15px
 
+      &:first-child
+        +rmin($mobile-s)
+          order: 0
+          width: 50%
+        +rmin($tablet)
+          order: 0
+          width: auto
+
+        .submenu__btn
+          &:before
+            content: ""
+            display: inline-block
+            margin-right: 10px
+            @include sprite(submenuArrow)
+
+
+      &:last-child
+        +rmin($mobile-s)
+          order: 1
+          width: 50%
+          justify-content: flex-end
+        +rmin($tablet)
+          order: 4
+          width: auto
+          justify-content: flex-start
+
+        .submenu__btn
+          border: 2px solid $colorGold
+          border-radius: 2em
+          +transition(background-color, color)
+
           &:hover
             background-color: $colorGold
             color: #000
             +transition(background-color, color)
 
+      &:nth-child(2)
+        +rmin($mobile-s)
+          order: 2
+        +rmin($tablet)
+          order: 1
+      &:nth-child(3)
+        +rmin($mobile-s)
+          order: 3
+        +rmin($tablet)
+          order: 2
+      &:nth-child(4)
+        +rmin($mobile-s)
+          order: 4
+        +rmin($tablet)
+          order: 3
 
 
   &__btn
@@ -110,7 +160,9 @@
     display: block
     color: $colorWhite
     font-weight: 500
-    +rmin($tablet)
+    +rmin($mobile-s)
+      font-size: 12px
+    +rmin($mobile)
       font-size: 14px
     +rmin($desktop)
       font-size: 18px
