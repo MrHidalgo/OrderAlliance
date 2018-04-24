@@ -479,6 +479,21 @@ $(document).ready(function(){
   // ====================
 
 
+  // MASTERPLAN
+  // ====================
+  /**
+   * @description master plan
+   */
+  _document.on("click", "[masterplan-js] polygon", (e) => {
+    // console.log(e.offsetX);
+    // console.log(e.offsetY);
+
+    $("[masterplan-js] polygon").removeClass("is-active");
+    $(e.target).addClass("is-active");
+  });
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   // _document.on('click', '[js-hamburger]', function(){
