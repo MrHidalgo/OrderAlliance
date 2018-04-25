@@ -1,20 +1,20 @@
 $sprite: (
 	arrow: (
-		offset-x: -75px,
-		offset-y: 0px,
+		offset-x: 0px,
+		offset-y: -78px,
 		width: 16px,
 		height: 9px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	corner: (
 		offset-x: -54px,
-		offset-y: -48px,
+		offset-y: -55px,
 		width: 11px,
 		height: 7px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	doc: (
@@ -22,71 +22,80 @@ $sprite: (
 		offset-y: 0px,
 		width: 22px,
 		height: 28px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
+		image: '../img/sprite.png'
+	),
+	done: (
+		offset-x: -54px,
+		offset-y: 0px,
+		width: 15px,
+		height: 15px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	marker--hover: (
-		offset-x: -75px,
-		offset-y: -19px,
+		offset-x: -79px,
+		offset-y: -47px,
 		width: 10px,
 		height: 13px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	marker-active: (
-		offset-x: -54px,
-		offset-y: 0px,
+		offset-x: -32px,
+		offset-y: -40px,
 		width: 11px,
 		height: 14px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	marker-black: (
-		offset-x: -54px,
-		offset-y: -24px,
+		offset-x: -79px,
+		offset-y: 0px,
 		width: 11px,
 		height: 14px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	marker: (
-		offset-x: -75px,
-		offset-y: -42px,
+		offset-x: -79px,
+		offset-y: -24px,
 		width: 10px,
 		height: 13px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	next: (
+		offset-x: -32px,
+		offset-y: 0px,
+		width: 12px,
+		height: 30px,
+		total-width: 90px,
+		total-height: 87px,
+		image: '../img/sprite.png'
+	),
+	prev: (
 		offset-x: 0px,
 		offset-y: -38px,
 		width: 12px,
 		height: 30px,
-		total-width: 91px,
-		total-height: 68px,
-		image: '../img/sprite.png'
-	),
-	prev: (
-		offset-x: -32px,
-		offset-y: 0px,
-		width: 12px,
-		height: 30px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 	submenuArrow: (
-		offset-x: -32px,
-		offset-y: -40px,
+		offset-x: -54px,
+		offset-y: -25px,
 		width: 9px,
 		height: 20px,
-		total-width: 91px,
-		total-height: 68px,
+		total-width: 90px,
+		total-height: 87px,
 		image: '../img/sprite.png'
 	),
 );
@@ -153,6 +162,9 @@ $sprite: (
 	}
 	.icon-doc {
 		@include sprite(doc)
+	}
+	.icon-done {
+		@include sprite(done)
 	}
 	.icon-marker--hover {
 		@include sprite(marker--hover)

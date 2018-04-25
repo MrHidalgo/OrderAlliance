@@ -129,6 +129,11 @@ $(document).ready(function(){
     if(!$(e.target).closest(".dropdown").length) {
       $(".dropdown__menu").removeClass("is-show");
     }
+
+    if(!$(e.target).closest(".masterplan__map").length) {
+      $("[masterplan-js] polygon").removeClass("is-active");
+      $(".masterplan .master").remove();
+    }
   });
   // ====================
 
@@ -484,12 +489,42 @@ $(document).ready(function(){
   /**
    * @description master plan
    */
+  /**
+   * @description
+   *
+   * @param x {Number}
+   * @param y {Number}
+   * @param className {string}
+   * @param title {string}
+   * @param text {string}
+   * @param price {string}
+   * @param info {string}
+   * @returns {string}
+   */
+  var masterPopUp = (x, y, className, title, text, price, info) => {
+    return `
+      <div class="master" style="left:${x}px;top:${y}px;">
+        <p class="master__title">${title}</p>
+        <p class="master__text">${text}</p>
+        <p class="master__price">${price}</p>
+        <p class="master__info"><i class="icon-${className}"></i> ${info}</p>
+      </div>
+    `;
+  };
+  /**
+   * @description
+   */
   _document.on("click", "[masterplan-js] polygon", (e) => {
-    // console.log(e.offsetX);
-    // console.log(e.offsetY);
+    const leftPosition = e.originalEvent.offsetX - 100,
+      topPosition = e.originalEvent.offsetY - 30;
+
+    const obj = $(e.target).data('obj');
 
     $("[masterplan-js] polygon").removeClass("is-active");
+    $(".masterplan .master").remove();
+
     $(e.target).addClass("is-active");
+    $('.masterplan').append(masterPopUp(leftPosition, topPosition, obj.className, obj.title, obj.text, obj.price, obj.info));
   });
   // ====================
 
