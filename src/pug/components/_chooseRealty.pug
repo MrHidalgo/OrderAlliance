@@ -4,14 +4,17 @@
 //- VARIABLE
 //- ==========
 -
-  var tableHead = [
-    "№", "Kомнаты", "Площадь", "Стоимость", "Цена за м²"
+  var tableHeadSale = [
+    "Тип сделки", "Площадь", "Стоимость", "Цена за м²"
   ];
-  var tableNumber = [
-    "1", "2", "5", "16", "23", "34", "38", "40", "43", "48", "52", "67", "1", "2", "5", "16", "23", "34", "38", "40", "43", "48", "52", "67"
+  var tableHeadRent = [
+    "Тип сделки", "Площадь", "Стоимость в мес.", "Цена за м² в мес."
   ];
-  var tableRoom = [
-    "2", "1", "2", "3", "3", "2", "4", "4", "4", "2", "2", "1", "2", "1", "2", "3", "3", "2", "4", "4", "4", "2", "2", "1"
+  var tableDealSale = [
+    "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа", "Продажа"
+  ];
+  var tableDealRent = [
+    "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда", "Аренда"
   ];
   var tableArea = [
     "67.5 м2", "88.5 м2", "84.62 м2", "67.5 м2", "88.5 м2", "84.62 м2", "88.5 м2", "84.62 м2", "67.5 м2", "88.5 м2", "84.62 м2", "88.5 м2", "67.5 м2", "88.5 м2", "84.62 м2", "67.5 м2", "88.5 м2", "84.62 м2", "88.5 м2", "84.62 м2", "67.5 м2", "88.5 м2", "84.62 м2", "88.5 м2"
@@ -21,6 +24,18 @@
   ];
   var tablePrice = [
     "55 000₽", "52 000₽", "52 000₽", "55 000₽", "52 000₽", "52 000₽", "38 000₽", "52 000₽", "52 000₽", "52 000₽", "52 000₽", "52 000₽", "55 000₽", "52 000₽", "52 000₽", "55 000₽", "52 000₽", "52 000₽", "38 000₽", "52 000₽", "52 000₽", "52 000₽", "52 000₽", "52 000₽"
+  ];
+  var tableTypeSale = [
+    "str",
+    "str",
+    "str",
+    "str"
+  ];
+  var tableTypeRent = [
+    "str",
+    "str",
+    "str",
+    "str"
   ];
   var selectSection = [
     "Любая", "A", "Б", "В", "Г", "Д"
@@ -36,49 +51,61 @@
 //- ==========
 
 
-#choose.choose
+#choose.choose.choose--realty
   .container
 
-    h3.main__title!= "Выбрать квартиру"
+    h3.main__title!= "Выбрать помещение"
 
     .choose__row
       .choose__row-left
 
+        .choose__field.choose__field-radioWrap
+          p!= "Продажа"
+          +checkboxBtn("checkbox--irisBlue", "")
+          p!= "Аренда"
+
+
         .choose__field-selectWrap
-          if(bodyClass === "house")
-            .choose__field.choose__field-select.choose__field-selectHouse
-              p.choose__field-title!= "Дом"
-              .choose__field-wrap
-                +select(selectHouseNumber)
+          .choose__field.choose__field-select.choose__field-selectHouse
+            p.choose__field-title!= "Дом"
+            .choose__field-wrap
+              +select(selectHouseNumber)
 
           .choose__field.choose__field-select.choose__field-selectSection
             p.choose__field-title!= "Секция"
             .choose__field-wrap
               +select(selectSection)
 
-        .choose__field.choose__field-radio
-          p.choose__field-title!= "Количество комнат"
-
-          .choose__field-wrap
-            button(type="button" radio-js)!= "1"
-            button(type="button" radio-js)!= "2"
-            button(type="button" radio-js)!= "3"
-            button(type="button" radio-js)!= "4"
-
-        .choose__field.choose__field-table
+        .choose__field.choose__field-table.choose__field-table--sale.is-active(table-sale-js)
           .table(table-js)
             .table__thead(thead-js)
               .table__tr(thead-tr-js)
-                -for(var i = 0, len = tableHead.length; i < len; i++)
-                  .table__th(th-js data-id!= i)
-                    != tableHead[i]
+                -for(var i = 0, len = tableHeadSale.length; i < len; i++)
+                  .table__th(th-js data-id!= i data-type!= tableTypeSale[i])
+                    != tableHeadSale[i]
                     i.icon.icon-arrow
 
             .table__tbody(tbody-js)
-              -for(var i = 0, len = tableNumber.length; i < len; i++)
+              -for(var i = 0, len = tableDealSale.length; i < len; i++)
                 .table__tr(tbody-tr-js)
-                  .table__td(td-js)!= tableNumber[i]
-                  .table__td(td-js room-js)!= tableRoom[i]
+                  .table__td(td-js)!= tableDealSale[i]
+                  .table__td(td-js)!= tableArea[i]
+                  .table__td(td-js)!= tableCost[i]
+                  .table__td(td-js)!= tablePrice[i]
+
+        .choose__field.choose__field-table.choose__field-table--rent(table-rent-js)
+          .table(table-js)
+            .table__thead(thead-js)
+              .table__tr(thead-tr-js)
+                -for(var i = 0, len = tableHeadRent.length; i < len; i++)
+                  .table__th(th-js data-id!= i data-type!= tableTypeRent[i])
+                    != tableHeadRent[i]
+                    i.icon.icon-arrow
+
+            .table__tbody(tbody-js)
+              -for(var i = 0, len = tableDealRent.length; i < len; i++)
+                .table__tr(tbody-tr-js)
+                  .table__td(td-js)!= tableDealRent[i]
                   .table__td(td-js)!= tableArea[i]
                   .table__td(td-js)!= tableCost[i]
                   .table__td(td-js)!= tablePrice[i]
@@ -101,8 +128,8 @@
 
         .choose__field.choose__field-description
           .choose__field-left
-            p!= "Квартира"
-            p!= "№248"
+            p!= "Тип сделки:"
+            p!= "продажа"
           .choose__field-middle
             .choose__field-wrap
               span!= "Секция:"
@@ -110,16 +137,10 @@
             .choose__field-wrap
               span!= "Этаж:"
               span!= "11"
-            .choose__field-wrap
-              span!= "Комнат:"
-              span!= "2"
           .choose__field-right
             .choose__field-wrap
               span!= "Общая площадь:"
               span!= "67.5"
-            .choose__field-wrap
-              span!= "Жилая площадь:"
-              span!= "32.77"
             .choose__field-wrap
               span!= "Срок сдачи:"
               span!= "Сдан"

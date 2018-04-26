@@ -21,3 +21,5 @@ PageList:
   ready: 75
 - file: pantry.html
   ready: 75
+- file: realty.html
+  ready: 75

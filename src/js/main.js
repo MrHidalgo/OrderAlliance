@@ -275,6 +275,9 @@ $(document).ready(function(){
    * @description custom checkbox button
    */
   function checkboxInit() {
+    const tableSale = $("[table-sale-js]"),
+      tableRent = $("[table-rent-js]");
+
     $(".checkbox").click(function(e) {
       e.preventDefault();
 
@@ -285,6 +288,18 @@ $(document).ready(function(){
       }
 
       $(this).toggleClass('is-active');
+
+      if($(this).hasClass("is-active")) {
+        if(tableSale) {
+          tableSale.removeClass("is-active");
+          tableRent.addClass("is-active");
+        }
+      } else {
+        if(tableSale) {
+          tableSale.addClass("is-active");
+          tableRent.removeClass("is-active");
+        }
+      }
 
       if(inputCheckbox.prop('checked') === true){
         inputCheckbox.prop('checked', false).change();
@@ -406,7 +421,7 @@ $(document).ready(function(){
     var elem = $(e.target);
 
     if(elem.closest("[td-js]")) {
-      $("[tbody-tr-js]").removeClass("is-active");
+      elem.closest("[table-js]").find("[tbody-tr-js]").removeClass("is-active");
       elem.closest("[tbody-tr-js]").addClass("is-active");
     }
   });
@@ -417,14 +432,11 @@ $(document).ready(function(){
     var elem = $(e.target);
 
     if(elem.closest("[th-js]")) {
-      var tbody = $("[tbody-js]"),
-        tbodyTr = $("[tbody-tr-js]");
+      var tbody = elem.closest("[table-js]").find("[tbody-js]"),
+        tbodyTr = elem.closest("[table-js]").find("[tbody-tr-js]");
 
       var sortIdx = parseInt(elem.attr("data-id")),
         sortType = elem.attr("data-type");
-
-      console.log('sortIdx: ', sortIdx);
-      console.log('sortType: ', sortType);
 
       elem.toggleClass("is-active");
 
@@ -572,7 +584,8 @@ $(document).ready(function(){
       [data-js='carousel-flatBlue-js'],
       [data-js='carousel-houseBlue-js'],
       [data-js='carousel-carBlue-js'],
-      [data-js='carousel-pantryBlue-js']
+      [data-js='carousel-pantryBlue-js'],
+      [data-js='carousel-realtyBlue-js']
     `;
     const sliderLocationName = `
       [data-js='slider-apartment-js'],
@@ -586,7 +599,8 @@ $(document).ready(function(){
       [data-js='slider-flat-js'],
       [data-js='slider-house-js'],
       [data-js='slider-car-js'],
-      [data-js='slider-pantry-js']
+      [data-js='slider-pantry-js'],
+      [data-js='slider-realty-js']
     `;
     const swapInfoName = `
       [swap-apartment-js],
