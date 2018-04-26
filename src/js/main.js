@@ -24,14 +24,14 @@ $(document).ready(function(){
   ////////////
   function pageReady(){
     legacySupport();
-    updateHeaderActiveClass();
+    // updateHeaderActiveClass();
     // initHeaderScroll();
 
     initPopups();
     initSliders();
     initScrollMonitor();
     initMasks();
-    initLazyLoad();
+    // initLazyLoad();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -50,9 +50,9 @@ $(document).ready(function(){
 
 
   // some plugins work best with onload triggers
-  _window.on('load', function(){
+  // _window.on('load', function(){
     // your functions
-  })
+  // })
 
 
   //////////
@@ -82,7 +82,7 @@ $(document).ready(function(){
       $('body, html').animate({
           scrollTop: $(el).offset().top}, 1000);
       return false;
-    })
+    });
 
 
   // HEADER SCROLL
@@ -428,9 +428,8 @@ $(document).ready(function(){
    * @type {boolean}
    */
   var sortBool = true;
-
   /**
-   * @description
+   * @description choose active row
    */
   _document.on("click", "[tbody-js]", function(e) {
     var elem = $(e.target);
@@ -440,9 +439,8 @@ $(document).ready(function(){
       elem.closest("[tbody-tr-js]").addClass("is-active");
     }
   });
-
   /**
-   * @description
+   * @description sort table col
    */
   _document.on("click", "[thead-js]", function(e) {
     var elem = $(e.target);
@@ -487,10 +485,7 @@ $(document).ready(function(){
   // MASTERPLAN
   // ====================
   /**
-   * @description master plan
-   */
-  /**
-   * @description
+   * @description master plan popup
    *
    * @param x {Number}
    * @param y {Number}
@@ -512,7 +507,7 @@ $(document).ready(function(){
     `;
   };
   /**
-   * @description
+   * @description master plan call for svg polygon popup window
    */
   _document.on("click", "[masterplan-js] polygon", (e) => {
     const leftPosition = e.originalEvent.offsetX - 100,
@@ -543,49 +538,49 @@ $(document).ready(function(){
 
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering when header is inside barba-container
-  function updateHeaderActiveClass(){
-    $('.header__menu li').each(function(i,val){
-      if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
-        $(val).addClass('is-active');
-      } else {
-        $(val).removeClass('is-active')
-      }
-    });
-  }
+  // function updateHeaderActiveClass(){
+  //   $('.header__menu li').each(function(i,val){
+  //     if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
+  //       $(val).addClass('is-active');
+  //     } else {
+  //       $(val).removeClass('is-active')
+  //     }
+  //   });
+  // }
 
   //////////
   // SLIDERS
   //////////
 
   function initSliders(){
-    var slickPrevArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
-    var slickNextArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>';
+    // var slickPrevArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
+    // var slickNextArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>';
 
     // General purpose sliders
-    $('[js-slider]').each(function(i, slider){
-      var self = $(slider);
-
-      // set data attributes on slick instance to control
-      if (self && self !== undefined) {
-        self.slick({
-          autoplay: self.data('slick-autoplay') !== undefined ? true : false,
-          dots: self.data('slick-dots') !== undefined ? true : false,
-          arrows: self.data('slick-arrows') !== undefined ? true : false,
-          prevArrow: slickNextArrow,
-          nextArrow: slickPrevArrow,
-          infinite: self.data('slick-infinite') !== undefined ? true : true,
-          speed: 300,
-          slidesToShow: 1,
-          accessibility: false,
-          adaptiveHeight: true,
-          draggable: self.data('slick-no-controls') !== undefined ? false : true,
-          swipe: self.data('slick-no-controls') !== undefined ? false : true,
-          swipeToSlide: self.data('slick-no-controls') !== undefined ? false : true,
-          touchMove: self.data('slick-no-controls') !== undefined ? false : true
-        });
-      }
-
-    });
+    // $('[js-slider]').each(function(i, slider){
+    //   var self = $(slider);
+    //
+    //   // set data attributes on slick instance to control
+    //   if (self && self !== undefined) {
+    //     self.slick({
+    //       autoplay: self.data('slick-autoplay') !== undefined ? true : false,
+    //       dots: self.data('slick-dots') !== undefined ? true : false,
+    //       arrows: self.data('slick-arrows') !== undefined ? true : false,
+    //       prevArrow: slickNextArrow,
+    //       nextArrow: slickPrevArrow,
+    //       infinite: self.data('slick-infinite') !== undefined ? true : true,
+    //       speed: 300,
+    //       slidesToShow: 1,
+    //       accessibility: false,
+    //       adaptiveHeight: true,
+    //       draggable: self.data('slick-no-controls') !== undefined ? false : true,
+    //       swipe: self.data('slick-no-controls') !== undefined ? false : true,
+    //       swipeToSlide: self.data('slick-no-controls') !== undefined ? false : true,
+    //       touchMove: self.data('slick-no-controls') !== undefined ? false : true
+    //     });
+    //   }
+    //
+    // });
 
 
     // VARIABLE
@@ -744,20 +739,20 @@ $(document).ready(function(){
       }
     });
 
-    $('[js-popup-gallery]').magnificPopup({
-  		delegate: 'a',
-  		type: 'image',
-  		tLoading: 'Загрузка #%curr%...',
-  		mainClass: 'popup-buble',
-  		gallery: {
-  			enabled: true,
-  			navigateByImgClick: true,
-  			preload: [0,1]
-  		},
-  		image: {
-  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-  		}
-  	});
+    // $('[js-popup-gallery]').magnificPopup({
+  	// 	delegate: 'a',
+  	// 	type: 'image',
+  	// 	tLoading: 'Загрузка #%curr%...',
+  	// 	mainClass: 'popup-buble',
+  	// 	gallery: {
+  	// 		enabled: true,
+  	// 		navigateByImgClick: true,
+  	// 		preload: [0,1]
+  	// 	},
+  	// 	image: {
+  	// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+  	// 	}
+  	// });
   }
 
   function closeMfp(){
@@ -835,99 +830,99 @@ $(document).ready(function(){
   //////////
   // LAZY LOAD
   //////////
-  function initLazyLoad(){
-    _document.find('[js-lazy]').Lazy({
-      threshold: 500,
-      enableThrottle: true,
-      throttle: 100,
-      scrollDirection: 'vertical',
-      effect: 'fadeIn',
-      effectTime: 350,
-      // visibleOnly: true,
-      // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
-      onError: function(element) {
-          console.log('error loading ' + element.data('src'));
-      },
-      beforeLoad: function(element){
-        // element.attr('style', '')
-      }
-    });
-  }
+  // function initLazyLoad(){
+  //   _document.find('[js-lazy]').Lazy({
+  //     threshold: 500,
+  //     enableThrottle: true,
+  //     throttle: 100,
+  //     scrollDirection: 'vertical',
+  //     effect: 'fadeIn',
+  //     effectTime: 350,
+  //     // visibleOnly: true,
+  //     // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
+  //     onError: function(element) {
+  //         console.log('error loading ' + element.data('src'));
+  //     },
+  //     beforeLoad: function(element){
+  //       // element.attr('style', '')
+  //     }
+  //   });
+  // }
 
   //////////
   // BARBA PJAX
   //////////
 
-  Barba.Pjax.Dom.containerClass = "page";
-
-  var FadeTransition = Barba.BaseTransition.extend({
-    start: function() {
-      Promise
-        .all([this.newContainerLoading, this.fadeOut()])
-        .then(this.fadeIn.bind(this));
-    },
-
-    fadeOut: function() {
-      var deferred = Barba.Utils.deferred();
-
-      anime({
-        targets: this.oldContainer,
-        opacity : .5,
-        easing: easingSwing, // swing
-        duration: 300,
-        complete: function(anim){
-          deferred.resolve();
-        }
-      })
-
-      return deferred.promise
-    },
-
-    fadeIn: function() {
-      var _this = this;
-      var $el = $(this.newContainer);
-
-      $(this.oldContainer).hide();
-
-      $el.css({
-        visibility : 'visible',
-        opacity : .5
-      });
-
-      anime({
-        targets: "html, body",
-        scrollTop: 0,
-        easing: easingSwing, // swing
-        duration: 150
-      });
-
-      anime({
-        targets: this.newContainer,
-        opacity: 1,
-        easing: easingSwing, // swing
-        duration: 300,
-        complete: function(anim) {
-          triggerBody()
-          _this.done();
-        }
-      });
-    }
-  });
-
-  // set barba transition
-  Barba.Pjax.getTransition = function() {
-    return FadeTransition;
-  };
-
-  Barba.Prefetch.init();
-  Barba.Pjax.start();
-
-  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
-
-    pageReady();
-    // closeMobileMenu();
-
-  });
+  // Barba.Pjax.Dom.containerClass = "page";
+  //
+  // var FadeTransition = Barba.BaseTransition.extend({
+  //   start: function() {
+  //     Promise
+  //       .all([this.newContainerLoading, this.fadeOut()])
+  //       .then(this.fadeIn.bind(this));
+  //   },
+  //
+  //   fadeOut: function() {
+  //     var deferred = Barba.Utils.deferred();
+  //
+  //     anime({
+  //       targets: this.oldContainer,
+  //       opacity : .5,
+  //       easing: easingSwing, // swing
+  //       duration: 300,
+  //       complete: function(anim){
+  //         deferred.resolve();
+  //       }
+  //     })
+  //
+  //     return deferred.promise
+  //   },
+  //
+  //   fadeIn: function() {
+  //     var _this = this;
+  //     var $el = $(this.newContainer);
+  //
+  //     $(this.oldContainer).hide();
+  //
+  //     $el.css({
+  //       visibility : 'visible',
+  //       opacity : .5
+  //     });
+  //
+  //     anime({
+  //       targets: "html, body",
+  //       scrollTop: 0,
+  //       easing: easingSwing, // swing
+  //       duration: 150
+  //     });
+  //
+  //     anime({
+  //       targets: this.newContainer,
+  //       opacity: 1,
+  //       easing: easingSwing, // swing
+  //       duration: 300,
+  //       complete: function(anim) {
+  //         triggerBody()
+  //         _this.done();
+  //       }
+  //     });
+  //   }
+  // });
+  //
+  // // set barba transition
+  // Barba.Pjax.getTransition = function() {
+  //   return FadeTransition;
+  // };
+  //
+  // Barba.Prefetch.init();
+  // Barba.Pjax.start();
+  //
+  // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+  //
+  //   pageReady();
+  //   // closeMobileMenu();
+  //
+  // });
 
   // some plugins get bindings onNewPage only that way
   function triggerBody(){
