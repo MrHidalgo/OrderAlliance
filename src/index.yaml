@@ -19,3 +19,5 @@ PageList:
   ready: 75
 - file: car.html
   ready: 75
+- file: pantry.html
+  ready: 75

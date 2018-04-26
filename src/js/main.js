@@ -571,7 +571,8 @@ $(document).ready(function(){
       [data-js='carousel-quarterBlur-js'],
       [data-js='carousel-flatBlue-js'],
       [data-js='carousel-houseBlue-js'],
-      [data-js='carousel-carBlue-js']
+      [data-js='carousel-carBlue-js'],
+      [data-js='carousel-pantryBlue-js']
     `;
     const sliderLocationName = `
       [data-js='slider-apartment-js'],
@@ -584,7 +585,8 @@ $(document).ready(function(){
       [data-js='slider-quarter-js'],
       [data-js='slider-flat-js'],
       [data-js='slider-house-js'],
-      [data-js='slider-car-js']
+      [data-js='slider-car-js'],
+      [data-js='slider-pantry-js']
     `;
     const swapInfoName = `
       [swap-apartment-js],

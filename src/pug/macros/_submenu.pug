@@ -27,6 +27,11 @@
     "Выбрать машиноместо",
     "Где купить"
   ];
+  var submenuPantryArr = [
+    "ДРУГИЕ ОБЪЕКТЫ",
+    "Выбрать кладовую",
+    "Где купить"
+  ];
   var submenuHrefQurterArr = [
     "#",
     "#masterplan",
@@ -49,6 +54,11 @@
     "#"
   ];
   var submenuHrefCarArr = [
+    "#",
+    "#choose",
+    "#buy"
+  ];
+  var submenuHrefPantryArr = [
     "#",
     "#choose",
     "#buy"
@@ -95,4 +105,10 @@ mixin submenuLink(hrefArr, count, arr)
         -for(var i = 0, len = submenuCarArr.length; i < len; i++)
           li.submenu__item
             +submenuLink(submenuHrefCarArr, i, submenuCarArr)
+
+    else if(bodyClass === "pantry")
+      ul.submenu__list.submenu__list--pantry
+        -for(var i = 0, len = submenuPantryArr.length; i < len; i++)
+          li.submenu__item
+            +submenuLink(submenuHrefPantryArr, i, submenuPantryArr)
 
