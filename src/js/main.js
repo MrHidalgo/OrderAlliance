@@ -323,38 +323,9 @@ $(document).ready(function(){
   // ====================
   /**
    *
-   * @param selector
    * @description custom select component - init
    */
-  function selectInit(selector) {
-    if (selector === undefined) {
-      var selector = 'select';
-    }
-
-    selectReset(selector);
-
-    $(selector).on('change', function () {
-      selectReset(this);
-    });
-  }
-
-  /**
-   *
-   * @param selector
-   * @description custom select component - reset
-   */
-  function selectReset(selector){
-    if (selector === undefined) {
-      var selector = 'select';
-    }
-
-    $(selector).each(function(){
-      var valOption = $(this).children('option:selected');
-
-      $(this).prev('span').html(valOption.text());
-    });
-  }
-  selectInit();
+  $('select').selectric();
   // ====================
 
 
@@ -449,7 +420,11 @@ $(document).ready(function(){
       var tbody = $("[tbody-js]"),
         tbodyTr = $("[tbody-tr-js]");
 
-      var sortIdx = parseInt(elem.attr("data-id"));
+      var sortIdx = parseInt(elem.attr("data-id")),
+        sortType = elem.attr("data-type");
+
+      console.log('sortIdx: ', sortIdx);
+      console.log('sortType: ', sortType);
 
       elem.toggleClass("is-active");
 
@@ -459,7 +434,7 @@ $(document).ready(function(){
           var firstVal = $(a).find('[td-js]').eq(sortIdx).text(),
             secondVal = $(b).find('[td-js]').eq(sortIdx).text();
 
-          if(sortIdx === 0 || sortIdx === 1) {
+          if(sortType === "int") {
 
             return (numberSortVal) ? firstVal - secondVal : secondVal - firstVal;
           } else {
@@ -595,7 +570,8 @@ $(document).ready(function(){
     const carouselInnerBgName = `
       [data-js='carousel-quarterBlur-js'],
       [data-js='carousel-flatBlue-js'],
-      [data-js='carousel-houseBlue-js']
+      [data-js='carousel-houseBlue-js'],
+      [data-js='carousel-carBlue-js']
     `;
     const sliderLocationName = `
       [data-js='slider-apartment-js'],
@@ -607,7 +583,8 @@ $(document).ready(function(){
     const sliderInnerLocationName = `
       [data-js='slider-quarter-js'],
       [data-js='slider-flat-js'],
-      [data-js='slider-house-js']
+      [data-js='slider-house-js'],
+      [data-js='slider-car-js']
     `;
     const swapInfoName = `
       [swap-apartment-js],

@@ -138,6 +138,10 @@
         +rmin($desktop)
           font-size: 69px
 
+      .banner__slider--car &
+        font-size: 20px
+        font-weight: normal
+
     &-info
       display: none
       margin-top: 8px
@@ -146,6 +150,8 @@
       .banner__slider--quarter &,
       .banner__slider--flat &
         display: block
+      .banner__slider--car &
+        display: none !important
       .slick-center &,
       .slick-active &
         display: block
@@ -192,7 +198,6 @@
         width: 470px !important
 
   &__swap
-
     &-content
       color: $colorWhite
       text-align: center

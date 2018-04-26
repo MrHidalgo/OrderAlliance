@@ -22,6 +22,11 @@
     "Где купить",
     "ДРУГИЕ ДОМА"
   ];
+  var submenuCarArr = [
+    "ДРУГИЕ ОБЪЕКТЫ",
+    "Выбрать машиноместо",
+    "Где купить"
+  ];
   var submenuHrefQurterArr = [
     "#",
     "#masterplan",
@@ -42,6 +47,11 @@
     "#about",
     "#buy",
     "#"
+  ];
+  var submenuHrefCarArr = [
+    "#",
+    "#choose",
+    "#buy"
   ];
 //- ==========
 //- MIXIN
@@ -79,4 +89,10 @@ mixin submenuLink(hrefArr, count, arr)
         -for(var i = 0, len = submenuHouseArr.length; i < len; i++)
           li.submenu__item
             +submenuLink(submenuHrefHouseArr, i, submenuHouseArr)
+
+    else if(bodyClass === "car")
+      ul.submenu__list.submenu__list--car
+        -for(var i = 0, len = submenuCarArr.length; i < len; i++)
+          li.submenu__item
+            +submenuLink(submenuHrefCarArr, i, submenuCarArr)
 

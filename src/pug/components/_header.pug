@@ -31,7 +31,7 @@ header.header
               .hamburger-box
                 .hamburger-inner
 
-    if(bodyClass === "homepage")
+    if(bodyClass === "homepage" || bodyClass === "flat" || bodyClass === "quarter" || bodyClass === "house")
       +tabComponent(0)
     else if (bodyClass === "commercial")
       +tabComponent(1)
@@ -39,14 +39,8 @@ header.header
       +tabComponent(2)
     else if (bodyClass === "earth")
       +tabComponent(3)
-    else if (bodyClass === "parking")
+    else if (bodyClass === "parking" || bodyClass === "car")
       +tabComponent(4)
-    else if (bodyClass === "flat")
-      +tabComponent(0)
-    else if (bodyClass === "quarter")
-      +tabComponent(0)
-    else if (bodyClass === "house")
-      +tabComponent(0)
 
 
 // HEADER :: END
