@@ -41,6 +41,9 @@
     "Фото и видео",
     "Где купить"
   ];
+  var submenuGalleryArr = [
+    "ПЕТРОВСКИЙ КВАРТАЛ"
+  ];
   var submenuHrefQurterArr = [
     "#",
     "#masterplan",
@@ -80,6 +83,9 @@
     "#nearby",
     "#",
     "#buy"
+  ];
+  var submenuHrefGalleryArr = [
+    "#"
   ];
 //- ==========
 //- MIXIN
@@ -135,4 +141,10 @@ mixin submenuLink(hrefArr, count, arr)
         -for(var i = 0, len = submenuRealtyArr.length; i < len; i++)
           li.submenu__item
             +submenuLink(submenuHrefRealtyArr, i, submenuRealtyArr)
+
+    else if(bodyClass === "media")
+      ul.submenu__list.submenu__list--gallery
+        -for(var i = 0, len = submenuGalleryArr.length; i < len; i++)
+          li.submenu__item
+            +submenuLink(submenuHrefGalleryArr, i, submenuGalleryArr)
 
