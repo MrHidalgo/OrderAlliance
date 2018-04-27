@@ -336,7 +336,25 @@
         font-size: 20px
 
       a
+        position: relative
         font-weight: bold
+        &:after
+          pointer-events: none
+          opacity: 0
+          content: ''
+          position: absolute
+          left: 0
+          bottom: 0
+          width: 100%
+          height: 2px
+          background: $colorBlack
+          transform: translateY(5px)
+          +transition(transform, opacity)
+        &:hover
+          &:after
+            opacity: 1
+            transform: translateY(0px)
+
         +rmin($mobile-s)
           font-size: 25px
         +rmin($mobile)
