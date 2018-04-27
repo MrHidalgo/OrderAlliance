@@ -128,6 +128,7 @@ $(document).ready(function(){
   _document.on("click", "body", function(e) {
     if(!$(e.target).closest(".dropdown").length) {
       $(".dropdown__menu").removeClass("is-show");
+      $("[dropdown-choose]").removeClass("is-hide");
     }
 
     if(!$(e.target).closest(".masterplan__map").length) {
