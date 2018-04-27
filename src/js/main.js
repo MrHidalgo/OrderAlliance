@@ -173,16 +173,16 @@ $(document).ready(function(){
   /**
    * @description toggle active tab
    */
-  _document.on("click", "[tab-js]", function(e) {
-    var attrName = $(this).attr("data-tab");
-
-
-    $("[tab-js]").removeClass("is-active");
-    $(this).addClass("is-active");
-
-    $(".banner__slider").removeClass("is-active");
-    $(".banner__slider--" + attrName).addClass("is-active");
-  });
+  // _document.on("click", "[tab-js]", function(e) {
+  //   var attrName = $(this).attr("data-tab");
+  //
+  //
+  //   $("[tab-js]").removeClass("is-active");
+  //   $(this).addClass("is-active");
+  //
+  //   $(".banner__slider").removeClass("is-active");
+  //   $(".banner__slider--" + attrName).addClass("is-active");
+  // });
   // ====================
 
 
