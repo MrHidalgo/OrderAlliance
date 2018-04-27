@@ -147,6 +147,7 @@ $(document).ready(function(){
     var dropdownMenu = $(".dropdown__menu");
 
     dropdownMenu.addClass("is-show");
+    $(this).addClass("is-hide");
   });
   /**
    * @description choose your location
@@ -162,6 +163,7 @@ $(document).ready(function(){
     currentVal.text(chooseVal);
 
     dropdownMenu.removeClass("is-show");
+    $("[dropdown-choose]").removeClass("is-hide");
   });
   // ====================
 
