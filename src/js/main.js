@@ -359,11 +359,11 @@ $(document).ready(function(){
    * @description
    */
   function smoothScrollSubmenu() {
-    $(".submenu__list").on("click", "a", function (e) {
+    $(".submenu__list, .mouse").on("click", "a", function (e) {
       e.preventDefault();
 
       var id = $(this).attr('href'),
-        navHeight = 0 || $(".submenu").outerHeight(),
+        navHeight = 0, // || $(".submenu").outerHeight(),
         topHeightOffset;
 
       if ($(window).width() >= bp.tablet) {
