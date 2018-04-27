@@ -199,6 +199,11 @@
     display: block
     color: $colorWhite
     font-weight: 500
+    +transition(text-shadow)
+    &:hover
+      text-shadow: 0 0 20px rgba($colorWhite, 0.75)
+      +transition(text-shadow)
+
     +rmin($mobile-s)
       font-size: 12px
     +rmin($mobile)
