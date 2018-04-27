@@ -186,6 +186,10 @@
             background-color: rgba($colorVeryLightGrey, 0.5)
             border-top: 1px solid transparent
             +transition(background-color, border-top)
+            &:hover
+              background-color: $colorWhite
+              border-top: 1px solid $colorWhite
+              +transition(background-color, border-top)
 
           &.slick-active
             span

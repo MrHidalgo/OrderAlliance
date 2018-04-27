@@ -277,10 +277,16 @@
       padding-left: 25px
       padding-right: 25px
       border-radius: 2em
+      border: 1px solid transparent
       background-color: $colorGold
       color: $colorBlack
       font-size: 15px
       font-weight: 500
+      +transition(background-color, border-color)
+      &:hover
+        border-color: $colorGold
+        background-color: rgba($colorGold, 0.5)
+        +transition(background-color, border-color)
 
     .slick
       &-dots
@@ -312,6 +318,10 @@
             background-color: rgba($colorWhite, 0.5)
             border-top: 1px solid transparent
             +transition(background-color, border-top)
+            &:hover
+              background-color: $colorWhite
+              border-top: 1px solid $colorWhite
+              +transition(background-color, border-top)
 
           &.slick-active
             span
