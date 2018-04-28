@@ -641,7 +641,9 @@ $(document).ready(function(){
         nextArrow: false,
         speed: 500,
         infinite: true,
-        fade: true,
+        // fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         cssEase: 'linear',
         asNavFor: asNavForName
       }
@@ -698,7 +700,27 @@ $(document).ready(function(){
     // SLICK INIT
     // ===============
     $(carouselBgName).not('.slick-initialized').slick(mainCarouselOption(asNavForCarousel));
-    $(sliderLocationName).not('.slick-initialized').slick(mainSliderOption(true, true, asNavForSlider));
+    $(sliderLocationName)
+      .not('.slick-initialized')
+      .on('init.slick', function(event, slick) {
+        const slickActive = $('.slick-active');
+
+        slickActive.prev().addClass('slick-prev');
+        slickActive.next().addClass('slick-next');
+      })
+      .slick(mainSliderOption(true, true, asNavForSlider))
+      .on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        $('.slick-slide').removeClass('slick-prev slick-next');
+        $('.slick-list').addClass("is-hide");
+      })
+      .on('afterChange', function(event, slick, currentSlide, nextSlide) {
+        const slickActive = $('.slick-active');
+
+        slickActive.prev().addClass('slick-prev');
+        slickActive.next().addClass('slick-next');
+
+        $('.slick-list').removeClass("is-hide");
+      });
     $(swapInfoName).not('.slick-initialized').slick(swapInfoOption);
 
     $(carouselInnerBgName).not('.slick-initialized').slick(mainCarouselOption(asNavForCarouselInner));
