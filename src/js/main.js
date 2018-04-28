@@ -728,6 +728,15 @@ $(document).ready(function(){
         slickActive.next().addClass('slick-next');
 
         $('.slick-list').removeClass("is-hide");
+      })
+      .on('click', '.slick-slide', function (e) {
+        e.stopPropagation();
+        const slickSlider = $('.slick-slider'),
+          index = $(this).data("slick-index");
+
+        if (slickSlider.slick('slickCurrentSlide') !== index) {
+          slickSlider.slick('slickGoTo', index);
+        }
       });
     $(swapInfoName).not('.slick-initialized').slick(swapInfoOption);
 
