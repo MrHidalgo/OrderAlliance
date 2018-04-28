@@ -641,7 +641,7 @@ $(document).ready(function(){
         nextArrow: false,
         speed: 500,
         infinite: true,
-        // fade: true,
+        fade: true,
         cssEase: 'linear',
         asNavFor: asNavForName
       }
