@@ -624,10 +624,17 @@ $(document).ready(function(){
       [swap-earth-js],
       [swap-parking-js]
     `;
+    const sliderGallery0 = `[slider-0-js]`;
+    const sliderGallery1 = `[slider-1-js]`;
+    const sliderGallery2 = `[slider-2-js]`;
+    const swapGallery0 = `[swap-0-js]`;
+    const swapGallery1 = `[swap-1-js]`;
+    const swapGallery2 = `[swap-2-js]`;
 
     const asNavForCarousel = `${sliderLocationName} , ${swapInfoName}`;
     const asNavForSlider = `${carouselBgName} , ${swapInfoName}`;
     const asNavForSwap = `${carouselBgName} , ${sliderLocationName}`;
+
     const asNavForCarouselInner = `${sliderInnerLocationName}`;
     const asNavForSliderInner = `${carouselInnerBgName}`;
 
@@ -639,6 +646,26 @@ $(document).ready(function(){
     const sliderNextBtn = `
       <button type='button' class='slick-btn slick-next'>
         <i class='icon icon-next'></i>
+      </button>
+    `;
+    const sliderGalleryPrevBtn = `
+      <button type='button' class='slick-btn slick-prev'>
+        <i class='icon icon-prev-slider-gallery'></i>
+      </button>
+    `;
+    const sliderGalleryNextBtn = `
+      <button type='button' class='slick-btn slick-next'>
+        <i class='icon icon-next-slider-gallery'></i>
+      </button>
+    `;
+    const swapGalleryPrevBtn = `
+      <button type='button' class='slick-btn slick-prev'>
+        <i class='icon icon-prev-swap-gallery'></i>
+      </button>
+    `;
+    const swapGalleryNextBtn = `
+      <button type='button' class='slick-btn slick-next'>
+        <i class='icon icon-next-swap-gallery'></i>
       </button>
     `;
     // ===============
@@ -704,6 +731,30 @@ $(document).ready(function(){
         return '<span></span>';
       },
     };
+    const sliderGalleryOption = (asNavForName) => {
+      return {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: asNavForName,
+        prevArrow: sliderGalleryPrevBtn,
+        nextArrow: sliderGalleryNextBtn
+      }
+    };
+    const swapGalleryOption = (asNavForName) => {
+      return {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: asNavForName,
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true,
+        prevArrow: swapGalleryPrevBtn,
+        nextArrow: swapGalleryNextBtn
+      }
+    };
+
     // ===============
     // SLICK INIT
     // ===============
@@ -745,6 +796,13 @@ $(document).ready(function(){
     $(sliderInnerLocationName).not('.slick-initialized').slick(mainSliderOption(false, false, asNavForSliderInner));
 
     $('[info-slide-js]').not('.slick-initialized').slick(sliderInfoOption);
+
+    $(sliderGallery0).not('.slick-initialized').slick(sliderGalleryOption(swapGallery0));
+    $(sliderGallery1).not('.slick-initialized').slick(sliderGalleryOption(swapGallery1));
+    $(sliderGallery2).not('.slick-initialized').slick(sliderGalleryOption(swapGallery2));
+    $(swapGallery0).not('.slick-initialized').slick(swapGalleryOption(sliderGallery0));
+    $(swapGallery1).not('.slick-initialized').slick(swapGalleryOption(sliderGallery1));
+    $(swapGallery2).not('.slick-initialized').slick(swapGalleryOption(sliderGallery2));
     // ===============
   }
 
