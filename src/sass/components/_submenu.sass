@@ -20,12 +20,13 @@
   &__list
     display: flex
     align-items: center
-    justify-content: space-around
     min-height: 105px
     +rmin($mobile-s)
       flex-wrap: wrap
+      justify-content: space-between
     +rmin($tablet)
       flex-wrap: nowrap
+      justify-content: space-around
 
     .media &
       justify-content: flex-start
@@ -213,7 +214,7 @@
     +rmin($mobile-s)
       font-size: 10px
     +rmin($mobile)
-      font-size: 14px
+      font-size: 16px
     +rmin($desktop)
       font-size: 18px
     +rmin($wide)

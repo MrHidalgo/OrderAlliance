@@ -258,9 +258,9 @@
               opacity: 1
 
           .icon
-            //opacity: 0
-            margin-left: 5px
-            +transition(transform, opacity)
+            +rmin($mobile)
+              margin-left: 5px
+              +transition(transform, opacity)
 
 
         &__td

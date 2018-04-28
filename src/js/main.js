@@ -731,6 +731,7 @@ $(document).ready(function(){
       })
       .on('click', '.slick-slide', function (e) {
         e.stopPropagation();
+
         const slickSlider = $('.slick-slider'),
           index = $(this).data("slick-index");
 
