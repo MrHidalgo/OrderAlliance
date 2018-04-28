@@ -50,16 +50,17 @@
     .choose__row
       .choose__row-left
 
-        .choose__field-selectWrap
-          .choose__field.choose__field-select.choose__field-selectHouse
-            p.choose__field-title!= "Дом"
-            .choose__field-wrap
-              +select(selectHouseNumber)
+        .choose__row-filter
+          .choose__field-selectWrap
+            .choose__field.choose__field-select.choose__field-selectHouse
+              p.choose__field-title!= "Дом"
+              .choose__field-wrap
+                +select(selectHouseNumber)
 
-          .choose__field.choose__field-select.choose__field-selectSection
-            p.choose__field-title!= "Секция"
-            .choose__field-wrap
-              +select(selectSection)
+            .choose__field.choose__field-select.choose__field-selectSection
+              p.choose__field-title!= "Секция"
+              .choose__field-wrap
+                +select(selectSection)
 
         .choose__field.choose__field-table
           .table(table-js)
@@ -68,7 +69,7 @@
                 -for(var i = 0, len = tableHead.length; i < len; i++)
                   .table__th(th-js data-id!= i data-type!= tableType[i])
                     != tableHead[i]
-                    i.icon.icon-arrow
+                    //i.icon.icon-arrow
 
             .table__tbody(tbody-js)
               -for(var i = 0, len = tableNumber.length; i < len; i++)

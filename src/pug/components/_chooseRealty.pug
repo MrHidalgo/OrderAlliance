@@ -59,22 +59,23 @@
     .choose__row
       .choose__row-left
 
-        .choose__field.choose__field-radioWrap
-          p!= "Продажа"
-          +checkboxBtn("checkbox--irisBlue", "")
-          p!= "Аренда"
+        .choose__row-filter
+          .choose__field.choose__field-radioWrap
+            p!= "Продажа"
+            +checkboxBtn("checkbox--irisBlue", "")
+            p!= "Аренда"
 
 
-        .choose__field-selectWrap
-          .choose__field.choose__field-select.choose__field-selectHouse
-            p.choose__field-title!= "Дом"
-            .choose__field-wrap
-              +select(selectHouseNumber)
+          .choose__field-selectWrap
+            .choose__field.choose__field-select.choose__field-selectHouse
+              p.choose__field-title!= "Дом"
+              .choose__field-wrap
+                +select(selectHouseNumber)
 
-          .choose__field.choose__field-select.choose__field-selectSection
-            p.choose__field-title!= "Секция"
-            .choose__field-wrap
-              +select(selectSection)
+            .choose__field.choose__field-select.choose__field-selectSection
+              p.choose__field-title!= "Секция"
+              .choose__field-wrap
+                +select(selectSection)
 
         .choose__field.choose__field-table.choose__field-table--sale.is-active(table-sale-js)
           .table(table-js)
@@ -83,7 +84,7 @@
                 -for(var i = 0, len = tableHeadSale.length; i < len; i++)
                   .table__th(th-js data-id!= i data-type!= tableTypeSale[i])
                     != tableHeadSale[i]
-                    i.icon.icon-arrow
+                    //i.icon.icon-arrow
 
             .table__tbody(tbody-js)
               -for(var i = 0, len = tableDealSale.length; i < len; i++)
