@@ -642,8 +642,6 @@ $(document).ready(function(){
         speed: 500,
         infinite: true,
         // fade: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
         cssEase: 'linear',
         asNavFor: asNavForName
       }

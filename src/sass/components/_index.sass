@@ -224,13 +224,23 @@
 
 
 
-//
 //  ANIMATED
-//
-//.animated
-  //animation-duration: 1s
-  //animation-fill-mode: both
+// ===============
+.animated
+  animation-duration: 1s
+  animation-fill-mode: both
 
+
+//  FADE-IN
+// ===============
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.fadeIn
+  animation-name: fadeIn
 
 //
 //  INFINITY
@@ -238,18 +248,3 @@
 //.animated.infinite
 //  animation-iteration-count: infinite
 
-//
-//  BOUNCE
-//
-//@keyframes bounce
-    //0%,100%,20%,50%,60%
-    //    transform: translateY(0)
-    //
-    //40%,80%
-    //    transform: translateY(0)
-
-.bounce
-    //animation-name: bounce
-    //animation-direction: normal
-    //animation-duration: 2s
-    //animation-iteration-count: infinite
