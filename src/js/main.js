@@ -435,18 +435,28 @@ $(document).ready(function(){
     var elem = $(e.target);
 
     if(elem.closest("[th-js]")) {
-      var tbody = elem.closest("[table-js]").find("[tbody-js]"),
+      let tbody = elem.closest("[table-js]").find("[tbody-js]"),
         tbodyTr = elem.closest("[table-js]").find("[tbody-tr-js]");
 
-      var sortIdx = parseInt(elem.attr("data-id")),
-        sortType = elem.attr("data-type");
+      const sortIdx = parseInt(elem.closest("[th-js]").attr("data-id")),
+        sortType = elem.closest("[th-js]").attr("data-type");
 
-      elem.toggleClass("is-active");
+      elem.closest("[th-js]").toggleClass("is-active");
+
+      let tbodyTh = elem.closest("[table-js]").find("[tbody-tr-js]");
+
+      tbodyTh.each(function(idx, val) {
+        let elemEq = $(val).find("[td-js]").eq(sortIdx),
+          elemNotEq = $(val).find("[td-js]").not(":eq(" + sortIdx + ")");
+
+        elemNotEq.removeClass("is-sort");
+        elemEq.toggleClass("is-sort");
+      });
 
       function sortTable(sortNum1, sortNum2, numberSortVal, boolVal) {
-        var sortVal = tbodyTr.sort(function(a, b) {
+        const sortVal = tbodyTr.sort(function(a, b) {
 
-          var firstVal = $(a).find('[td-js]').eq(sortIdx).text(),
+          let firstVal = $(a).find('[td-js]').eq(sortIdx).text(),
             secondVal = $(b).find('[td-js]').eq(sortIdx).text();
 
           if(sortType === "int") {
