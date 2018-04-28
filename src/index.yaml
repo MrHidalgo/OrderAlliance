@@ -12,16 +12,16 @@ PageList:
 - file: parking.html
   ready: 85
 - file: flat.html
-  ready: 75
+  ready: 85
 - file: quarter.html
-  ready: 75
+  ready: 85
 - file: house.html
-  ready: 75
+  ready: 85
 - file: car.html
-  ready: 75
+  ready: 85
 - file: pantry.html
-  ready: 75
+  ready: 85
 - file: realty.html
-  ready: 75
+  ready: 85
 - file: gallery.html
-  ready: 75
+  ready: 85
