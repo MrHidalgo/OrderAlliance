@@ -292,17 +292,17 @@ $(document).ready(function(){
 
       $(this).toggleClass('is-active');
 
-      // if($(this).hasClass("is-active")) {
-      //   if(tableSale) {
-      //     tableSale.removeClass("is-active");
-      //     tableRent.addClass("is-active");
-      //   }
-      // } else {
-      //   if(tableSale) {
-      //     tableSale.addClass("is-active");
-      //     tableRent.removeClass("is-active");
-      //   }
-      // }
+      if($(this).is(".realty-js.is-active")) {
+        if(tableSale) {
+          tableSale.removeClass("is-active");
+          tableRent.addClass("is-active");
+        }
+      } else if ($(this).is(".realty-js")) {
+        if(tableSale) {
+          tableSale.addClass("is-active");
+          tableRent.removeClass("is-active");
+        }
+      }
 
       if(inputCheckbox.prop('checked') === true){
         inputCheckbox.prop('checked', false).change();
