@@ -770,7 +770,7 @@ $(document).ready(function(){
       .slick(mainSliderOption(true, true, asNavForSlider))
       .on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         $('.slick-slide').removeClass('slick-prev slick-next');
-        $('.slick-list').addClass("is-hide");
+        $('.banner__slider .slick-list').removeClass("fadeIn").addClass("animated fadeOut");
       })
       .on('afterChange', function(event, slick, currentSlide, nextSlide) {
         const slickActive = $('.slick-active');
@@ -778,7 +778,7 @@ $(document).ready(function(){
         slickActive.prev().addClass('slick-prev');
         slickActive.next().addClass('slick-next');
 
-        $('.slick-list').removeClass("is-hide");
+        $('.banner__slider .slick-list').removeClass("fadeOut").addClass("fadeIn");
       })
       .on('click', '.slick-slide', function (e) {
         e.stopPropagation();

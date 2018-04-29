@@ -245,6 +245,34 @@
 .fadeIn
   animation-name: fadeIn
 
+
+//  FADE-OUT
+// ===============
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+.fadeOut
+  animation-name: fadeOut
+
+  .banner__slider &
+    animation-duration: 0s
+
+
+//  SLIDE-IN-DOWN
+// ===============
+@keyframes slideInDown
+  from
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translate3d(0, 0, 0)
+
+.slideInDown
+  animation-name: slideInDown
+
 //
 //  INFINITY
 //

@@ -90,7 +90,7 @@ mixin sliderLocation(className, jsName, arrLocation)
       -for(var i = 0, len = arrLocation.length; i < len; i++)
         //div(class="slider__banner-content" style="width: 180px;")
         div(class="slider__banner-content")
-          p.banner__slider-badge!= "новые корпуса с отделкой"
+          p.banner__slider-badge.animated!= "новые корпуса с отделкой"
           p.banner__slider-name!= arrLocation[i]
           p.banner__slider-info!= "г. Тула, ул. Фрунзе, д. 20"
 
