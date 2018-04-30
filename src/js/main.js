@@ -685,6 +685,7 @@ $(document).ready(function(){
     };
     const mainSliderOption = (centerModeBool, variableWidthBool, asNavForName) => {
       return {
+        draggable: false,
         dots: false,
         prevArrow: sliderPrevBtn,
         nextArrow: sliderNextBtn,
