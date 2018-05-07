@@ -610,6 +610,45 @@ $(document).ready(function(){
   // ====================
 
 
+  //
+  // ====================
+  function initTeleport(){
+    $('[js-teleport]').each(function (i, val) {
+      let self = $(val);
+      let objHtml = $(val).html();
+      let target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
+      let conditionMedia = $(val).data('teleport-condition').substring(1);
+      let conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+
+      if (target && objHtml && conditionPosition) {
+
+        function teleport() {
+          let condition;
+
+          if (conditionPosition === "<") {
+            condition = _window.width() < conditionMedia;
+          } else if (conditionPosition === ">") {
+            condition = _window.width() > conditionMedia;
+          }
+
+          if (condition) {
+            target.html(objHtml);
+            self.html('')
+          } else {
+            self.html(objHtml);
+            target.html("")
+          }
+        }
+
+        teleport();
+        _window.on('resize', debounce(teleport, 100));
+      }
+    })
+  }
+  initTeleport();
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   // _document.on('click', '[js-hamburger]', function(){
@@ -977,7 +1016,7 @@ $(document).ready(function(){
       var elWatcher = scrollMonitor.create( $(el) );
 
       var delay;
-      if ( $(window).width() < 768 ){
+      if ( _window.width() < 768 ){
         delay = 0
       } else {
         delay = $(el).data('animation-delay');

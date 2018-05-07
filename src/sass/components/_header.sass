@@ -51,6 +51,9 @@
         width: auto
         padding-left: 0
         padding-right: 30px
+
+        animation-name: wowFade
+        visibility: visible
       +rmin($desktop)
         padding-right: 30px
         padding-left: 20px
@@ -66,12 +69,13 @@
 
       svg
         cursor: pointer
-        width: 179px
         margin-top: 6px
         +rmin($mobile-s)
+          width: 90px
           height: 30px
           margin-top: 0
         +rmin($desktop)
+          width: 179px
           height: auto
           margin-top: 6px
 
