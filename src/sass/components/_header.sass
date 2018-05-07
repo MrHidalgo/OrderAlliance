@@ -6,14 +6,30 @@
   top: 0
   left: 0
   width: 100%
-  padding-top: 15px
+
+  .preloader &
+    z-index: 1001
+    position: fixed
+
+
+  &--cover
+    padding-top: 15px
+    padding-bottom: 25px
+    +transition(background-color)
+
+    .no-preloader &
+      animation-delay: 0.5s
+    .preloader &
+      animation-delay: 9s
+      background-color: $colorWhite
+      +transition(background-color)
 
 
   &__wrapper
     display: flex
     align-items: center
     justify-content: space-between
-    margin-bottom: 25px
+
 
 
   &__container
@@ -39,6 +55,12 @@
       +rmin($wide)
         width: 285px
 
+      .no-preloader &
+        animation-delay: 0.7s
+      .preloader &
+        animation-delay: 9.2s
+
+
       img
         cursor: pointer
         margin-top: 6px
@@ -51,6 +73,12 @@
 
     &-1
       padding-top: 5px
+
+    &-2
+      .no-preloader &
+        animation-delay: 1.2s
+      .preloader &
+        animation-delay: 9.7s
 
 
     &-3
@@ -66,6 +94,11 @@
         padding-left: 15px
       +rmin($desktop)
         width: 180px
+
+      .no-preloader &
+        animation-delay: 1.3s
+      .preloader &
+        animation-delay: 9.8s
 
 
   &__phone
@@ -88,6 +121,9 @@
       font-size: 16px
     +rmin($desktop)
       font-size: 20px
+
+    .preloader &
+      color: $colorBlack
 
     &--tab
       +r($mobile-max)

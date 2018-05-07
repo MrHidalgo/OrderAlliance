@@ -524,6 +524,43 @@ $(document).ready(function(){
   // ====================
 
 
+  //
+  // ====================
+  function preloader() {
+    if (typeof(Storage) !== "undefined") {
+      // Code for localStorage/sessionStorage.
+      if(!localStorage.isFirstLoadComplete){
+        console.log("local if");
+
+        $("body").addClass("preloader");
+        $("#barba-wrapper").addClass("fadeIn");
+
+        setTimeout(function() {
+          $("#loader").fadeOut(500);
+          $("body").addClass("no-preloader").removeClass("preloader");
+          $("body, html").removeClass("is-hideScroll");
+
+          $("#barba-wrapper").addClass("fadeIn");
+        }, 10850);
+
+        localStorage.setItem("isFirstLoadComplete", "true");
+      } else {
+        console.log("local else");
+
+        $("#barba-wrapper").addClass("fadeIn");
+        $("body").addClass("no-preloader").removeClass("preloader");
+        $("body, html").removeClass("is-hideScroll");
+      }
+    } else {
+      // No Web Storage support..
+    }
+
+
+  }
+  preloader();
+  // ====================
+
+
 
   // HAMBURGER TOGGLER
   // _document.on('click', '[js-hamburger]', function(){
@@ -772,7 +809,6 @@ $(document).ready(function(){
       .on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         $('.slick-slide').removeClass('slick-prev slick-next');
         $('.banner__slider .slick-list').removeClass("fadeIn").addClass("animated fadeOut");
-        // debugger;
       })
       .on('afterChange', function(event, slick, currentSlide, nextSlide) {
         const slickActive = $('.slick-active');
@@ -898,9 +934,9 @@ $(document).ready(function(){
         delay = $(el).data('animation-delay');
       }
 
-      var animationClass = $(el).data('animation-class') || "wowFadeUp"
+      var animationClass = $(el).data('animation-class') || "wowFadeUp";
 
-      var animationName = $(el).data('animation-name') || "wowFade"
+      var animationName = $(el).data('animation-name') || "wowFade";
 
       elWatcher.enterViewport(throttle(function() {
         $(el).addClass(animationClass);
@@ -912,14 +948,14 @@ $(document).ready(function(){
       }, 100, {
         'leading': true
       }));
-      elWatcher.exitViewport(throttle(function() {
-        $(el).removeClass(animationClass);
-        $(el).css({
-          'animation-name': 'none',
-          'animation-delay': 0,
-          'visibility': 'hidden'
-        });
-      }, 100));
+      // elWatcher.exitViewport(throttle(function() {
+      //   $(el).removeClass(animationClass);
+      //   $(el).css({
+      //     'animation-name': 'none',
+      //     'animation-delay': 0,
+      //     'visibility': 'hidden'
+      //   });
+      // }, 100));
     });
 
   }
