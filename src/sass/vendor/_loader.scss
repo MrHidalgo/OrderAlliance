@@ -1,7 +1,6 @@
 // LOADER
 // ===============
 .loader {
-  display: none;
   z-index: 100;
   overflow: hidden;
 
@@ -16,12 +15,19 @@
 
   font-family: "TT Norms", Arila, sans-serif;
   line-height: 1.2;
+  transition: opacity 0.3s ease-in-out,  visibility 0.3s ease-in-out;
   @media screen and (max-width: 767px) {
     display: none !important;
   }
 
+  .no-preloader & {
+    display: none;
+  }
   .preloader & {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    transition: opacity 0.3s ease-in-out,  visibility 0.3s ease-in-out;
   }
 
 

@@ -544,12 +544,12 @@ $(document).ready(function(){
       if(_window.width() > "767") {
         if(!localStorage.isFirstLoadComplete){
           $("body").addClass("preloader");
-          $("#barba-wrapper").addClass("fadeIn");
 
           setTimeout(function() {
+            $("#barba-wrapper").addClass("fadeIn");
             $("#loader").fadeOut(500);
             cleanPreloaderClass();
-          }, 10850);
+          }, 11000);
 
           localStorage.setItem("isFirstLoadComplete", "true");
         } else {
