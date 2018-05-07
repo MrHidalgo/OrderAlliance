@@ -529,25 +529,30 @@ $(document).ready(function(){
   /**
    * @description
    */
+  function cleanPreloaderClass() {
+    $("body").addClass("no-preloader").removeClass("preloader");
+    $("body, html").removeClass("is-hideScroll");
+    $("#barba-wrapper").addClass("fadeIn");
+  }
   function preloader() {
     if (typeof(Storage) !== "undefined") {
 
-      if(!localStorage.isFirstLoadComplete){
-        $("body").addClass("preloader");
-        $("#barba-wrapper").addClass("fadeIn");
-
-        setTimeout(function() {
-          $("#loader").fadeOut(500);
-          $("body").addClass("no-preloader").removeClass("preloader");
-          $("body, html").removeClass("is-hideScroll");
+      if(_window.width() > "767") {
+        if(!localStorage.isFirstLoadComplete){
+          $("body").addClass("preloader");
           $("#barba-wrapper").addClass("fadeIn");
-        }, 10850);
 
-        localStorage.setItem("isFirstLoadComplete", "true");
+          setTimeout(function() {
+            $("#loader").fadeOut(500);
+            cleanPreloaderClass();
+          }, 10850);
+
+          localStorage.setItem("isFirstLoadComplete", "true");
+        } else {
+          cleanPreloaderClass();
+        }
       } else {
-        $("body").addClass("no-preloader").removeClass("preloader");
-        $("body, html").removeClass("is-hideScroll");
-        $("#barba-wrapper").addClass("fadeIn");
+        cleanPreloaderClass();
       }
     } else {
       // No Web Storage support..
