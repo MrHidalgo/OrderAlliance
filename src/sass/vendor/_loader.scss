@@ -106,7 +106,7 @@
       z-index: 1;
       position: relative;
 
-      height: 80px;
+      height: 100px;
 
       margin-top: 115px;
       margin-bottom: 100px;
@@ -114,6 +114,7 @@
         height: 50px;
 
         margin-top: 80px;
+        margin-bottom: 50px;
       }
     }
 
@@ -146,6 +147,9 @@
 
     width: 110px;
     height: 110px;
+    @media screen and (max-width: 991px) {
+      transform: scale(0.8);
+    }
 
     &-wrap {
       z-index: 1;
@@ -162,6 +166,9 @@
       animation-name: scale;
       animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(1,1,1,1);
+      @media screen and (max-width: 991px) {
+        transform: scale(0.8);
+      }
     }
 
     @each $className, $color, $l, $r, $t, $b, $delay in

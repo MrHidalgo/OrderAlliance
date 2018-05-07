@@ -534,6 +534,10 @@ $(document).ready(function(){
     $("body, html").removeClass("is-hideScroll");
     $("#barba-wrapper").addClass("fadeIn");
   }
+
+  /**
+   * @description
+   */
   function preloader() {
     if (typeof(Storage) !== "undefined") {
 
