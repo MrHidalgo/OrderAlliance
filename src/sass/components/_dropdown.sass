@@ -28,7 +28,7 @@
     font:
       size: 12px
       weight: 500
-    +transition(box-shadow)
+    +transition(border-color, color, box-shadow)
     &:hover
       box-shadow: 0 0 40px 0 rgba($colorWhite, 0.3)
       +transition(box-shadow)
@@ -36,6 +36,7 @@
     .preloader &
       border-color: $colorBlack
       color: $colorBlack
+      +transition(border-color, color)
 
 
     .tab &

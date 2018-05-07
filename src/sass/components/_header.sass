@@ -106,7 +106,7 @@
     top: -5px
     color: $colorWhite
     font-weight: 500
-    +transition(text-shadow)
+    +transition(text-shadow, color)
     &:hover
       text-shadow: 0 0 20px rgba($colorWhite, 0.75)
       +transition(text-shadow)
@@ -124,6 +124,7 @@
 
     .preloader &
       color: $colorBlack
+      +transition(color)
 
     &--tab
       +r($mobile-max)
