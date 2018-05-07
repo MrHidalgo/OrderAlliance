@@ -524,14 +524,15 @@ $(document).ready(function(){
   // ====================
 
 
-  //
+  // PRELOADER
   // ====================
+  /**
+   * @description
+   */
   function preloader() {
     if (typeof(Storage) !== "undefined") {
-      // Code for localStorage/sessionStorage.
-      if(!localStorage.isFirstLoadComplete){
-        console.log("local if");
 
+      if(!localStorage.isFirstLoadComplete){
         $("body").addClass("preloader");
         $("#barba-wrapper").addClass("fadeIn");
 
@@ -539,23 +540,18 @@ $(document).ready(function(){
           $("#loader").fadeOut(500);
           $("body").addClass("no-preloader").removeClass("preloader");
           $("body, html").removeClass("is-hideScroll");
-
           $("#barba-wrapper").addClass("fadeIn");
         }, 10850);
 
         localStorage.setItem("isFirstLoadComplete", "true");
       } else {
-        console.log("local else");
-
-        $("#barba-wrapper").addClass("fadeIn");
         $("body").addClass("no-preloader").removeClass("preloader");
         $("body, html").removeClass("is-hideScroll");
+        $("#barba-wrapper").addClass("fadeIn");
       }
     } else {
       // No Web Storage support..
     }
-
-
   }
   preloader();
   // ====================
