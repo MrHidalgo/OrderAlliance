@@ -63,8 +63,10 @@
         animation-delay: 9.2s
 
 
-      img
+
+      svg
         cursor: pointer
+        width: 179px
         margin-top: 6px
         +rmin($mobile-s)
           height: 30px
@@ -72,6 +74,14 @@
         +rmin($desktop)
           height: auto
           margin-top: 6px
+
+        .g-path-text-top,
+        .g-path-text-bottom
+          path
+            +transition(fill)
+            .preloader &
+              fill: #000 !important
+              +transition(fill)
 
     &-1
       padding-top: 5px
