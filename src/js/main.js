@@ -255,7 +255,13 @@ $(document).ready(function(){
     });
   }
   if($("#map-buy").length || $("#map-nearby").length) {
-    initMap();
+    var timerID = setInterval(function() {
+      if (window.google) {
+        initMap();
+        clearInterval(timerID)
+      }
+    }, 200);
+
   }
   // ====================
 
