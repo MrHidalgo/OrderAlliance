@@ -4,6 +4,25 @@
 .banner__slider--apartment .slick-slide
   overflow: hidden
 
+.progress__block
+    width: 20vw
+
+.progress__block[data-offset="0"]
+  margin-top: 0px
+
+.progress__block[data-offset="1"],
+.progress__block[data-offset="-1"]
+  padding-top: 10px
+  padding-bottom: 10px
+
+.progress__block[data-offset="2"],
+.progress__block[data-offset="-2"]
+  padding-top: 20px
+  padding-bottom: 20px
+
+
+
+
 .banner
   position: relative
   +rmin($mobile-s)

@@ -935,6 +935,27 @@ $(document).ready(function(){
     $(swapGallery0).not('.slick-initialized').slick(swapGalleryOption(sliderGallery0));
     $(swapGallery1).not('.slick-initialized').slick(swapGalleryOption(sliderGallery1));
     $(swapGallery2).not('.slick-initialized').slick(swapGalleryOption(sliderGallery2));
+
+    $('[data-js="progress"]').on('afterChange', function(event, slick, direction){
+      console.log(direction);
+      var index = $('[data-js="progress"] .slick-slide').index($('[data-js="progress"] .slick-current'))
+      console.log('index', index)
+
+      $('[data-js="progress"] .slick-slide').each(function( i ) {
+        console.log('i', i, this)
+        $(this).attr('data-offset', i - index )
+      })
+      // left
+    });
+    $('[data-js="progress"]').not('.slick-initialized').slick({
+      variableWidth: true,
+      infinite: true,
+      centerMode: true,
+      draggable: false,
+      dots: false,
+      prevArrow: sliderPrevBtn,
+      nextArrow: sliderNextBtn,
+    });
     // ===============
   }
 

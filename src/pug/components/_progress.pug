@@ -11,6 +11,17 @@
 //- ==========
 
 
+-
+  var progress = [
+    "./img/img-bg-1__progress.png",
+    "./img/img-bg-2__progress.png",
+    "./img/img-bg-3__progress.png",
+    "./img/img-bg-1__progress.png",
+    "./img/img-bg-2__progress.png",
+    "./img/img-bg-3__progress.png",
+  ];
+
+
 .progress
 
   h3.main__title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Ход строительства"
@@ -18,7 +29,15 @@
   svg(id="svg-filter")
     filter(id="svg-blur-0")
       feGaussianBlur(in="SourceGraphic" stdDeviation="8")
-
+        
+        
+        
+  .progress__row(data-js="progress")
+    -for(var i = 0; i < progress.length; i++)
+      div.slider__banner-content.progress__block.wow.wowFadeLeft(data-animation-delay="0.5s")
+          div(style="background-image: url('" + progress[i] + "');")
+      
+      
   .progress__row
     .progress__block.progress__block-0.wow.wowFadeLeft(data-animation-delay="0.5s")
       div(style="background-image: url('./img/img-bg-1__progress.png');")
