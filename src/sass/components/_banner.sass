@@ -1,24 +1,52 @@
 // BANNER
 // ===============
 
+.progress
+  .slick-btn
+    cursor: pointer
+    position: absolute
+    top: 7%
+    height: 86%
+    width: 50px
+    background-color: rgba(0,0,0,0.2)
+    border: none
+    z-index: 99999
+  .slick-prev
+    left: 0
+  .slick-next
+    right: 0
 .banner__slider--apartment .slick-slide
   overflow: hidden
 
 .progress__block
-    width: 20vw
+  width: 20vw
+  padding: 25px 0
+  > div
+    filter: blur(3px)
+    width: auto !important
 
 .progress__block[data-offset="0"]
-  margin-top: 0px
+  padding: 0
+  z-index: 3 !important
+  div
+    filter: blur(0px)
+    margin: 0 -4vw
 
 .progress__block[data-offset="1"],
 .progress__block[data-offset="-1"]
   padding-top: 10px
   padding-bottom: 10px
+  z-index: 2
+  div
+    filter: blur(1px)
+    margin: 0 -2vw
 
 .progress__block[data-offset="2"],
 .progress__block[data-offset="-2"]
   padding-top: 20px
   padding-bottom: 20px
+  div
+    filter: blur(2px)
 
 
 

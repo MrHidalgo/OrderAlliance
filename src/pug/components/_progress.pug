@@ -13,12 +13,30 @@
 
 -
   var progress = [
-    "./img/img-bg-1__progress.png",
-    "./img/img-bg-2__progress.png",
-    "./img/img-bg-3__progress.png",
-    "./img/img-bg-1__progress.png",
-    "./img/img-bg-2__progress.png",
-    "./img/img-bg-3__progress.png",
+    {
+      image: "./img/img-bg-1__progress.png",
+      date: "Ноябрь 2017г."
+    },
+    {
+      image: "./img/img-bg-2__progress.png",
+      date: "Ноябрь 2017г."
+    },
+    {
+      image: "./img/img-bg-3__progress.png",
+      date: "Декабрь 2017г."
+    },
+    {
+      image: "./img/img-bg-1__progress.png",
+      date: "Январь 2017г."
+    },
+    {
+      image: "./img/img-bg-2__progress.png",
+      date: "Декабрь 2017г."
+    },
+    {
+      image: "./img/img-bg-3__progress.png",
+      date: "Ноябрь 2017г."
+    },
   ];
 
 
@@ -35,7 +53,8 @@
   .progress__row(data-js="progress")
     -for(var i = 0; i < progress.length; i++)
       div.slider__banner-content.progress__block.wow.wowFadeLeft(data-animation-delay="0.5s")
-          div(style="background-image: url('" + progress[i] + "');")
+        div(style="background-image: url('" + progress[i].image + "');")
+        p!= progress[i].date
       
       
   .progress__row
