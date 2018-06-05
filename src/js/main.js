@@ -956,6 +956,11 @@ $(document).ready(function(){
       prevArrow: sliderPrevBtn,
       nextArrow: sliderNextBtn,
     });
+
+    setTimeout(function() {
+      $('[data-js="progress"]').slick('slickNext');
+    }, 400)
+
     // ===============
   }
 
