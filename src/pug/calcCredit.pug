@@ -1,0 +1,78 @@
+---
+title: Calc credit
+bodyClass: calc-credit
+---
+extends shared/_layout
+block content
+
+  +backgroundInHeader('./img/img-bg__carParking.jpg', 'Ипотека')
+  .container.container__calc
+    p.calc__header="Расчёт ипотеки"
+    .calc__row
+      .calc__left
+        
+        form.wow.wowFadeUp(data-animation-delay="0.4s")
+          .calc__row-left-block
+            .calc__first-part.wrap
+              .calc__text-container
+                | Стоимость квартиры
+              .form__field
+                input(class="form__input" placeholder="2 000 000")
+            .calc__second-part.wrap
+              .calc__text-container.block-size
+                | Первоначальный взнос
+              .detail="(сумма или процент)"
+              .form__field.short
+                input(class="form__input form__first-pay" name="message" placeholder="100 000")
+              .form__field.form-percent
+                input(class="form__input form__price-input" placeholder="50%")
+
+
+          .calc__row-left-block
+            .calc__first-part.wrap
+              .calc__text-container
+                | Процентная ставка
+              .form__field
+                input(class="form__input" placeholder="7.4%")
+            .calc__second-part.wrap
+              .calc__text-container
+                | Срок кредита
+              .form__field
+                input(class="form__input" placeholder="100 000")
+                  
+          .calc__row-left-block.is-result
+            .calc__first-part.wrap
+              .calc__result-text Общая сумма кредита
+              .calc__result-number 1 000 000₽
+            .calc__second-part.wrap
+              .calc__result-text Ежемесячный платёж
+              .calc__result-number 12 080₽
+              
+            
+
+      .calc__right
+        .calc__block
+          form(choose-appartment-wrap).calc__form
+            .form__field="Получить консультацию по ипотеке"
+            .form__field.form__field--half.form__inputs
+              input(type="name" name="name" class="form__input choose__input" placeholder="Ваше имя")
+              .form__field-left
+                input(type="tel" name="phone" class="form__input choose__input")
+              .form__field-right
+                button(type="submit" class="form__button form__text-size")!= "получить консультацию"
+    .calc__bank-title="Банки-партнеры"
+    
+    
+    .calc__banks
+      img.calc__bank(src="./img/Banks/sberBank.png")
+      img.calc__bank(src="./img/Banks/vtbBank.png")
+      img.calc__bank(src="./img/Banks/gasProm.png")
+      img.calc__bank.is-small-width(src="./img/Banks/fondIpoteka.png")
+        
+      img.calc__bank(src="./img/Banks/selkhosBank.png")
+      img.calc__bank(src="./img/Banks/raifaisenBank.png")
+      img.calc__bank(src="./img/Banks/industrialBank.png")
+
+        
+      
+    

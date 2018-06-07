@@ -1,0 +1,161 @@
+.calc-credit
+
+  .calc
+    &__row
+      display: flex
+
+    &__header
+      font-size: 30px
+      font-weight: 800
+      text-align: center
+      margin-top: 40px
+      +rmin(800)
+        font-size: 55px
+
+    &__result-number,
+      font-size: 20px
+      font-weight: 800
+      text-align: left
+
+
+      +rmin(800)
+        font-size: 35px
+
+  .container__calc
+    padding: 0 30px
+
+  .calc__block
+    width: 320px
+    height: 360px
+    background-color: rgb(254, 252, 238)
+    display: flex
+    align-items: center
+    flex-direction: row
+    border-radius: 10px
+    .form__field
+      width: 200px
+      font-size: 20px
+    +rmin(600)
+      width: 500px
+      .form__field
+        width: 360px
+        font-size: 20px
+
+
+
+  .choose-appartment-wrap
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  .form__field
+    width: 363px
+    font-size: 30px
+    font-weight: bold
+    margin-bottom: 20px
+
+  .calc__form
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+
+
+
+
+  .form__inputs
+    margin-bottom: 10px
+
+  input.form__input
+    margin-bottom: 20px
+
+  .form__text-size
+    font-size: 18px
+
+  .calc__row
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    +rmin(800)
+      flex-direction: row
+
+  .form-price
+    width: 260px
+    height: 52px
+
+
+
+  .calc__row-left-block
+    display: flex
+    flex-direction: column
+    &.is-result
+      justify-content: space-between
+    +rmin(1150)
+      flex-direction: row
+    .form__field
+      width: 230px
+      margin-right: 10px
+      display: inline-block
+      vertical-align: middle
+      &.form-percent
+        width: 70px
+
+  .calc__text-container
+    height: 38px
+
+  .calc__second-part
+    width: 300px
+    .short
+      width: 150px
+
+  .calc-credit .wrap
+    margin-right: 30px
+
+  .calc__text-container
+    font-size: 20px
+
+  .block-size
+    width: 240px
+    height: 19px
+
+  .detail
+    padding-bottom: 4px
+    color: grey
+
+  .calc__third-part
+    display: flex
+    align-items: flex-end
+    margin-right: 100px
+
+  .calc__bank-title
+    font-size: 24px
+    font-weight: 800
+    text-align: center
+    margin-top: 40px
+
+  .calc__banks
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    align-items: center
+    flex-direction: column
+    margin-bottom: 60px
+
+    +rmin(800)
+      flex-direction: row
+      align-items: flex-end
+
+  .calc__bank
+    filter: grayscale(1)
+    transition: 0.2s
+    margin: 15px
+    height: 30px
+    &.is-small-width
+      height: 70px
+    +rmin(800)
+      height: auto
+      &.is-small-width
+        height: auto
+    &:hover
+      filter: grayscale(0)
