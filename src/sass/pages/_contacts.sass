@@ -1,0 +1,72 @@
+.contacts
+  font-size: 16px
+
+.contacts__header
+  font-size: 24px
+  margin-top: 40px
+
+.contacts__header-download
+  margin-top: 30px
+
+.contacts__text
+  margin-top: 20px
+  color: #666
+
+.contacts__download
+  display: flex
+  margin-top: 20px
+  flex-wrap: wrap
+
+  flex-direction: column
+  +rmin(600)
+    flex-direction: row
+    li
+      width: 40%
+  +rmin(900)
+    li
+      width: auto
+  p
+    padding-top: 6px
+  li
+    margin-top: 15px
+    margin-right: 20px
+
+.form__upload
+  background: #444
+  color: #eee
+  border: none
+  text-align: center
+  line-height: 45px
+
+.question-detail__first-row
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .select
+    width: 80%
+  +rmin(600)
+    .select
+      width: 90%
+
+.question-detail__last-row
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  label
+    width: 100%
+  .form__button
+    margin: 0
+    margin-top: 10px
+    width: 100%
+    max-width: none
+  +rmin(600)
+    flex-direction: row
+    label,
+    .form__button
+      width: 40%
+    label .form__button
+      width: 100%
+
+    .form__button
+      margin-top: 0px

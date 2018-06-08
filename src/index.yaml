@@ -25,3 +25,11 @@ PageList:
   ready: 95
 - file: gallery.html
   ready: 95
+- file: aboutCompany.html
+  ready: 95
+- file: contacts.html
+  ready: 95
+- file: finishedProject.html
+  ready: 95
+- file: calcCredit.html
+  ready: 95

@@ -1,0 +1,164 @@
+.about__head-text
+  color: rgb(80, 200, 125)
+  font-size: 24px
+  font-weight: bold
+  display: flex
+  justify-content: center
+  margin-bottom: 20px
+  margin-top: 30px
+  +rmin(800)
+    font-size: 38px
+
+
+.about__head-text.is-orange
+  color: rgb(246, 157, 33)
+
+.about__head-text.is-purple
+  color: rgb(170, 74, 157)
+
+.about-company .container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 0 30px
+  line-height: 1.5
+
+.about__text
+  color: #888
+  font-size: 16px
+  margin-bottom: 50px
+  +rmin(800)
+    font-size: 20px
+
+
+.about__sub-text
+    font-weight: bold
+    font-size: 22px
+    display: flex
+    justify-content: flex-start
+    margin-bottom: 25px
+    +rmin(800)
+      font-size: 25px
+
+.about__left-block
+  display: inline-block
+  width: 100%
+  +rmin(800)
+    width: 50%
+    padding-right: 3%
+
+.about__right-block
+  width: 100%
+  +rmin(800)
+    width: 50%
+
+.about__plus-button
+  vertical-align: middle
+  display: inline-block
+  background-color: rgb(246, 247, 248)
+  height: 30px
+  width: 30px
+  border-radius: 30px
+  margin-right: 12px
+  text-align: center
+  line-height: 30px
+  &:before
+    content: "+"
+    font-size: 20px
+    opacity: 0.5
+
+
+.about__wrap
+  display: flex
+  margin-top: 20px
+  flex-direction: column
+
+  +rmin(800)
+    flex-direction: row
+
+  &-column
+    margin-left: 25px
+    margin-bottom: 15px
+
+  &-detail
+    margin-top: 10px
+    margin-right: 10px
+
+.about__detail
+  display: none
+
+.about__wrap-detail.is-open
+  background: #f6f7f8
+  border-radius: 15px
+  .about__plus-button
+    transform: rotate(45deg)
+
+  .about__section
+    display: inline-block
+    position: relative
+    top: 15px
+  .about__detail
+    padding: 15px
+    padding-left: 42px
+    display: block
+
+
+
+
+.about__section
+  vertical-align: middle
+  font-weight: bold
+  font-size: 16px
+  width: 70%
+
+.about__section-orange
+  position: relative
+
+.about__section-orange::before
+  content: ""
+  width: 6px
+  height: 6px
+  border-radius: 3px
+  background-color: rgb(246, 157, 33)
+  display: inline-block
+  vertical-align: middle
+  margin-right: 10px
+  position: absolute
+  top: 5px
+  left: -15px
+
+.about__section-purple
+  position: relative
+
+.about__plus-line
+  height: 1px
+  background-color: black
+  width: 50%
+
+.about__plus-cross
+  height: 1px
+  background-color: black
+  width: 50%
+  transform: rotate(90deg)
+
+.about__section-purple::before
+  content: ""
+  width: 6px
+  height: 6px
+  border-radius: 3px
+  background-color: rgb(170, 74, 157)
+  display: inline-block
+  vertical-align: middle
+  margin-right: 10px
+  position: absolute
+  top: 5px
+  left: -15px
+
+.about__head-blue
+  color: rgb(85, 170, 200)
+  font-size: 38px
+  font-weight: bold
+  display: flex
+  justify-content: center
+  margin-bottom: 20px
+  margin-top: 100px

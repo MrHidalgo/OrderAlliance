@@ -29,6 +29,7 @@ $(document).ready(function(){
 
     initPopups();
     initSliders();
+    initTeleport();
     initScrollMonitor();
     initMasks();
     // initLazyLoad();
@@ -58,6 +59,43 @@ $(document).ready(function(){
   //////////
   // COMMON
   //////////
+
+  //
+  // ====================
+  function initTeleport(){
+    $('[js-teleport]').each(function (i, val) {
+      let self = $(val);
+      let objHtml = $(val).html();
+      let target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
+      let conditionMedia = $(val).data('teleport-condition').substring(1);
+      let conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+
+      if (target && objHtml && conditionPosition) {
+
+        function teleport() {
+          let condition;
+
+          if (conditionPosition === "<") {
+            condition = _window.width() < conditionMedia;
+          } else if (conditionPosition === ">") {
+            condition = _window.width() > conditionMedia;
+          }
+
+          if (condition) {
+            target.html(objHtml);
+            self.html('')
+          } else {
+            self.html(objHtml);
+            target.html("")
+          }
+        }
+
+        teleport();
+        _window.on('resize', debounce(teleport, 100));
+      }
+    })
+  }
+
 
   function legacySupport(){
     // svg support for laggy browsers
@@ -255,7 +293,13 @@ $(document).ready(function(){
     });
   }
   if($("#map-buy").length || $("#map-nearby").length) {
-    initMap();
+    var timerID = setInterval(function() {
+      if (window.google) {
+        initMap();
+        clearInterval(timerID)
+      }
+    }, 200);
+
   }
   // ====================
 
@@ -610,42 +654,7 @@ $(document).ready(function(){
   // ====================
 
 
-  //
-  // ====================
-  function initTeleport(){
-    $('[js-teleport]').each(function (i, val) {
-      let self = $(val);
-      let objHtml = $(val).html();
-      let target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
-      let conditionMedia = $(val).data('teleport-condition').substring(1);
-      let conditionPosition = $(val).data('teleport-condition').substring(0, 1);
 
-      if (target && objHtml && conditionPosition) {
-
-        function teleport() {
-          let condition;
-
-          if (conditionPosition === "<") {
-            condition = _window.width() < conditionMedia;
-          } else if (conditionPosition === ">") {
-            condition = _window.width() > conditionMedia;
-          }
-
-          if (condition) {
-            target.html(objHtml);
-            self.html('')
-          } else {
-            self.html(objHtml);
-            target.html("")
-          }
-        }
-
-        teleport();
-        _window.on('resize', debounce(teleport, 100));
-      }
-    })
-  }
-  initTeleport();
   // ====================
 
 
@@ -929,6 +938,32 @@ $(document).ready(function(){
     $(swapGallery0).not('.slick-initialized').slick(swapGalleryOption(sliderGallery0));
     $(swapGallery1).not('.slick-initialized').slick(swapGalleryOption(sliderGallery1));
     $(swapGallery2).not('.slick-initialized').slick(swapGalleryOption(sliderGallery2));
+
+    $('[data-js="progress"]').on('afterChange', function(event, slick, direction){
+      console.log(direction);
+      var index = $('[data-js="progress"] .slick-slide').index($('[data-js="progress"] .slick-current'))
+      console.log('index', index)
+
+      $('[data-js="progress"] .slick-slide').each(function( i ) {
+        console.log('i', i, this)
+        $(this).attr('data-offset', i - index )
+      })
+      // left
+    });
+    $('[data-js="progress"]').not('.slick-initialized').slick({
+      variableWidth: true,
+      infinite: true,
+      centerMode: true,
+      draggable: false,
+      dots: false,
+      prevArrow: sliderPrevBtn,
+      nextArrow: sliderNextBtn,
+    });
+
+    setTimeout(function() {
+      $('[data-js="progress"]').slick('slickNext');
+    }, 400)
+
     // ===============
   }
 
