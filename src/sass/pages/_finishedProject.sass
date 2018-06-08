@@ -2,12 +2,17 @@
   display: none
   flex-wrap: wrap
   justify-content: space-between
+  flex-direction: column
   margin-bottom: 30px
   &.is-active
     display: flex
+  +rmin(600)
+    flex-direction: row
 
 .finished-project-item
-  width: calc(50% - 20px)
+  width: calc(100% - 20px)
+  +rmin(600)
+    width: calc(50% - 20px)
   height: 390px
   background-size: cover
   background-position: center
@@ -24,3 +29,11 @@
 
   &-subtitle
     font-size: 20px
+
+
+
+.finished-project
+  .choose__field p
+    font-size: 11px
+    +rmin(800)
+      font-size: 24px
