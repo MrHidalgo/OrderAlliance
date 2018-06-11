@@ -654,6 +654,17 @@ $(document).ready(function(){
   // ====================
 
 
+  // BLOCK
+  // ====================
+  _document.on("click", "[block-js]", function(e) {
+    var elem = $(e.currentTarget);
+
+    // $("[block-js]").removeClass("is-active");
+    elem.toggleClass("is-active");
+  });
+  // ====================
+
+
 
   // ====================
 
