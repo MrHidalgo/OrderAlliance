@@ -7,37 +7,8 @@ block content
   
 
   +backgroundInHeader('./img/MaxPng/Layer-2.jpg', 'Контакты')
-  // include ./components/_documentation
-  .container
-    -
-      var downloadName = [
-        "ООО «Альянс-Строй»",
-        "ООО «Альянс-Гарант»",
-        "ООО «Альянс-Проект»",
-        "ООО «Энергопроект»",
-      ];
-    div.contacts__header
-      | ГК "Строй-Альянс"
-    p.contacts__text
-      | Юридический адрес: 300013, г.Тула, ул. Болдина, 33, 2-ой этаж, офис 1
-    p.contacts__text
-      | Телефон/факс секретаря: (4872) 70-22-81, (4872) 70-42-81
-      
-    div.contacts__header-download
-      | Скачать реквизиты
-    
-    ul.contacts__download
-      -for(var i = 0, len = downloadName.length; i < len; i++)
-        li.wow.wowFadeUp(data-animation-delay!= (0.3 + parseFloat(0.1 * i)).toFixed(1) + "s")
-          a(
-            href="#"
-            class="documentation__list-btn"
-            title=""
-          )
-            div
-              i.icon-doc
-            p!= downloadName[i]
-  
+
+  include ./components/_address
   include ./components/_buy
   include ./components/_questionDetail
   
