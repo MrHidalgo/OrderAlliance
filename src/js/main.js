@@ -665,6 +665,26 @@ $(document).ready(function(){
   // ====================
 
 
+  // CHOOSE FILE...
+  // ====================
+  var inputs = document.querySelectorAll('[inputfile-js]');
+  Array.prototype.forEach.call(inputs, function(el) {
+    var label	 = el.nextElementSibling,
+      labelVal = label.innerHTML;
+
+    el.addEventListener('change', function(ev) {
+      var fileName = '';
+
+      fileName = ev.target.value.split('\\').pop();
+
+      if(fileName)
+        label.querySelector('span').innerHTML = fileName;
+      else
+        label.innerHTML = labelVal;
+    });
+  });
+
+
 
   // ====================
 

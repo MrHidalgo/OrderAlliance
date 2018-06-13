@@ -1,15 +1,17 @@
 // QUESTION :: START
 
-
-//- VARIABLE
-//- ==========
-
-//- ==========
-//- MIXIN
-//- ==========
-
-//- ==========
-
+-
+  var selectArr = [
+    "Руководство 1",
+    "Руководство 2",
+    "Руководство 3",
+    "Руководство 4",
+    "Руководство 5",
+    "Руководство 6",
+    "Руководство 7",
+    "Руководство 8",
+    "Руководство 9"
+  ];
 
 .question
   .container
@@ -18,9 +20,9 @@
 
     form.wow.wowFadeUp(class="question__form" question-form-js data-animation-delay="0.4s")
       
-      .form__field.question-detail__first-row
-        span Кому
-        +select(['Руководство'])
+      .form__field.form__field-select
+        label!= "Кому"
+        +select(selectArr)
       
       .form__field
         input(type="name" name="name" class="form__input question__form-input" placeholder="Ваше имя")
@@ -30,13 +32,15 @@
 
       .form__field
         textarea(class="form__message question__form-message" name="message" placeholder="Сообщение")
-          
-      .question-detail__last-row
+
+      .form__field.form__field-group
+        .form__field-wrap
+          input(type="file" name="file" id="file" inputfile-js)
+          label(for="file")
+            p.form__button!= "Прикрепить файл"
+            span!= ""
+
         button(type="submit" class="form__button question__form-btn")!= "Отправить"
-        
-        label(for="question-file-upload")
-          div( class="form__button form__upload question__form-btn ")!= "Прикрепить файл"
-        input(id="question-file-upload" type="file" style="display: none")
 
 
 // QUESTION :: END
