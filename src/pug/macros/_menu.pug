@@ -2,10 +2,16 @@
 //- ==========
 -
   var headerMenuArr = [
-    "Инвесторам",
+    "Реализованные проекты",
     "Ипотека",
     "Контакты",
     "О компании"
+  ];
+  var headerHrefArr = [
+    "finishedProject.html",
+    "calcCredit.html",
+    "contacts.html",
+    "aboutCompany.html"
   ];
 //- ==========
 
@@ -14,4 +20,4 @@
   ul.menu
     -for(var i = 0, len = headerMenuArr.length; i < len; i++)
       li.menu__item.wow.wowFadeDown
-        a(href="#" class="menu__link" title="")!= headerMenuArr[i]
+        a(href!= headerHrefArr[i] class="menu__link" title="")!= headerMenuArr[i]

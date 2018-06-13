@@ -136,4 +136,4 @@ mixin checkboxBtn(className, text)
         
 mixin backgroundInHeader(image, text)
   div(class="background-in-header " style="background-image: url('" + image + "')")
-    p!= text
+    p.wow.wowFadeUp(data-animation-delay="0.4s")!= text
