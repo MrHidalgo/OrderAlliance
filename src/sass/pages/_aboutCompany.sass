@@ -1,10 +1,19 @@
 .about__head-text
-  padding-top: 60px
   padding-bottom: 35px
-  font-size: 50px
   font-weight: bold
   text-align: center
   color: rgb(80, 200, 125)
+  +rmin($mobile-s)
+    padding-top: 30px
+    font-size: 25px
+  +rmin($tablet)
+    font-size: 35px
+  +rmin($desktop)
+    padding-top: 45px
+    font-size: 42px
+  +rmin($wide)
+    padding-top: 60px
+    font-size: 50px
 
   &.is-orange
     color: rgb(246, 157, 33)
@@ -16,16 +25,31 @@
     color: rgb(85, 170, 200)
 
 .about__text
-  margin-bottom: 60px
   color: #888
-  font-size: 20px
   line-height: 1.5
+  +rmin($mobile-s)
+    margin-bottom: 30px
+    font-size: 16px
+  +rmin($mobile)
+    font-size: 18px
+  +rmin($tablet)
+    font-size: 20px
+  +rmin($desktop)
+    margin-bottom: 45px
+  +rmin($wide)
+    margin-bottom: 60px
 
 .about__sub-text
-  margin-bottom: 45px
-  font-size: 30px
   font-weight: bold
   line-height: 1
+  +rmin($mobile-s)
+    margin-bottom: 30px
+    font-size: 20px
+  +rmin($tablet)
+    margin-bottom: 45px
+    font-size: 25px
+  +rmin($wide)
+    font-size: 30px
 
 .about__list
   display: flex
@@ -34,6 +58,8 @@
   &-left,
   &-right
     width: 50%
+    +r(767)
+      width: 100%
 
     ul
       li
@@ -59,24 +85,39 @@
 
   &-left
     padding-right: 15px
+    +r(767)
+      padding-right: 0
   &-right
     padding-left: 15px
+    +r(767)
+      padding-left: 0
 
 .about__wrap
   display: flex
   margin-bottom: 45px
+  +r(767)
+    flex-direction: column
+    margin-bottom: 15px
 
   &:last-child
     margin-bottom: 120px
+    +r(767)
+      margin-bottom: 60px
 
   &-left,
   &-right
     width: 50%
+    +r(767)
+      width: 100%
 
   &-left
     padding-right: 15px
+    +r(767)
+      padding-right: 0
   &-right
     padding-left: 15px
+    +r(767)
+      padding-left: 0
 
 .about__block
   cursor: pointer
