@@ -45,7 +45,7 @@
 
     .project__row.project__row--checkbox
 
-      .project__checkbox
+      .project__checkbox.wow.wowFadeUp(data-animation-delay="0.35s")
         p.project__checkbox-title!= "жилая недвижимость"
         +checkboxBtn("checkbox--irisBlue project-js", "")
         p.project__checkbox-title!= "коммерческая недвижимость"
@@ -54,7 +54,11 @@
 
       .project__col.animated.is-active(project-residential-js)
         -for(var i = 0, len = projectResidentialArr.length; i < len; i++)
-          a(href="#" class="project__block")
+          a.wow.wowFadeUp(
+            data-animation-delay!= (0.35 + parseFloat(0.1 * i)).toFixed(1) + "s"
+            href="#"
+            class="project__block"
+          )
             .project__block-img
               img(
                 src!= projectResidentialArr[i].image
@@ -68,7 +72,11 @@
 
       .project__col.animated(project-commercial-js)
         -for(var j = 0, len = projectResidentialArr.length; j < len; j++)
-          a(href="#" class="project__block")
+          a.wow.wowFadeUp(
+            data-animation-delay!= (0.35 + parseFloat(0.1 * i)).toFixed(1) + "s"
+            href="#"
+            class="project__block"
+          )
             .project__block-img
               img(
                 src!= projectResidentialArr[j].image
