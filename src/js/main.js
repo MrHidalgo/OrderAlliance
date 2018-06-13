@@ -336,6 +336,8 @@ $(document).ready(function(){
 
       $(this).toggleClass('is-active');
 
+
+      // table data filters
       if($(this).is(".realty-js.is-active")) {
         if(tableSale) {
           tableSale.removeClass("is-active");
@@ -347,6 +349,23 @@ $(document).ready(function(){
           tableRent.removeClass("is-active");
         }
       }
+
+      // filter finished project
+      const projectRes = $("[project-residential-js]"),
+        projectComm = $("[project-commercial-js]");
+
+      if($(this).is(".project-js.is-active")) {
+        if(projectRes || projectComm) {
+          projectRes.removeClass("is-active");
+          projectComm.addClass("is-active");
+        }
+      } else if ($(this).is(".project-js")) {
+        if(projectRes || projectComm) {
+          projectRes.addClass("is-active");
+          projectComm.removeClass("is-active");
+        }
+      }
+
 
       if(inputCheckbox.prop('checked') === true){
         inputCheckbox.prop('checked', false).change();
