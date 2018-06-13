@@ -33,7 +33,7 @@ header.header
 
   .container
 
-    if(bodyClass === "homepage" || bodyClass === "flat" || bodyClass === "quarter" || bodyClass === "house" || bodyClass === "media" || bodyClass === "finished-project" || bodyClass === "about-company" || bodyClass === "calc-credit" || bodyClass === "contacts"  )
+    if(bodyClass === "homepage" || bodyClass === "flat" || bodyClass === "quarter" || bodyClass === "house" || bodyClass === "media")
       +tabComponent(0)
     else if (bodyClass === "commercial" || bodyClass === "realty")
       +tabComponent(1)
@@ -43,6 +43,8 @@ header.header
       +tabComponent(3)
     else if (bodyClass === "parking" || bodyClass === "car")
       +tabComponent(4)
+    else
+      +tabComponent("")
 
 
 // HEADER :: END
