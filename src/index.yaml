@@ -32,4 +32,4 @@ PageList:
 - file: finishedProject.html
   ready: 100
 - file: calcCredit.html
-  ready: 95
+  ready: 100
