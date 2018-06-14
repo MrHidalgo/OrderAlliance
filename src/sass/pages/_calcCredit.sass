@@ -1,169 +1,215 @@
-.calc-credit
-
-  .calc
-    &__row
+.credit
+  &__row
+    &-0
       display: flex
-
-    &__header
-      font-size: 30px
-      font-weight: 800
-      text-align: center
-      margin-top: 40px
-      +rmin(800)
-        font-size: 55px
-
-    &__result-number,
-      font-size: 20px
-      font-weight: 800
-      text-align: left
-
-
-      +rmin(800)
-        font-size: 35px
-
-  .container__calc
-    padding: 0 30px
-
-  .calc__block
-    width: 320px
-    height: auto
-
-    padding: 15px 0
-    margin-top: 30px
-    background-color: rgb(254, 252, 238)
-    display: flex
-    align-items: center
-    flex-direction: row
-    border-radius: 10px
-    .form__field
-      width: 270px
-
-      font-size: 20px
-    +rmin(600)
-      width: 500px
-      padding: 65px 0
-      margin-top: 0px
-      .form__field
-        width: 360px
-        font-size: 20px
-
-
-
-  .choose-appartment-wrap
-    display: flex
-    flex-direction: column
-    align-items: center
-
-  .form__field
-    width: 363px
-    font-size: 30px
-    font-weight: bold
-    margin-bottom: 20px
-
-  .calc__form
-    display: flex
-    flex-direction: column
-    align-items: center
-    width: 100%
-
-
-
-
-  .form__inputs
-    margin-bottom: 10px
-
-  input.form__input
-    margin-bottom: 20px
-
-  .form__text-size
-    font-size: 18px
-
-  .calc__row
-    display: flex
-    justify-content: center
-    flex-direction: column
-    align-items: center
-    +rmin(800)
-      flex-direction: row
-
-  .form-price
-    width: 260px
-    height: 52px
-
-
-
-  .calc__row-left-block
-    display: flex
-    flex-direction: column
-    &.is-result
       justify-content: space-between
-      .wrap
-        margin-top: 10px
-    +rmin(1150)
-      flex-direction: row
-    .form__field
-      width: 230px
-      margin-right: 10px
-      display: inline-block
-      vertical-align: middle
-      &.form-percent
-        width: 70px
+      padding-bottom: 45px
+      +r(767)
+        padding-bottom: 30px
+      +rmin(320)
+        flex-direction: column
+      +rmin(992)
+        flex-direction: row
 
-  .calc__text-container
-    height: 38px
+    &-1
+      padding-top: 45px
+      padding-bottom: 60px
+      +r(767)
+        padding-top: 30px
+        padding-bottom: 30px
 
-  .calc__second-part
-    width: 300px
-    .short
-      width: 150px
+    &-left
+      padding-top: 15px
+      +rmin(320)
+        width: 100%
+        margin-bottom: 30px
+      +rmin(992)
+        width: 700px
+        margin-bottom: 0
+      +rmin(1200)
+        width: 600px
 
-  .calc-credit .wrap
-    margin-right: 30px
+    &-right
+      +rmin(320)
+        width: 100%
+      +rmin(992)
+        width: 400px
+      +rmin(1200)
+        width: 500px
 
-  .calc__text-container
-    font-size: 20px
 
-  .block-size
-    width: 240px
-    height: 19px
-
-  .detail
-    padding-bottom: 4px
-    color: grey
-
-  .calc__third-part
-    display: flex
-    align-items: flex-end
-    margin-right: 100px
-
-  .calc__bank-title
-    font-size: 24px
+  &__title
+    padding-top: 75px
+    padding-bottom: 45px
     font-weight: 800
     text-align: center
-    margin-top: 40px
+    +r(767)
+      padding-top: 35px
+      padding-bottom: 20px
+    +rmin(768)
+      font-size: 40px
+    +rmin(992)
+      font-size: 50px
 
-  .calc__banks
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
-    align-items: center
-    flex-direction: column
-    margin-bottom: 60px
 
-    +rmin(800)
-      flex-direction: row
-      align-items: flex-end
+  &__calc
+    &-row
+      +rmin(576)
+        display: flex
 
-  .calc__bank
-    filter: grayscale(1)
-    transition: 0.2s
-    margin: 15px
-    height: 30px
-    &.is-small-width
-      height: 70px
-    +rmin(800)
+      &--top
+        margin-bottom: 45px
+
+        .credit__calc-col
+          &:last-child
+            .credit__calc-title
+              padding-bottom: 0
+
+        .form__field-group
+          display: flex
+          margin-top: 0
+
+          .form__field
+            &:nth-child(1)
+              +rmin(768)
+                width: 200px !important
+                padding-right: 30px
+
+            &:last-child
+              +rmin(768)
+                width: calc(100% - 200px) !important
+
+      &--middle
+        margin-bottom: 30px
+
+      &--bottom
+        .credit__calc-col
+          &:nth-child(1)
+            padding-right: 0
+          &:last-child
+            +rmin(768)
+              padding-left: 65px
+
+          .credit__calc-title
+            padding-bottom: 15px
+
+    &-col
+      +rmin(320)
+        width: 100%
+        margin-bottom: 30px
+      +rmin(576)
+        width: 50%
+        margin-bottom: 0
+      +rmin(320)
+        &:nth-child(1)
+          +r(767)
+            padding-right: 15px
+          +r(575)
+            padding: 0
+        &:last-child
+          +r(767)
+            padding-left: 15px
+          +r(575)
+            padding: 0
+
+      +rmin(768)
+        padding-right: 30px
+
+      .form__field
+        width: 100% !important
+
+    &-title,
+    &-subtitle
+      color: $colorDimGray
+
+    &-title
+      font-size: 20px
+      padding-bottom: 30px
+      +r(575)
+        padding-bottom: 15px
+
+    &-subtitle
+      padding-bottom: 14px
+      font-size: 14px
+
+    &-sum
+      font-weight: 800
+      +rmin(320)
+        font-size: 30px
+      +rmin(576)
+        font-size: 35px
+      +rmin(768)
+        font-size: 50px
+
+
+  &__consultation
+    width: 100%
+    border-radius: 13px
+    background-color: #fffcec
+    +rmin(320)
+      padding: 30px 15px
+    +rmin(768)
+      padding: 60px 70px
+    +rmin(992)
+      padding: 60px 50px
+    +rmin(1200)
+      padding: 60px 70px
+
+    &-title
+      margin-bottom: 30px
+      font-size: 30px
+      font-weight: bold
+      +r(767)
+        font-size: 25px
+
+    &-form
+      .form__field
+        width: 100% !important
+        margin-bottom: 15px
+      .form__button
+        text-transform: uppercase
+
+
+  &__bank
+    &-title
+      margin-bottom: 15px
+      text-align: center
+      font-size: 30px
+      font-weight: bold
+      +r(767)
+        margin-bottom: 30px
+        font-size: 25px
+
+    &-row
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      max-width: 1030px
+      padding-left: 30px
+      padding-right: 30px
+      margin-left: auto
+      margin-right: auto
+      +r(767)
+        flex-direction: column
+        justify-content: center
+        padding-left: 15px
+        padding-right: 15px
+
+    &-img
+      cursor: pointer
+      filter: grayscale(1)
+      display: block
+      max-width: 100%
       height: auto
-      &.is-small-width
-        height: auto
-    &:hover
-      filter: grayscale(0)
+      margin-left: 10px
+      margin-right: 10px
+      margin-bottom: 30px
+      +transition(filter)
+      +r(575)
+        height: 40px
+
+      &:hover
+        filter: grayscale(0)
+        +transition(filter)

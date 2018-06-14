@@ -1088,6 +1088,8 @@ $(document).ready(function(){
   // Masked input
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
+    $("[percentMask-js]").mask('##0,00%', {reverse: true});
+    $("[numberMask-js]").mask('#');
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
 
